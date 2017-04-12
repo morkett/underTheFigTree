@@ -11,7 +11,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
     })
     .state('search', {
       url: '/search',
-      templateUrl: '../states/search.html'
+      templateUrl: '../states/recipeSearch.html'
     })
     .state('auth-required', {
       url: '/authrequired',

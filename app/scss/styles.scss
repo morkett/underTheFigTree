@@ -7,9 +7,14 @@ body {
 }
 
 .home-wrap {
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
   border: $border-dev-red;
+}
+
+.recipe {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
 }
 // STYLES GO HERE //
 @import "js";

@@ -7,7 +7,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     RecipeFactory.getRecipes().then(
       function(success) {
         console.log('getRecipe: controller.recipe:', success);
-        controller.recipe = success.data;
+        controller.results = success.data;
       },
       function (error) {
         console.warn('getRecipe: no results', error);
@@ -28,7 +28,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     );
   };
 
-  controller.getPost = function(){
+  controller.getRecipe = function(){
     var recipeId = $stateParams.recipeId;
     RecipeFactory.getOne(recipeId).then(
       function success(res) {

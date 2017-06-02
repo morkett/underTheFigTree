@@ -1,5 +1,5 @@
 // var request = require('request');
-var Recipe = require('../models/recipe.js');
+var Recipe = require('../models/recipe.model.js');
 
 function getRecipes(req, res) {
   Recipe.find({}, function(err, Recipe){

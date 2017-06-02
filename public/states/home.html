@@ -1,18 +1,19 @@
-<div class="home-wrap">
+<!DOCTYPE html>
+<div class="home-wrap" ng-init="recipe.getRecipes()">
     <h2>Home State</h2>
-
-    <input ng-model="recipeSearch">
+    {{recipes}}
+    <!-- <input ng-model="recipeSearch">
     <ul>
         <li type="text" ng-repeat="recipes in recipe.recipeListTest | filter: recipeSearch | orderBy:title track by $index" class="recipe">
-            {{recipes.title}}<br>Cuisine: {{recipes.cuisine}} <br>Servers:{{recipes.serves}}<br>
+            {{recipes.title}}<br>Cuisine: {{recipes.cuisine}} <br>Serves:{{recipes.serves}}<br>
 
             <br>
             <p>Incredients:</p>
             <ul>
                 <li ng-repeat="ingredients in recipes.ingredients track by $index"> {{ingredients}} </li>
                 <br>
-                <p>Marinade:</p>
-                <li ng-repeat="marinade in recipes.marinade track by $index"> {{marinade}} </li>
+                <p ng-if="recipes.ingredients_2.length > 0">Marinade:</p>
+                <li ng-repeat="marinade in recipes.ingredients_2 track by $index" ng-if="recipes.ingredients_2.length > 0"> {{marinade}} </li>
             </ul>
 
             <br>
@@ -29,5 +30,5 @@
 
 
         </li>
-    </ul>
+    </ul> -->
 </div>

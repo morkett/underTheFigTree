@@ -38,6 +38,17 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
         ]
       }
     })
+    .state('admin-showOne', {
+      url: '/admin/showOne/:recipeId',
+      templateUrl: '/states/auth/admin/showOne.html',
+      resolve: {
+        currentAuth: [
+          'AuthFactory', (AuthFactory) => {
+            return AuthFactory.$requireSignIn();
+          }
+        ]
+      }
+    })
     .state('auth-required', {
       url: '/auth-required',
       templateUrl: '/states/auth/authRequired.html'

@@ -16,7 +16,7 @@ function RecipeFactory($http) {
     getOne: function(recipeId) {
       return $http({
         method: 'GET',
-        url: `/api/recipe/${recipeId}`
+        url: `/api/recipes/${recipeId}`
       });
     },
     deletePost: function(recipeId) {

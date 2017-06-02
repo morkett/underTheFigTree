@@ -5,8 +5,8 @@ var RecipeController = require('../controllers/Recipe.controller.js');
 router.get('/api/recipes', RecipeController.getRecipes);
 router.post('/api/recipes', RecipeController.createRecipe);
 
-// router.route('/api/recipes/:id')
-//   .get(RecipeController.getPost)
+router.route('/api/recipes/:id')
+  .get(RecipeController.getRecipe);
 //   .delete(RecipeController.deletePost);
 // router.delete('/api/Recipe/delete', RecipeController.deletePost);
 

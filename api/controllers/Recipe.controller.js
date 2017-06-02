@@ -22,13 +22,13 @@ function createRecipe(req, res) {
   });
 }
 
-// function getRecipe(req, res) {
-//   var id = req.params.id;
-//   Recipe.findById({_id: id}, function(err, recipe){
-//     if(err) return res.json({message: 'could not find recipe b/c', err});
-//     res.json({recipe: recipe});
-//   }).select('-__v');
-// }
+function getRecipe(req, res) {
+  var id = req.params.id;
+  Recipe.findById({_id: id}, function(err, recipe){
+    if(err) return res.json({message: 'could not find recipe b/c', err});
+    res.json({recipe: recipe});
+  }).select('-__v');
+}
 
 // function deletePost(req, res) {
 //   var id = req.params.id;
@@ -45,7 +45,7 @@ function createRecipe(req, res) {
 
 
 module.exports = {
-  // getRecipe: getRecipe,
+  getRecipe: getRecipe,
   createRecipe: createRecipe,
   getRecipes: getRecipes
   // deletePost: deletePost

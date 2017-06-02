@@ -28,7 +28,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     );
   };
 
-  controller.getPost = function(){
+  controller.getRecipe = function(){
     var recipeId = $stateParams.recipeId;
     RecipeFactory.getOne(recipeId).then(
       function success(res) {

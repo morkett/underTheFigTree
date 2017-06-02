@@ -3,7 +3,7 @@ var router = express.Router();
 var RecipeController = require('../controllers/Recipe.controller.js');
 
 router.get('/api/recipes', RecipeController.getRecipes);
-// router.post('/api/recipes', RecipeController.createPost);
+router.post('/api/recipes', RecipeController.createRecipe);
 
 // router.route('/api/recipes/:id')
 //   .get(RecipeController.getPost)

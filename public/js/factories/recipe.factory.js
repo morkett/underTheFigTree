@@ -6,7 +6,7 @@ function RecipeFactory($http) {
         url: '/api/recipes'
       });
     },
-    createPost: function(newPost) {
+    createRecipe: function(newPost) {
       return $http({
         method: 'POST',
         url: '/api/recipes',

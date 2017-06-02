@@ -12,15 +12,15 @@ function getRecipes(req, res) {
     res.json(Recipe);
   });
 }
-//
-// function createPost(req, res) {
-//   var recipe = new Recipe(req.body);
-//   recipe.save(function(err) {
-//     if(err) return res.json({message: 'Could not create recipe' + err});
-//     res.json({recipe: recipe});
-//     console.log('Could not create new recipe');
-//   });
-// }
+
+function createRecipe(req, res) {
+  var recipe = new Recipe(req.body);
+  recipe.save(function(err) {
+    if(err) return res.json({message: 'Could not create recipe' + err});
+    res.json({recipe: recipe});
+    console.log('Could not create new recipe');
+  });
+}
 
 // function getRecipe(req, res) {
 //   var id = req.params.id;
@@ -46,7 +46,7 @@ function getRecipes(req, res) {
 
 module.exports = {
   // getRecipe: getRecipe,
-  // createPost: createPost,
+  createRecipe: createRecipe,
   getRecipes: getRecipes
   // deletePost: deletePost
 };

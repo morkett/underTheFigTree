@@ -14,10 +14,9 @@ function RecipeController(RecipeFactory, $state, $stateParams){
       }
     );
   };
-  controller.createPost = function() {
-    console.log('createPost()');
-    controller.recipeBody.username = 'fred';
-    RecipeFactory.createPost(controller.recipeBody).then(
+  controller.createRecipe = function() {
+    console.log('createRecipe()');
+    RecipeFactory.createRecipe(controller.recipeData).then(
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);

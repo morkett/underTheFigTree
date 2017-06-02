@@ -2,14 +2,13 @@
 
 function AuthRun() {
   var config = {
-    apiKey: 'AIzaSyAOFMSr0GaBFuz2b1sY6kuzA6xY2O6dKqE',
-    authDomain: 'angular-project-4019a.firebaseapp.com',
-    databaseURL: 'https://angular-project-4019a.firebaseio.com',
-    projectId: 'angular-project-4019a',
-    storageBucket: 'angular-project-4019a.appspot.com',
-    messagingSenderId: '313923295915'
+    apiKey: 'AIzaSyDARTXkYg1itzsKHoawo-MheiEN-YEe0Uo',
+    authDomain: 'underthefigtree-4bb2f.firebaseapp.com',
+    databaseURL: 'https://underthefigtree-4bb2f.firebaseio.com',
+    projectId: 'underthefigtree-4bb2f',
+    storageBucket: 'underthefigtree-4bb2f.appspot.com',
+    messagingSenderId: '1066230166858'
   };
-
   firebase.initializeApp(config);
 }
 

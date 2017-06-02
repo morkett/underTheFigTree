@@ -19,7 +19,7 @@ function AuthController($state, AuthFactory) {
       (firebaseUser) => {
         console.log('firebaseUser', firebaseUser);
         resetCredentials();
-        $state.go('appFront');
+        $state.go('auth-required');
       },
       (error) => {
         controller.error = error;
@@ -38,7 +38,7 @@ function AuthController($state, AuthFactory) {
     AuthFactory.$signInWithEmailAndPassword(controller.email, controller.password).then(
      () => {
        resetCredentials();
-       $state.go('appFront');
+       $state.go('admin');
        console.log('signed in user: ');
      },
      (error) => {
@@ -62,7 +62,7 @@ function AuthController($state, AuthFactory) {
   //////////////////////////////////////////////////
   controller.signOutNewUser = () => {
     AuthFactory.$signOut();
-    $state.go('signup');
+    $state.go('home');
   };
 
 

@@ -1,0 +1,60 @@
+<form ng-submit="recipe.createRecipe()">
+
+<div>
+<label for="new-recipe-title">Title:</label>
+<input
+  type="text"
+  id="new-recipe-title"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.title">
+</div>
+
+<div>
+<label for="new-recipe-cuisine">Cuisine:</label>
+<input
+  type="text"
+  id="new-recipe-cuisine"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.cuisine">
+</div>
+
+<div>
+<label for="new-recipe-serves">Serves:</label>
+<input
+  type="text"
+  id="new-recipe-serves"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.serves">
+</div>
+<div>
+<label for="new-recipe-type">Type:</label>
+<input
+  type="text"
+  id="new-recipe-type"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.type">
+</div>
+
+<div>
+<label for="new-recipe-ingredients">ingredients:</label>
+<input
+  type="text"
+  id="new-recipe-ingredients"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.ingredients">
+</div>
+<div>
+<label for="new-recipe-instructions">instructions:</label>
+<input
+  type="text"
+  id="new-recipe-instructions"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.instructions">
+</div>
+
+
+<div>
+<input type="submit" value="Add Duck" >
+</div>
+
+</form>

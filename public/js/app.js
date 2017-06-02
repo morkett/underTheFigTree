@@ -1,21 +1,46 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, AuthFactory) {
 
   $stateProvider
-    .state('home', {
+    .state('login', {
       url: '/',
-      templateUrl: '../states/home.html'
+      templateUrl: '../states/auth/login.html'
     })
-    .state('recipes', {
-      url: '/recipes',
-      templateUrl: '../states/recipes.html'
+    .state('admin', {
+      url: '/admin',
+      templateUrl: '/states/auth/admin/admin.html',
+      resolve: {
+        currentAuth: [
+          'AuthFactory', (AuthFactory) => {
+            return AuthFactory.$requireSignIn();
+          }
+        ]
+      }
     })
-    .state('search', {
-      url: '/search',
-      templateUrl: '../states/recipeSearch.html'
+    .state('edit', {
+      url: '/admin/edit',
+      templateUrl: '/states/auth/admin/edit.html',
+      resolve: {
+        currentAuth: [
+          'AuthFactory', (AuthFactory) => {
+            return AuthFactory.$requireSignIn();
+          }
+        ]
+      }
+    })
+    .state('create', {
+      url: '/admin/create',
+      templateUrl: '/states/auth/admin/create.html',
+      resolve: {
+        currentAuth: [
+          'AuthFactory', (AuthFactory) => {
+            return AuthFactory.$requireSignIn();
+          }
+        ]
+      }
     })
     .state('auth-required', {
-      url: '/authrequired',
-      templateUrl: '../states/auth-required.html'
+      url: '/auth-required',
+      templateUrl: '/states/auth/authRequired.html'
     });
     // .state('search', {
     //   url: '/search',
@@ -39,17 +64,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
     //     ]
     //   }
     // })
-    // .state('appFront', {
-    //   url: '/getMainList',
-    //   templateUrl: '/states/appFront.html',
-    //   resolve: {
-    //     currentAuth: [
-    //       'AuthFactory', (AuthFactory) => {
-    //         return AuthFactory.$requireSignIn();
-    //       }
-    //     ]
-    //   }
-    // });
+
 
   $urlRouterProvider.otherwise('/');
 

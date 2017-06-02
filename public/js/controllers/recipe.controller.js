@@ -7,7 +7,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     RecipeFactory.getRecipes().then(
       function(success) {
         console.log('getRecipe: controller.recipe:', success);
-        controller.recipe = success.data;
+        controller.results = success.data;
       },
       function (error) {
         console.warn('getRecipe: no results', error);

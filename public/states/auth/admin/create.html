@@ -9,31 +9,18 @@
   ng-model="recipe.recipeData.title">
 </div>
 
-<div>
 <label for="new-recipe-cuisine">Cuisine:</label>
-<input
-  type="text"
-  id="new-recipe-cuisine"
-  placeholder="placeholder"
-  ng-model="recipe.recipeData.cuisine">
-</div>
+<select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions">
+</select>
 
-<div>
 <label for="new-recipe-serves">Serves:</label>
-<input
-  type="text"
-  id="new-recipe-serves"
-  placeholder="placeholder"
-  ng-model="recipe.recipeData.serves">
-</div>
-<div>
+<select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.recipeData.serves" ng-options="r for r in recipe.serveOptions">
+</select>
+
+
 <label for="new-recipe-type">Type:</label>
-<input
-  type="text"
-  id="new-recipe-type"
-  placeholder="placeholder"
-  ng-model="recipe.recipeData.type">
-</div>
+<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions">
+</select>
 
 <fieldset  data-ng-repeat="ing in recipe.ing">
   <label for="new-recipe-ingredients">ingredients:</label>

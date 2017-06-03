@@ -9,40 +9,19 @@
   ng-model="recipe.selectedRecipe.recipe.title">
 </div>
 
-<div>
-<label for="new-recipe-cuisine">Cuisine:</label>
-<input
-  type="text"
-  id="new-recipe-cuisine"
-  placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.cuisine">
-</div>
+<label for="new-recipe-cuisine">Serves:</label>
+<select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.selectedRecipe.recipe.cuisine" ng-options="r for r in recipe.cuisineOptions">
+</select>
 
-<div>
+
 <label for="new-recipe-serves">Serves:</label>
-<input
-  type="text"
-  id="new-recipe-serves"
-  placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.serves">
-</div>
-<div>
-<label for="new-recipe-type">Type:</label>
-<input
-  type="text"
-  id="new-recipe-type"
-  placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.type">
-</div>
+<select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.selectedRecipe.recipe.serves" ng-options="r for r in recipe.serveOptions">
+</select>
 
-<!-- <div>
-<label for="new-recipe-ingredients">ingredients:</label>
-<input
-  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index"
-  type="text"
-  id="new-recipe-ingredients"
-  ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
-</div> -->
+
+<label for="new-recipe-type">Type:</label>
+<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">
+</select>
 
 <label for="new-recipe-ingredients">ingredients:</label>
 <input

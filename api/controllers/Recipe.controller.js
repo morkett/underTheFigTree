@@ -30,6 +30,18 @@ function getRecipe(req, res) {
   }).select('-__v');
 }
 
+function deleteRecipe(req, res) {
+  var recipeId = req.params.id;
+
+  Recipe.remove({_id: recipeId}, function(err){
+    if(err) {
+      res.json({message: 'could not delete duck b/c:' + err});
+    }
+    res.json({message: 'duck successfully delete'});
+  
+  });
+}
+
 // function deletePost(req, res) {
 //   var id = req.params.id;
 //   console.log('id', id);
@@ -47,6 +59,6 @@ function getRecipe(req, res) {
 module.exports = {
   getRecipe: getRecipe,
   createRecipe: createRecipe,
-  getRecipes: getRecipes
-  // deletePost: deletePost
+  getRecipes: getRecipes,
+  deleteRecipe: deleteRecipe
 };

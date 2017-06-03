@@ -33,7 +33,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     RecipeFactory.getOne(recipeId).then(
       function success(res) {
         console.log('getPost:',res);
-        controller.selectedPost = res.data;
+        controller.selectedRecipe = res.data;
       },
       function error(err){
         console.log('Error getting recipe, front', err);
@@ -41,11 +41,12 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     );
   };
 
-  controller.deletePost = function(recipeId){
-    RecipeFactory.deletePost(recipeId).then(
+
+  controller.deleteRecipe = function(recipeId){
+    RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {
         console.log('deleted',res);
-        $state.go('home');
+        $state.go('edit');
 
       },
       function error(err){
@@ -53,6 +54,8 @@ function RecipeController(RecipeFactory, $state, $stateParams){
       }
     );
   };
+
+
 
 }
 

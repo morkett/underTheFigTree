@@ -6,11 +6,11 @@ function RecipeFactory($http) {
         url: '/api/recipes'
       });
     },
-    createRecipe: function(newPost) {
+    createRecipe: function(newRecipe) {
       return $http({
         method: 'POST',
         url: '/api/recipes',
-        data: newPost
+        data: newRecipe
       });
     },
     getOne: function(recipeId) {
@@ -19,10 +19,11 @@ function RecipeFactory($http) {
         url: `/api/recipes/${recipeId}`
       });
     },
-    deletePost: function(recipeId) {
+
+    deleteRecipe: function(recipeId) {
       return $http({
         method: 'DELETE',
-        url: `/api/recipe/${recipeId}`
+        url: `/api/recipes/${recipeId}`
       });
     }
   };

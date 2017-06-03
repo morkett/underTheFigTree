@@ -1,1 +1,62 @@
 <h1 ng-init="recipe.getRecipe()">show one</h1>
+<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)">Delete</button>
+<form ng-submit="recipe.updateRecipe(recipe.selectedRecipe.recipe._id)">
+{{recipe.selectedRecipe.recipe._id}}
+<div>
+<label for="new-recipe-title">Title:</label>
+<input
+  type="text"
+  id="new-recipe-title"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.title">
+</div>
+
+<div>
+<label for="new-recipe-cuisine">Cuisine:</label>
+<input
+  type="text"
+  id="new-recipe-cuisine"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.cuisine">
+</div>
+
+<div>
+<label for="new-recipe-serves">Serves:</label>
+<input
+  type="text"
+  id="new-recipe-serves"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.serves">
+</div>
+<div>
+<label for="new-recipe-type">Type:</label>
+<input
+  type="text"
+  id="new-recipe-type"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.type">
+</div>
+
+<div>
+<label for="new-recipe-ingredients">ingredients:</label>
+<input
+  type="text"
+  id="new-recipe-ingredients"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.ingredients">
+</div>
+<div>
+<label for="new-recipe-instructions">instructions:</label>
+<input
+  type="text"
+  id="new-recipe-instructions"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.instructions">
+</div>
+
+
+<div>
+<input type="submit" value="Submit" >
+</div>
+
+</form>

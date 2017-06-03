@@ -5,76 +5,53 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       url: '/',
       templateUrl: '../states/auth/login.html'
     })
-    .state('admin', {
-      url: '/admin',
-      templateUrl: '/states/auth/admin/admin.html',
-      resolve: {
-        currentAuth: [
-          'AuthFactory', (AuthFactory) => {
-            return AuthFactory.$requireSignIn();
-          }
-        ]
+    .state('create', {
+      url: '/admin/create',
+      views: {
+        '': {templateUrl: '/states/auth/admin/admin.html'},
+        'admin-main@create': {templateUrl: '/states/auth/admin/partials/_create.html'},
+        resolve: {
+          currentAuth: [
+            'AuthFactory', (AuthFactory) => {
+              return AuthFactory.$requireSignIn();
+            }
+          ]
+        }
       }
     })
     .state('edit', {
       url: '/admin/edit',
-      templateUrl: '/states/auth/admin/edit.html',
-      resolve: {
-        currentAuth: [
-          'AuthFactory', (AuthFactory) => {
-            return AuthFactory.$requireSignIn();
-          }
-        ]
-      }
-    })
-    .state('create', {
-      url: '/admin/create',
-      templateUrl: '/states/auth/admin/create.html',
-      resolve: {
-        currentAuth: [
-          'AuthFactory', (AuthFactory) => {
-            return AuthFactory.$requireSignIn();
-          }
-        ]
+      views: {
+        '': {templateUrl: '/states/auth/admin/admin.html'},
+        'admin-main@edit': {templateUrl: '/states/auth/admin/partials/_edit.html'},
+        resolve: {
+          currentAuth: [
+            'AuthFactory', (AuthFactory) => {
+              return AuthFactory.$requireSignIn();
+            }
+          ]
+        }
       }
     })
     .state('admin-showOne', {
       url: '/admin/showOne/:recipeId',
-      templateUrl: '/states/auth/admin/showOne.html',
-      resolve: {
-        currentAuth: [
-          'AuthFactory', (AuthFactory) => {
-            return AuthFactory.$requireSignIn();
-          }
-        ]
+      views: {
+        '': {templateUrl: '/states/auth/admin/admin.html'},
+        'admin-main@admin-showOne': {templateUrl: '/states/auth/admin/partials/_showOne.html'},
+        resolve: {
+          currentAuth: [
+            'AuthFactory', (AuthFactory) => {
+              return AuthFactory.$requireSignIn();
+            }
+          ]
+        }
       }
     })
     .state('auth-required', {
       url: '/auth-required',
       templateUrl: '/states/auth/authRequired.html'
     });
-    // .state('search', {
-    //   url: '/search',
-    //   templateUrl: '/states/search.html',
-    //   resolve: {
-    //     currentAuth: [
-    //       'AuthFactory', (AuthFactory) => {
-    //         return AuthFactory.$requireSignIn();
-    //       }
-    //     ]
-    //   }
-    // })
-    // .state('movieDetails', {
-    //   url: '/movie/:movieId',
-    //   templateUrl: '/states/movieDetails.html',
-    //   resolve: {
-    //     currentAuth: [
-    //       'AuthFactory', (AuthFactory) => {
-    //         return AuthFactory.$requireSignIn();
-    //       }
-    //     ]
-    //   }
-    // })
+
 
 
   $urlRouterProvider.otherwise('/');

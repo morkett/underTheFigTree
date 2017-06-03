@@ -60,7 +60,7 @@ function seed () {
             'Mix veg (optional)',
             '1/2 lime'
           ],
-          marinade: ['1 red chili',
+          ingredients_2: ['1 red chili',
             '2 garlic',
             '1 TBSP ginger',
             '1/2 lime',
@@ -70,6 +70,26 @@ function seed () {
             '1 TBSP fish sauce',
             '2 TBSP ketchup',
             '3 tsp pepper'
+          ],
+          instructions: [
+            '500g beef steak + marinade ingredients → 20 min',
+            'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min', 'coriander + 1/2 lime → serve'
+          ]
+        },
+        {
+          title: 'Grilled Lamb Kebabs (mutton tikka)',
+          cuisine: '',
+          serves: 4,
+          type: 'starters',
+          ingredients: [
+            '3 TBSP oil',
+            '1 TBSP',
+            '2 garlic',
+            '3/4 tsp cayenne',
+            '1 tsp paprika',
+            '1/2 tsp garam masala',
+            '1 tsp salt',
+            '560g lamb'
           ],
           instructions: [
             '500g beef steak + marinade ingredients → 20 min',

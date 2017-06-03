@@ -9,7 +9,7 @@
   ng-model="recipe.selectedRecipe.recipe.title">
 </div>
 
-<label for="new-recipe-cuisine">Serves:</label>
+<label for="new-recipe-cuisine">cuisine:</label>
 <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.selectedRecipe.recipe.cuisine" ng-options="r for r in recipe.cuisineOptions">
 </select>
 
@@ -29,6 +29,12 @@
   type="text"
   id="new-recipe-ingredients"
   ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
+<label for="new-recipe-ingredients_2">ingredients_2:</label>
+<input
+  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index"
+  type="text"
+  id="new-recipe-ingredients_2"
+  ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index]">
 <div>
 <label for="new-recipe-instructions">instructions:</label>
 <input

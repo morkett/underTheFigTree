@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var RecipeSchema = mongoose.Schema({
 
   title: {type: String, required: true},
-  cuisine: {type: String, required: true},
+  cuisine: {type: String},
   serves: {type: Number, required: true},
   type: {type: String, required: true},
   ingredients: {type: Object, required: true},

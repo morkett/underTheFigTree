@@ -65,17 +65,17 @@ function updateRecipe(req, res) {
   }).select('-__v');
 }
 
-// function deletePost(req, res) {
-//   var id = req.params.id;
-//   console.log('id', id);
-//
-//   Recipe.remove({_id: id}, function(err){
-//     if(err) {
-//       return res.json({message: 'could not delete recipe b/c' + err});
-//     }
-//     res.json({message: 'recipe successfully deleted'});
-//   });
-// }
+function getRecipeByCuisine (req, res) {
+  var cat = req && req.params && req.params.cat;
+  if (!cat) return err.missingParams(res, ['cat']);
+
+  Recipe.find({ cuisine: cat }, function (err, products) {
+    if (err) return err.recordNotFound(res, err.message);
+    res.json(products);
+  });
+
+  
+}
 
 
 
@@ -84,5 +84,7 @@ module.exports = {
   createRecipe: createRecipe,
   getRecipes: getRecipes,
   deleteRecipe: deleteRecipe,
-  updateRecipe: updateRecipe
+  updateRecipe: updateRecipe,
+  getRecipeByCuisine: getRecipeByCuisine
+
 };

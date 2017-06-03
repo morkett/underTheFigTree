@@ -31,6 +31,13 @@ function RecipeFactory($http) {
         url: `/api/recipes/${editedRecipe._id}`,
         data: editedRecipe
       });
+    },
+    getRecipeByCuisine: function(cuisine) {
+      return $http({
+        method: 'GET',
+        url: `/api/cuisine/${cuisine}`,
+        data: cuisine
+      });
     }
   };
 

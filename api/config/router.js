@@ -10,4 +10,7 @@ router.route('/api/recipes/:id')
   .patch(RecipeController.updateRecipe)
   .delete(RecipeController.deleteRecipe);
 
+router.route('/api/cuisine/:cat')
+    .get(RecipeController.getRecipeByCuisine);
+
 module.exports = router;

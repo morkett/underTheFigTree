@@ -1,14 +1,8 @@
-<h1 ng-init="recipe.getRecipes()">edit</h1>
+<h1>edit</h1>
 
-<input
-  type="search"
+<input type="search"
   ng-model="searchRecipies"  >
-<h2>Cuisine: Indian</h2>
-<ul ng-repeat="result in recipe.results | filter: searchRecipies track by $index" >
-  <li ng-if="result.cuisine === 'indian' "><a ui-sref="admin-showOne({recipeId : result._id})">{{result.title}}</a></li>
-</ul>
 
-<h2>Cuisine: Cambodian</h2>
-<ul ng-repeat="result in recipe.results | filter: searchRecipies track by $index">
-  <li ng-if="result.cuisine === 'cambodian' "><a ui-sref="admin-showOne({recipeId : result._id})">{{result.title}}</a></li>
-</ul>
+  <indian></indian>
+
+  <cambodian></cambodian>

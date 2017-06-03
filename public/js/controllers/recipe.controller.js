@@ -1,6 +1,13 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
 
+  controller.indian = false;
+
+  controller.toggleCuisine = function() {
+    controller.indian = !controller.indian;
+    console.log(controller.indian);
+  };
+
   controller.ing = ['ingredient'];
 
   controller.addNewChoiceIng = function() {
@@ -87,13 +94,26 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
       function success(res) {
         console.log('recipe updated', res);
-        $state.reload();
+        $state.go('edit');
       },
       function error(err){
         console.warn('error updating recipie', err);
       }
     );
   };
+
+  controller.getRecipeByCuisine = function(cat) {
+    RecipeFactory.getRecipeByCuisine(cat).then(
+     function success(success) {
+       console.log('success getting specific recipe by cuisine');
+       controller.cuisine = success.data;
+     },
+     function error(error) {
+       console.warn('Could not get specific cuisine: ', error);
+     }
+   );
+  };
+
 
 }
 

@@ -8,8 +8,7 @@ var RecipeSchema = mongoose.Schema({
   type: {type: String, required: true},
   ingredients: {type: Object, required: true},
   ingredients_2: {type: Object},
-  instructions: {type: Object, required: true},
-  date: {type: Date, default: Date.now}
+  instructions: {type: Object, required: true}
 },{
   timestamps: true,
   versionKey: false

@@ -1,7 +1,5 @@
 <h1 ng-init="recipe.getRecipe()">show one</h1>
-<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)">Delete</button>
 <form ng-submit="recipe.updateRecipe()">
-{{recipe.selectedRecipe.recipe._id}}
 <div>
 <label for="new-recipe-title">Title:</label>
 <input
@@ -37,21 +35,29 @@
   ng-model="recipe.selectedRecipe.recipe.type">
 </div>
 
-<div>
+<!-- <div>
 <label for="new-recipe-ingredients">ingredients:</label>
 <input
+  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index"
   type="text"
   id="new-recipe-ingredients"
-  placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.ingredients">
-</div>
+  ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
+</div> -->
+
+<label for="new-recipe-ingredients">ingredients:</label>
+<input
+  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index"
+  type="text"
+  id="new-recipe-ingredients"
+  ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
 <div>
 <label for="new-recipe-instructions">instructions:</label>
 <input
+  ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index"
   type="text"
   id="new-recipe-instructions"
   placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.instructions">
+  ng-model="recipe.selectedRecipe.recipe.instructions[$index]">
 </div>
 
 
@@ -60,3 +66,4 @@
 </div>
 
 </form>
+<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)">Delete</button>

@@ -1,6 +1,36 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
-  // controller.recipe = [];
+
+  controller.ing = ['ingredient'];
+
+  controller.addNewChoiceIng = function() {
+    var newItemNo = controller.ing.length + 1;
+    controller.ing.push( 'employed-name-'+newItemNo);
+    console.log('click');
+  };
+
+
+
+  controller.removeChoiceIng = function() {
+    var lastItem = controller.inst.length-1;
+    controller.inst.splice(lastItem);
+  };
+
+  controller.inst = ['instruction'];
+
+  controller.addNewChoiceInst = function() {
+    var newItemNo = controller.inst.length + 1;
+    controller.inst.push( 'employed-name-'+newItemNo);
+    console.log('click');
+  };
+
+  controller.removeChoiceInst = function() {
+    var lastItem = controller.inst.length-1;
+    controller.inst.splice(lastItem);
+  };
+
+
+
 
 
   controller.getRecipes = function() {
@@ -20,7 +50,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);
-          $state.reload();
+          $state.go('edit');
         },
      function error(error) {
        console.warn('Error creating recipe:',error);
@@ -57,6 +87,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
       function success(res) {
         console.log('recipe updated', res);
+        $state.reload();
       },
       function error(err){
         console.warn('error updating recipie', err);

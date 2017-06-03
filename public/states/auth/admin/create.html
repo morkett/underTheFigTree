@@ -35,22 +35,26 @@
   ng-model="recipe.recipeData.type">
 </div>
 
-<div>
-<label for="new-recipe-ingredients">ingredients:</label>
-<input
-  type="text"
-  id="new-recipe-ingredients"
-  placeholder="placeholder"
-  ng-model="recipe.recipeData.ingredients">
-</div>
-<div>
-<label for="new-recipe-instructions">instructions:</label>
-<input
-  type="text"
-  id="new-recipe-instructions"
-  placeholder="placeholder"
-  ng-model="recipe.recipeData.instructions">
-</div>
+<fieldset  data-ng-repeat="ing in recipe.ing">
+  <label for="new-recipe-ingredients">ingredients:</label>
+      <input type="text" ng-model="recipe.recipeData.ingredients[$index]" name="" placeholder="Enter employe name">
+
+      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceIng()">-</a>
+   </fieldset>
+   <a class="addfields" ng-click="recipe.addNewChoiceIng()">Add fields</a>
+
+
+<fieldset  data-ng-repeat="inst in recipe.inst">
+  <label for="new-recipe-instructions">instructions:</label>
+      <input type="text" ng-model="recipe.recipeData.instructions[$index]" name="" placeholder="Enter employe name">
+
+      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceInst()">-</a>
+   </fieldset>
+   <a class="addfields" ng-click="recipe.addNewChoiceInst()">Add fields</a>
+
+
+
+
 
 
 <div>

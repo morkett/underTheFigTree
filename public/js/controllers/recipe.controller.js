@@ -116,6 +116,9 @@ function RecipeController(RecipeFactory, $state, $stateParams){
    );
   };
 
+  controller.createClear= function() {
+    controller.recipeData = '';
+  };
 
 }
 

@@ -19,11 +19,17 @@ function RecipeFactory($http) {
         url: `/api/recipes/${recipeId}`
       });
     },
-
     deleteRecipe: function(recipeId) {
       return $http({
         method: 'DELETE',
         url: `/api/recipes/${recipeId}`
+      });
+    },
+    editOne: function(editedRecipe){
+      return $http({
+        method: 'PATCH',
+        url: `/api/recipes/${editedRecipe._id}`,
+        data: editedRecipe
       });
     }
   };

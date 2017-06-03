@@ -38,8 +38,30 @@ function deleteRecipe(req, res) {
       res.json({message: 'could not delete duck b/c:' + err});
     }
     res.json({message: 'duck successfully delete'});
-  
+
   });
+}
+
+function updateRecipe(req, res) {
+  var id = req.params.id;
+
+  Recipe.findById({_id: id}, function(err, recipe){
+    if(err) return res.json({message: 'could not find recipe b/c:' + err});
+
+    if(req.body.title) recipe.title = req.body.title;
+    if(req.body.cuisine) recipe.cuisine = req.body.cuisine;
+    if(req.body.serves) recipe.serves = req.body.serves;
+    if(req.body.type) recipe.type = req.body.type;
+    if(req.body.ingredients) recipe.ingredients = req.body.ingredients;
+    if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;
+
+
+    recipe.save(function(err){
+      if(err) return res.status(404).json({message: 'Could not update recipe b/c' + err});
+
+      res.json({message: 'recipe successfully updated', recipe: recipe});
+    });
+  }).select('-__v');
 }
 
 // function deletePost(req, res) {
@@ -60,5 +82,6 @@ module.exports = {
   getRecipe: getRecipe,
   createRecipe: createRecipe,
   getRecipes: getRecipes,
-  deleteRecipe: deleteRecipe
+  deleteRecipe: deleteRecipe,
+  updateRecipe: updateRecipe
 };

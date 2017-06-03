@@ -1,6 +1,6 @@
 <h1 ng-init="recipe.getRecipe()">show one</h1>
 <button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)">Delete</button>
-<form ng-submit="recipe.updateRecipe(recipe.selectedRecipe.recipe._id)">
+<form ng-submit="recipe.updateRecipe()">
 {{recipe.selectedRecipe.recipe._id}}
 <div>
 <label for="new-recipe-title">Title:</label>

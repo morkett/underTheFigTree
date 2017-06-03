@@ -7,8 +7,7 @@ router.post('/api/recipes', RecipeController.createRecipe);
 
 router.route('/api/recipes/:id')
   .get(RecipeController.getRecipe)
+  .patch(RecipeController.updateRecipe)
   .delete(RecipeController.deleteRecipe);
-//   .delete(RecipeController.deletePost);
-// router.delete('/api/Recipe/delete', RecipeController.deletePost);
 
 module.exports = router;

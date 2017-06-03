@@ -41,13 +41,11 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     );
   };
 
-
   controller.deleteRecipe = function(recipeId){
     RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {
         console.log('deleted',res);
         $state.go('edit');
-
       },
       function error(err){
         console.warn('Error deleting recipe',err);
@@ -55,7 +53,16 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     );
   };
 
-
+  controller.updateRecipe = function() {
+    RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
+      function success(res) {
+        console.log('recipe updated', res);
+      },
+      function error(err){
+        console.warn('error updating recipie', err);
+      }
+    );
+  };
 
 }
 

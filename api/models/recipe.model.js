@@ -6,9 +6,9 @@ var RecipeSchema = mongoose.Schema({
   serves: {type: String, required: true},
   type: {type: String, required: true},
   ingredients: {type: Array, required: true},
-  ingredients_2: {type: String},
+  ingredients_2: {type: Array},
   instructions: {type: Array, required: true},
-  date: {type: Date, required: true, default: Date.now}
+  date: {type: Date, default: Date.now}
 },{
   timestamps: true,
   versionKey: false

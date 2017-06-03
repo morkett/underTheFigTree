@@ -41,7 +41,7 @@ function seed () {
       'model': 'Recipe',
       'documents': [
         {title: 'Green Beans With Toasted Mustard and Garlic',
-          cuisine: 'Indian',
+          cuisine: 'indian',
           serves: '4',
           type: 'sides',
           ingredients: ['450g green beans - chopped', '4 garlic',
@@ -51,7 +51,7 @@ function seed () {
         },
         {
           title: 'Cambodian Marinated Beef (Beef Lok Lak)',
-          cuisine: 'Cambodian',
+          cuisine: 'cambodian',
           serves: '2',
           type: 'beef',
           ingredients: [

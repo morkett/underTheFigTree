@@ -18,6 +18,12 @@
 <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.selectedRecipe.recipe.serves" ng-options="r for r in recipe.serveOptions">
 </select>
 
+<label for="new-recipe-makes">Makes:</label>
+<input
+  type="text"
+  id="new-recipe-makes"
+  placeholder="placeholder"
+  ng-model="recipe.selectedRecipe.recipe.makes">
 
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">

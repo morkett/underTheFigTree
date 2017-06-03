@@ -17,6 +17,14 @@
 <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.recipeData.serves" ng-options="r for r in recipe.serveOptions">
 </select>
 
+<div>
+<label for="new-recipe-makes">Makes:</label>
+<input
+  type="text"
+  id="new-recipe-makes"
+  placeholder="placeholder"
+  ng-model="recipe.recipeData.makes">
+</div>
 
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions">
@@ -29,6 +37,14 @@
       <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceIng()">-</a>
    </fieldset>
    <a class="addfields" ng-click="recipe.addNewChoiceIng()">Add fields</a>
+
+<fieldset  data-ng-repeat="ing_2 in recipe.ing_2">
+  <label for="new-recipe-ingredients_2">ingredients_2:</label>
+      <input type="text" ng-model="recipe.recipeData.ingredients_2[$index]" name="" placeholder="Enter employe name">
+
+      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceIng_2()">-</a>
+   </fieldset>
+   <a class="addfields" ng-click="recipe.addNewChoiceIng_2()">Add fields</a>
 
 
 <fieldset  data-ng-repeat="inst in recipe.inst">
@@ -45,7 +61,7 @@
 
 
 <div>
-<input type="submit" value="Add Duck" >
+<input type="submit" value="Create Recipe" class="createBtn">
 </div>
 
 </form>

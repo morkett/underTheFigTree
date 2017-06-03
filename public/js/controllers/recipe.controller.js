@@ -1,8 +1,8 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
 
-  controller.serveOptions = [1,2,3,4,5,6,7,8,9,10];
-  controller.cuisineOptions = ['indian','cambodian'];
+  controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
+  controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
   controller.typeOptions = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'sides', 'starters', 'veg'];
 
   controller.toggleCuisine = function() {
@@ -17,12 +17,21 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     controller.ing.push( 'employed-name-'+newItemNo);
     console.log('click');
   };
-
-
-
   controller.removeChoiceIng = function() {
-    var lastItem = controller.inst.length-1;
-    controller.inst.splice(lastItem);
+    var lastItem = controller.ing.length-1;
+    controller.ing.splice(lastItem);
+  };
+
+  controller.ing_2 = ['ingredient_2'];
+
+  controller.addNewChoiceIng_2 = function() {
+    var newItemNo = controller.ing_2.length + 1;
+    controller.ing_2.push( 'employed-name-'+newItemNo);
+    console.log('click');
+  };
+  controller.removeChoiceIng_2 = function() {
+    var lastItem = controller.ing_2.length-1;
+    controller.ing_2.splice(lastItem);
   };
 
   controller.inst = ['instruction'];
@@ -118,6 +127,9 @@ function RecipeController(RecipeFactory, $state, $stateParams){
 
   controller.createClear= function() {
     controller.recipeData = '';
+    controller.ing.length = 1;
+    controller.ing_2.length = 1;
+    controller.inst.length = 1;
   };
 
 }

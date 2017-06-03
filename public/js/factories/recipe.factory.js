@@ -38,6 +38,13 @@ function RecipeFactory($http) {
         url: `/api/cuisine/${cuisine}`,
         data: cuisine
       });
+    },
+    getRecipeByType: function(type) {
+      return $http({
+        method: 'GET',
+        url: `/api/type/${type}`,
+        data: type
+      });
     }
   };
 

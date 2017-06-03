@@ -73,8 +73,15 @@ function getRecipeByCuisine (req, res) {
     if (err) return err.recordNotFound(res, err.message);
     res.json(products);
   });
+}
+function getRecipeByType (req, res) {
+  var type = req && req.params && req.params.type;
+  if (!type) return err.missingParams(res, ['type']);
 
-  
+  Recipe.find({ type: type }, function (err, products) {
+    if (err) return err.recordNotFound(res, err.message);
+    res.json(products);
+  });
 }
 
 
@@ -85,6 +92,7 @@ module.exports = {
   getRecipes: getRecipes,
   deleteRecipe: deleteRecipe,
   updateRecipe: updateRecipe,
-  getRecipeByCuisine: getRecipeByCuisine
+  getRecipeByCuisine: getRecipeByCuisine,
+  getRecipeByType: getRecipeByType
 
 };

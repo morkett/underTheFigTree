@@ -6,6 +6,6 @@ function indian () {
   return {
     restrict: 'E',
 
-    templateUrl: 'js/directives/admin/recipeData/indian/indian.directive.html'
+    templateUrl: 'js/directives/admin/recipeData/cuisine/indian/indian.directive.html'
   };
 }

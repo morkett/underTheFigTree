@@ -3,7 +3,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
 
   controller.serveOptions = [1,2,3,4,5,6,7,8,9,10];
   controller.cuisineOptions = ['indian','cambodian'];
-  controller.typeOptions = ['starters', 'prawns', 'seafood', 'fish', 'chicken', 'mince', 'lamb', 'beef', 'pork', 'vegetarian', 'sides', 'baking']
+  controller.typeOptions = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'sides', 'starters', 'veg'];
 
   controller.toggleCuisine = function() {
     controller.indian = !controller.indian;

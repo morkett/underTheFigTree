@@ -1,0 +1,7 @@
+<div ng-controller="TypeController as type" ng-init="type.getRecipeByType('baking')" >
+<h2 ng-if="type.type[0].type">Type: {{type.type[0].type}}</h2>
+<ul
+  ng-repeat="result in type.type | filter: searchRecipies track by $index" >
+  <li><a ui-sref="admin-showOne({recipeId : result._id})">{{result.title}}</a></li>
+</ul>
+</div>

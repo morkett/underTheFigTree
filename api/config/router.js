@@ -13,4 +13,7 @@ router.route('/api/recipes/:id')
 router.route('/api/cuisine/:cat')
     .get(RecipeController.getRecipeByCuisine);
 
+router.route('/api/type/:type')
+        .get(RecipeController.getRecipeByType);
+
 module.exports = router;

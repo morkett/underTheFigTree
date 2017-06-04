@@ -9,11 +9,6 @@ function RecipeController(RecipeFactory, $state, $stateParams){
 
   controller.isLiveOptions = ['yes', 'no'];
 
-  controller.toggleCuisine = function() {
-    controller.indian = !controller.indian;
-    console.log(controller.indian);
-  };
-
   controller.ing = ['ingredient'];
 
   controller.addNewChoiceIng = function() {

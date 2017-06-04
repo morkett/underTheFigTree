@@ -9,11 +9,13 @@ var RecipeSchema = mongoose.Schema({
   type: {type: String, required: true},
   type2: {type: String},
   ingredients: [{
+    _id: false,
     quantity: {type: String},
     unit: {type: String},
     name: {type: String, required: true}
   }],
   ingredients_2: [{
+    _id: false,
     quantity: {type: String},
     unit: {type: String},
     name: {type: String}

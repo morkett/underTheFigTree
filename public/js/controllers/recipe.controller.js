@@ -2,8 +2,12 @@ function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
 
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
+
   controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
+
   controller.typeOptions = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'sides', 'starters', 'veg'];
+
+  controller.isLiveOptions = ['yes', 'no'];
 
   controller.toggleCuisine = function() {
     controller.indian = !controller.indian;
@@ -46,9 +50,6 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     var lastItem = controller.inst.length-1;
     controller.inst.splice(lastItem);
   };
-
-
-
 
 
   controller.getRecipes = function() {

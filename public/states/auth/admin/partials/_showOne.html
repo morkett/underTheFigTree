@@ -28,6 +28,9 @@
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">
 </select>
+<label for="new-recipe-type2">Type2:</label>
+<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions">
+</select>
 
 <label for="new-recipe-ingredients">ingredients:</label>
 <input
@@ -49,8 +52,12 @@
   id="new-recipe-instructions"
   placeholder="placeholder"
   ng-model="recipe.selectedRecipe.recipe.instructions[$index]">
-</div>
 
+
+</div>
+<label for="new-recipe-isLive">isLive:</label>
+<select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.selectedRecipe.recipe.isLive" ng-options="r for r in recipe.isLiveOptions">
+</select>
 
 <div>
 <input type="submit" value="Submit" >

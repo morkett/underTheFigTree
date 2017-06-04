@@ -29,6 +29,9 @@
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions">
 </select>
+<label for="new-recipe-type2">Type2:</label>
+<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions">
+</select>
 
 <fieldset  data-ng-repeat="ing in recipe.ing">
   <label for="new-recipe-ingredients">ingredients:</label>
@@ -56,7 +59,9 @@
    <a class="addfields" ng-click="recipe.addNewChoiceInst()">Add fields</a>
 
 
-
+   <label for="new-recipe-isLive">isLive:</label>
+   <select id="new-recipe-isLive" name="new-recipe-type2" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
+   </select>
 
 
 

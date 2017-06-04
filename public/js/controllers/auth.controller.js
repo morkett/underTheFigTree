@@ -54,7 +54,7 @@ function AuthController($state, AuthFactory) {
   //////////////////////////////////////////////////
   controller.signOut = () => {
     AuthFactory.$signOut();
-    $state.go('home');
+    $state.go('admin');
   };
 
   //////////////////////////////////////////////////
@@ -62,7 +62,7 @@ function AuthController($state, AuthFactory) {
   //////////////////////////////////////////////////
   controller.signOutNewUser = () => {
     AuthFactory.$signOut();
-    $state.go('home');
+    $state.go('admin');
   };
 
 

@@ -69,7 +69,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);
-          $state.go('edit');
+          // $state.go('edit');
         },
      function error(error) {
        console.warn('Error creating recipe:',error);

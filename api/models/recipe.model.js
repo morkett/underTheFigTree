@@ -8,8 +8,16 @@ var RecipeSchema = mongoose.Schema({
   makes: {type: String},
   type: {type: String, required: true},
   type2: {type: String},
-  ingredients: {type: Array, required: true},
-  ingredients_2: {type: Array},
+  ingredients: [{
+    quantity: {type: String},
+    unit: {type: String},
+    name: {type: String, required: true}
+  }],
+  ingredients_2: [{
+    quantity: {type: String},
+    unit: {type: String},
+    name: {type: String}
+  }],
   instructions: {type: Array, required: true},
   notes: {type: String},
   isLive: {type: String, default: 'no', required: true}

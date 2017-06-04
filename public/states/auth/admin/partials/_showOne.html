@@ -28,23 +28,64 @@
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">
 </select>
+
 <label for="new-recipe-type2">Type2:</label>
 <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions">
 </select>
 
+<div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index" class="ing-container">
 <label for="new-recipe-ingredients">ingredients:</label>
+
+<div class="ing-inner-container">
+  <label for="new-recipe-ingredients.quantity">quantity</label>
 <input
-  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index"
   type="text"
-  id="new-recipe-ingredients"
-  ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
-<label for="new-recipe-ingredients_2">ingredients_2:</label>
-<input
-  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index"
-  type="text"
-  id="new-recipe-ingredients_2"
-  ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index]">
-<div>
+  id="new-recipe-ingredients.quantity"
+  ng-model="recipe.selectedRecipe.recipe.ingredients[$index].quantity"></div>
+
+<div class="ing-inner-container">  <label for="new-recipe-ingredients.unit">unit</label>
+  <input
+    type="text"
+    id="new-recipe-ingredients.unit"
+    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"></div>
+
+  <div class="ing-inner-container">  <label for="new-recipe-ingredients.name">name</label>
+    <input
+      type="text"
+      id="new-recipe-ingredients.name"
+    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name">
+  </div>
+  </div>
+
+
+  <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
+
+
+  <label for="new-recipe-ingredients_2">ingredients_2:</label>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-quantity">quantity</label>
+  <input
+
+    type="text"
+    id="new-recipe-ingredients_2-quantity"
+    ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].quantity"
+    class="ing-inner-container"></div>
+
+<div class="ing-inner-container"><label for="new-recipe-ingredients_2.unit">unit</label>
+    <input
+
+      type="text"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
+      class="ing-inner-container"></div>
+
+<div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name</label>
+    <input
+      id="new-recipe-ingredients_2-name"
+      type="text"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name"
+      class="ing-inner-container"></div>
+    </div>
+
 <label for="new-recipe-instructions">instructions:</label>
 <input
   ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index"
@@ -54,7 +95,7 @@
   ng-model="recipe.selectedRecipe.recipe.instructions[$index]">
 
 
-</div>
+
 <label for="new-recipe-isLive">isLive:</label>
 <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.selectedRecipe.recipe.isLive" ng-options="r for r in recipe.isLiveOptions">
 </select>

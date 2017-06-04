@@ -7,7 +7,7 @@ router.post('/api/recipes', RecipeController.createRecipe);
 
 router.route('/api/recipes/:id')
   .get(RecipeController.getRecipe)
-  .patch(RecipeController.updateRecipe)
+  .put(RecipeController.updateRecipe)
   .delete(RecipeController.deleteRecipe);
 
 router.route('/api/cuisine/:cat')

@@ -27,7 +27,7 @@ function RecipeFactory($http) {
     },
     editOne: function(editedRecipe){
       return $http({
-        method: 'PATCH',
+        method: 'PUT',
         url: `/api/recipes/${editedRecipe._id}`,
         data: editedRecipe
       });

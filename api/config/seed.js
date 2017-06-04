@@ -70,16 +70,46 @@ function seed () {
             'coriander + 1/2 lime → serve'
           ],
           ingredients_2: [
-            '1 red chili',
-            '2 garlic',
-            '1 TBSP ginger',
-            '1/2 lime',
-            '1 TBSP sugar',
-            '3 TBSP soy sauce',
-            '2 TBSP oyster sauce',
-            '1 TBSP fish sauce',
-            '2 TBSP ketchup',
-            '3 tsp pepper'
+            {
+              quantity: '1',
+              unit: '',
+              name: 'red chili'},
+            {
+              quantity: '2',
+              unit: '',
+              name: 'garlic'},
+            {
+              quantity: '1',
+              unit: 'TBSP',
+              name: 'ginger'},
+            {
+              quantity: '1/2',
+              unit: '',
+              name: 'lime'},
+            {
+              quantity: '1',
+              unit: 'TBSP',
+              name: 'sugar'},
+            {
+              quantity: '3',
+              unit: 'TBSP',
+              name: 'soy sauce'},
+            {
+              quantity: '2',
+              unit: 'TBSP',
+              name: 'oyster sauce'},
+            {
+              quantity: '1',
+              unit: 'TBSP',
+              name: 'fish sauce'},
+            {
+              quantity: '2',
+              unit: 'TBSP',
+              name: 'ketchup'},
+            {
+              quantity: '3',
+              unit: 'tsp',
+              name: 'pepper'}       
           ],
           isLive: 'no'
         }

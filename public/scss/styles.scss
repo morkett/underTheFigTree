@@ -18,3 +18,62 @@ body {
 }
 // STYLES GO HERE //
 @import "js";
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0; }
+
+.home-wrap {
+  width: 100vw;
+  border: 1px solid #d32f2f; }
+
+.recipe {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px; }
+
+/* FIXME: REMOVE DISPLAY BLOCK */
+body {
+  padding-left: 50px;
+}
+body * {
+  display: block;
+}
+
+.addfields {
+  cursor: pointer;
+  border: 1px solid green;
+  background: green;
+}
+
+.createBtn {
+  background: blue;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+
+.ing-input {
+  display: inline-block;
+}
+
+.ing-container{
+  display: flex;
+  flex-direction: row;
+}
+.ing-inner-container{
+  display: flex;
+  flex-direction: column;
+}
+
+// body {
+//   display: none;
+// }

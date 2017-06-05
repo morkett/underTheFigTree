@@ -7,8 +7,7 @@ function deleteBtn () {
     restrict: 'E',
     scope: {
       cntr: '=',
-      recipeid: '=',
-      del: '='
+      recipeid: '='
     },
 
     templateUrl: 'js/directives/admin//btns/delete/delete.directive.html',
@@ -21,8 +20,6 @@ function deleteBtn () {
       };
 
       scope.removeEmptyObj = function () {
-        console.log('cntr', scope.cntr);
-        console.log('recipeid', scope.recipeid);
         scope.cntr(scope.recipeid);
       };
 

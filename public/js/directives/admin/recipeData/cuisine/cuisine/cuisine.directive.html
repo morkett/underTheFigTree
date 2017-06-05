@@ -1,8 +1,9 @@
-<div ng-controller="CuisineController as cuisine" ng-init="cuisine.getRecipeByCuisine('cambodian')" >
-<h2 ng-if="cuisine.cuisine[0].cuisine">Cuisine: {{cuisine.cuisine[0].cuisine}}</h2>
-
-<ul
-  ng-repeat="result in cuisine.cuisine | filter: searchRecipies track by $index" >
-  <li><a ui-sref="admin-showOne({recipeId : result._id})">{{result.title}}</a></li>
+<div>
+<h2 >Cuisine: {{cuisine}} </h2>
+{{recipe.results}}
+{{scope}}
+<ul>
+  <li><a >{{c}}</a></li>
 </ul>
 </div>
+<!-- ui-sref="admin-showOne({recipeId : result._id})" -->

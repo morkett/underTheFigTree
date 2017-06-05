@@ -104,8 +104,8 @@ function RecipeController(RecipeFactory, $state, $stateParams){
   controller.getRecipeByCuisine = function(cat) {
     RecipeFactory.getRecipeByCuisine(cat).then(
      function success(success) {
-       console.log('success getting specific recipe by cuisine');
-       controller.cuisine = success.data;
+       console.log('success getting specific recipe by cuisine', success.data);
+       controller.results = success.data;
      },
      function error(error) {
        console.warn('Could not get specific cuisine: ', error);

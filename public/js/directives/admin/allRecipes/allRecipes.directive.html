@@ -1,0 +1,32 @@
+<div ng-init="recipe.getRecipes()" >
+<h2 >All Recipes: </h2>
+
+<div ng-repeat="recipe in recipe.results | filter: searchRecipies track by $index">
+  <h2>{{recipe.title}}</h2>
+  <p><strong>cuisine:</strong> {{recipe.cuisine}}</p>
+  <p><strong>serves:</strong> {{recipe.serves}}</p>
+  <p ng-if="recipe.makes">makes: {{recipe.makes}}</p>
+  <p><strong>type:</strong> {{recipe.type}}</p>
+  <p ng-if="recipe.makes">type2: {{recipe.type2}}</p>
+
+  <h3>ingredients:</h3>
+    <ul class="ing-all" ng-repeat="ingredient in recipe.ingredients track by $index">
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+
+  <h3 ng-if="recipe.ingredients_2">ingredients_2:</h3>
+    <ul class="ing-all" ng-repeat="ingredient in recipe.ingredients_2 track by $index">
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+
+  <h3>instructions:</h3>
+    <ul ng-repeat="instruction in recipe.instructions track by $index">
+      <li >{{instruction.instruction}}</li>
+    </ul>
+</div>
+
+</div>

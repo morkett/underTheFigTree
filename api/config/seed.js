@@ -41,88 +41,192 @@ function seed () {
       'model': 'Recipe',
       'documents': [
         {
-          title: 'Green Beans With Toasted Mustard and Garlic',
-          cuisine: 'indian',
-          serves: 4,
-          type: 'sides',
-          ingredients: [
-            '450g green beans - chopped',
-            '4 garlic',
-            '1 TBSP butter',
-            '3/4 tsp mustard seeds',
-            '1/2 tsp chili flakes'
-          ],
-          instructions:
-          [
-            'Pan + oil + 1 TBSP butter + medium heat + 3/4 tsp mustard seeds → pops',
-            '↓ low heat + 4 garlic + 450g green beans + 3/4 tsp chili flakes + salt + cover → 20 min/cooked'
-          ],
-          ingredients_2: [],
-          isLive: 'no'
-        },
-
-
-
-        {
-          title: 'Cambodian Marinated Beef (Beef Lok Lak)',
+          title: 'cambodian marinated beef (beef lok lak)',
           cuisine: 'cambodian',
           serves: 2,
           type: 'beef',
 
           ingredients: [
-            '500g beef steak thinly cut',
-            '1 onion',
-            'Mix veg (optional)',
-            '1/2 lime'
+            {
+              qty: '500',
+              unit: 'g',
+              name: 'beef steak thinly cut'},
+            {
+              qty: '1',
+              unit: '',
+              name: 'onion'},
+            {
+              qty: '',
+              unit: '',
+              name: 'Mix veg (optional)'},
+            {
+              qty: '1/2',
+              unit: '',
+              name: 'lime'}
           ],
           instructions: [
-            '500g beef steak + marinade ingredients → 20 min',
-            'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min',
-            'coriander + 1/2 lime → serve'
+            {
+              instruction: '500g beef steak + marinade ingredients → 20 min'
+            },
+            {
+              instruction: 'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min'
+            },
+            {
+              instruction: 'coriander + 1/2 lime → serve'
+            }
           ],
+
           ingredients_2: [
-            '1 red chili',
-            '2 garlic',
-            '1 TBSP ginger',
-            '1/2 lime',
-            '1 TBSP sugar',
-            '3 TBSP soy sauce',
-            '2 TBSP oyster sauce',
-            '1 TBSP fish sauce',
-            '2 TBSP ketchup',
-            '3 tsp pepper'
+            {
+              title: 'marinade'
+            },
+            {
+              qty: '1',
+              unit: '',
+              name: 'red chili'},
+            {
+              qty: '2',
+              unit: '',
+              name: 'garlic'},
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'ginger'},
+            {
+              qty: '1/2',
+              unit: '',
+              name: 'lime'},
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'sugar'},
+            {
+              qty: '3',
+              unit: 'TBSP',
+              name: 'soy sauce'},
+            {
+              qty: '2',
+              unit: 'TBSP',
+              name: 'oyster sauce'},
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'fish sauce'},
+            {
+              qty: '2',
+              unit: 'TBSP',
+              name: 'ketchup'},
+            {
+              qty: '3',
+              unit: 'tsp',
+              name: 'pepper'}
           ],
           isLive: 'no'
         },
-
-
         {
-          title: 'Grilled Lamb Kebabs (mutton tikka)',
+          title: 'green beans with toasted mustard and garlic',
+          cuisine: 'indian',
+          serves: 4,
+          type: 'sides',
+          ingredients: [
+            {
+              qty: '450',
+              unit: 'g',
+              name: 'grean beans - chopped'
+            },
+            {
+              qty: '4',
+              unit: '',
+              name: 'garlic'
+            },
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'butter'
+            },
+            {
+              qty: '3/4',
+              unit: 'tsp',
+              name: 'mustard seeds'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'chili flakes'
+            }
+          ],
+          instructions:
+          [
+            {
+              instruction: 'Pan + oil + 1 TBSP butter + medium heat + 3/4 tsp mustard seeds → pops'
+            },
+            {
+              instruction: '↓ low heat + 4 garlic + 450g green beans + 3/4 tsp chili flakes + salt + cover → 20 min/cooked'
+            }
+          ],
+          ingredients_2: [],
+          isLive: 'no'
+        },
+        {
+          title: 'grilled lamb kebabs (mutton tikka)',
           cuisine: '',
           serves: 4,
           type: 'starters',
 
           ingredients: [
-            '3 TBSP oil',
-            '1 TBSP',
-            '2 garlic',
-            '3/4 tsp cayenne',
-            '1 tsp paprika',
-            '1/2 tsp garam masala',
-            '1 tsp salt',
-            '560g lamb'
+            {
+              qty: '3',
+              unit: 'TBSP',
+              name: 'oil'
+            },
+            {
+              qty: '2',
+              unit: '',
+              name: 'garlic'
+            },
+            {
+              qty: '3/4',
+              unit: 'tsp',
+              name: 'cayenne'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'paprike'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'salt'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'garam masala'
+            },
+            {
+              qty: '500',
+              unit: 'g',
+              name: 'lamb'
+            }
           ],
-          instructions: [
-            '500g beef steak + marinade ingredients → 20 min',
-            'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min',
-            'coriander + 1/2 lime → serve'
-          ],
+
           ingredients_2: [],
+
+          instructions: [
+            {
+              instruction: '500g beef steak + marinade ingredients → 20 min'
+            },
+            {
+              instruction: 'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min'
+            },
+            {
+              instruction: 'coriander + 1/2 lime → serve'
+            }
+          ],
 
           isLive: 'no'
         },
-
-
         {
           title: 'onion bhajiyas',
           cuisine: 'indian',
@@ -130,27 +234,66 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            '2 onions',
-            '1 inch giner',
-            '2 garlic',
-            '2 TBSP coriander leaves',
-            '1/2 tsp chilli',
-            '2 tsp cumin',
-            '1 tsp turmeric',
-            '1 tsp coriander',
-            'gram flour',
-            '1 tsp baking powder'
+            {
+              qty: '2',
+              unit: '',
+              name: 'onions'
+            },
+            {
+              qty: '1',
+              unit: 'inch',
+              name: 'ginger'
+            },
+            {
+              qty: '2',
+              unit: '',
+              name: 'garlic'
+            },
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'coriander leaves'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'chili'
+            },
+            {
+              qty: '2',
+              unit: 'tsp',
+              name: 'cumin'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'turmeric'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'coriander'
+            },
+            {
+              qty: '',
+              unit: '',
+              name: 'garam flour'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'baking powder'
+            }
           ],
           instructions: [
-            'inst 1',
-            'inst 2'
+            {
+
+            }
           ],
-          ingredients_2: [],
+          ingredients_2: [{}],
 
           isLive: 'no'
         },
-
-
         {
           title: 'mums chana masala',
           cuisine: 'indian',
@@ -158,35 +301,95 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            '1 large onion',
-            '3 tomatoes',
-            '1 potatoe',
-            'coriander',
-            '2 garlic',
-            'lemon',
-            '1 red onion',
-            '1 tsp mustard seeds',
-            'curry leaves (optional)',
-            '1 tsp chilli',
-            '1 tsp turmeric',
-            '1 tsp coriander',
-            '3 TBSP tamarind',
-            '1 can chickpeas/ black chickpeas',
-            '1/2 tsp garam masala',
-            'yoghurt'
+            {
+              qty: '1',
+              name: 'large onion'
+            },
+            {
+              qty: '3',
+              name: 'tomatoes'
+            },
+            {
+              qty: '1',
+              name: 'potatoe'
+            },
+            {
+              name: 'coriander'
+            },
+            {
+              qty: '2',
+              name: 'garlic'
+            },
+            {
+              name: 'lemon'
+            },
+            {
+              qty: '1',
+              name: 'red onion'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'mustard seeds'
+            },
+            {
+              name: 'curry leaves (optional)'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'chilli'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'turmeric'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'coriander'
+            },
+            {
+              qty: '3',
+              unit: 'TBSP',
+              name: 'tamarind'
+            },
+            {
+              qty: '1',
+              unit: 'can',
+              name: 'chickpeas / black chickpeas'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'garam masala'
+            },
+            {
+              name: 'yoghurt'
+            }
           ],
           instructions: [
-            'Pan + oil + medium heat + 1 large onion + 1 tsp mustard seeds + curry leaves → soft',
-            '+ 4 tomatoes + 2 garlic + 1 tsp cumin + 1 tsp chili + 1 tsp turmeric + 1 tsp', 'coriander + 1 potato + 2 TBSP tamarind + salt + enough water→ simmer until cooked',
-            '+ 1 can chickpeas → 10 min',
-            '+ coriander + 1/4 tsp garam masala + lemon → serve with 1 red onion + yoghurt'
+            {
+              instruction: 'Pan + oil + medium heat + 1 large onion + 1 tsp mustard seeds + curry leaves → soft'
+            },
+            {
+              instruction: '+ 4 tomatoes + 2 garlic + 1 tsp cumin + 1 tsp chili + 1 tsp turmeric + 1 tsp'
+            },
+            {
+              instruction: 'coriander + 1 potato + 2 TBSP tamarind + salt + enough water→ simmer until cooked'
+            },
+            {
+              instruction: '+ 1 can chickpeas → 10 min'
+            },
+            {
+              instruction: '+ coriander + 1/4 tsp garam masala + lemon → serve with 1 red onion + yoghurt'
+            }
           ],
           ingredients_2: [],
 
           isLive: 'no'
         },
-
-
         {
           title: 'chicken florentine puffs',
           cuisine: 'english',
@@ -194,30 +397,85 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            '1 egg',
-            'puff pastry'
+            {
+              qty: '1',
+              name: 'egg'
+            },
+            {
+              qty: '1',
+              name: 'puff pastry'
+            }
           ],
           ingredients_2: [
-            'filling',
-            '2 cooked chicken breasts',
-            '1/2 pack spinach, liquid squeezed',
-            '2 TBSP basil leaves',
-            '1-2 roasted red pepper',
-            '4 TBSP cream cheese',
-            '1/2 cup mozzarella/cheddar',
-            '1/4 cup grutere/parmesan cheese',
-            '1/8 tsp garlic powder',
-            '1/8 tsp salt',
-            '1/8 tsp pepper'
+            {
+              title: 'filling'
+            },
+            {
+              qty: '2',
+              name: 'cooked chicken breats'
+            },
+            {
+              qty: '1/2',
+              name: 'pack spinach, liquid squeezed'
+            },
+            {
+              qty: '2',
+              unit: 'TBSP',
+              name: 'basil leaves'
+            },
+            {
+              qty: '1-2',
+              name: 'roasted red pepper'
+            },
+            {
+              qty: '4',
+              unit: 'TBSP',
+              name: 'cream cheese'
+            },
+            {
+              qty: '1/2',
+              unit: 'cup',
+              name: 'cup mozzarella/cheddar'
+            },
+            {
+              qty: '1/4',
+              unit: 'cup',
+              name: 'gruyere/parmesan cheese'
+            },
+            {
+              qty: '1/8',
+              unit: 'tsp',
+              name: 'garlic powder'
+            },
+            {
+              qty: '1/8',
+              tsp: 'tsp',
+              name: 'garlic powder'
+            },
+            {
+              qty: '1/8',
+              unit: 'tsp',
+              name: 'salt'
+            },
+            {
+              qty: '1/8',
+              unit: 'tsp',
+              name: 'pepper'
+            }
           ],
           instructions: [
-            'oven 200°C',
-            'all filling ingredients → mix',
-            'Puff pastry + filling + (1 egg + 1 TBSP water → beat) + oven → 15-18 min'
+            {
+              instruction: 'oven 200°C'
+            },
+            {
+              instruction: 'all filling ingredients → mix'
+            },
+            {
+              instruction: 'Puff pastry + filling + (1 egg + 1 TBSP water → beat) + oven → 15-18 min'
+            }
           ],
           isLive: 'no'
         },
-
         {
           title: 'mum\'s spring rolls',
           cuisine: 'chinese',
@@ -225,26 +483,72 @@ function seed () {
           makes: '30',
           type: 'starters',
           ingredients: [
-            '1 chicken breast thinly sliced',
-            '2 handful of prawns chopped',
-            '1 onion chopped',
-            '2 mushrooms chopped',
-            '3/4 pack mix veg chopped',
-            '2 inch ginger',
-            '3 spring onions',
-            '1 egg',
-            'soy sauce',
-            'spring roll pastry',
-            'flour',
-            '2 garlic'
+            {
+              qty: '1',
+              name: 'chicken breast thinly sliced'
+            },
+            {
+              qty: '2',
+              name: 'handful of prawns - chopped'
+            },
+            {
+              qty: '1',
+              name: 'onion - chopped'
+            },
+            {
+              qty: '2',
+              name: 'mushrooms chooped'
+            },
+            {
+              qty: '3/4',
+              name: 'pack mixed veg chopped'
+            },
+            {
+              qty: '2',
+              unit: 'inch',
+              name: 'ginger'
+            },
+            {
+              qty: '3',
+              name: 'spring onions'
+            },
+            {
+              qty: '1',
+              name: 'egg'
+            },
+            {
+              name: 'soy sauce'
+            },
+            {
+              name: 'spring roll pastry'
+            },
+            {
+              name: 'flour'
+            },
+            {
+              qty: '2',
+              name: 'garlic'
+            }
           ],
           instructions: [
-            'Pan + oil + 1 onion + 2 garlic + 3 mushrooms + 3/4 mix veg → 1/2 cooked + remove',
-            '1 chicken breast + 1 egg + salt + pepper + 2 inch gin- ger → mix',
-            '+ pan → cooked + remove',
-            'Pan + prawns → cooked',
-            '+ veg + 4 spring onions + chicken + soy sauce + sesa- me oil to taste → mix',
-            '+ spring roll pastry + (flour + water) as glue → make spring rolls'
+            {
+              instruction: 'Pan + oil + 1 onion + 2 garlic + 3 mushrooms + 3/4 mix veg → 1/2 cooked + remove'
+            },
+            {
+              instruction: '1 chicken breast + 1 egg + salt + pepper + 2 inch gin- ger → mix'
+            },
+            {
+              instruction: '+ pan → cooked + remove'
+            },
+            {
+              instruction: 'Pan + prawns → cooked'
+            },
+            {
+              instruction: '+ veg + 4 spring onions + chicken + soy sauce + sesa- me oil to taste → mix'
+            },
+            {
+              instruction: '+ spring roll pastry + (flour + water) as glue → make spring rolls'
+            }
           ],
           isLive: 'no'
         },
@@ -256,29 +560,71 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            'prawns',
-            '2 TBSP brown sugar'
+            {
+              name: 'prawns'
+            },
+            {
+              qty: '2',
+              unit: 'TBSP',
+              name: 'brown sugar'
+            }
           ],
           ingredients_2: [
-            'paste',
-            '6cm ginger',
-            '2 lemon grass',
-            '2 garlic',
-            '1 red chili',
-            '1 lime + zest',
-            '3 TBSP soy sauce',
-            'coriander roots',
-            '100g / 6 tbsp dried coconut',
-            '1 shallot'
+            {
+              title: 'paste'
+            },
+            {
+              qty: '6',
+              unit: 'cm',
+              name: 'ginger'
+            },
+            {
+              qty: '2',
+              name: 'lemon grass'
+            },
+            {
+              qty: '2',
+              name: 'garlic'
+            },
+            {
+              qty: '1',
+              name: 'red chilli'
+            },
+            {
+              qty: '1',
+              name: 'lime + zest'
+            },
+            {
+              qty: '3',
+              unit: 'TBSP',
+              name: 'soy sauce'
+            },
+            {
+              name: 'coriander roots'
+            },
+            {
+              qty: '100',
+              unit: 'g',
+              name: 'dried coconut'
+            },
+            {
+              qty: '1',
+              name: 'shallot'
+            }
           ],
           instructions: [
-            'Paste ingredients → blend',
-            '+ prawns + fridge → 1 hour +',
-            '+ skewers + grill → cooked'
+            {
+              instruction: 'Paste ingredients → blend'
+            },
+            {
+              instruction: '+ prawns + fridge → 1 hour +'
+            },
+            {
+              instruction: '+ skewers + grill → cooked'
+            }
           ],
           isLive: 'no'
         },
-
         {
           title: 'sticky sticks',
           cuisine: 'chinese',
@@ -286,27 +632,79 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            '8 chicken drumstick/wings',
-            '1 lemon',
-            '1/2 tsp ginger',
-            '6 TBSP honey',
-            '3 TBSP fish sauce',
-            '4 tsp soy sauce',
-            '4 TBSP rice wine vinegar',
-            '4 tsp sesame oil',
-            '1/2 TBSP brown sugar',
-            '1 tsp chilli flakes'
+            {
+              qty: '8',
+              name: 'chicken drumstick/wings'
+            },
+            {
+              qty: '1',
+              name: 'lemon'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'ginger'
+            },
+            {
+              qty: '6',
+              unit: 'TBSP',
+              name: 'honey'
+            },
+            {
+              qty: '3',
+              unit: 'TBSP',
+              name: 'fish sauce'
+            },
+            {
+              qty: '4',
+              unit: 'tsp',
+              name: 'soy sauce'
+            },
+            {
+              qty: '4',
+              unit: 'TBSP',
+              name: 'rice wine vinegar'
+            },
+            {
+              qty: '4',
+              unit: 'tsp',
+              name: 'seasme oil'
+            },
+            {
+              qty: '1/2',
+              unit: 'TBSP',
+              name: 'brown sugar'
+            },
+            {
+              qty: '1',
+              unit: 'tsp',
+              name: 'chilli flakes'
+            }
           ],
           instructions: [
-            'Oven 200°C',
-            'Chicken + salt + pepper + all ingredients + fridge → 30 min +',
-            '+ oven reserving marinade → 15 min',
-            '+ turn → 15 min',
-            'Marinade + medium-high heat → 10-15 min',
-            '+ dip chicken → serve'
+            {
+              instruction: 'Oven 200°C'
+            },
+            {
+              instruction: 'Chicken + salt + pepper + all ingredients + fridge → 30 min +'
+            },
+            {
+              instruction: '+ oven reserving marinade → 15 min'
+            },
+            {
+              instruction: '+ turn → 15 min'
+            },
+            {
+              instruction: 'Marinade + medium-high heat → 10-15 min'
+            },
+            {
+              instruction: '+ dip chicken → serve'
+            }
           ],
           isLive: 'no'
         },
+
+
         {
           title: 'salt and pepper prawns',
           cuisine: 'chinese',
@@ -314,20 +712,57 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            '450g prawns',
-            '2 TBSP cornflour',
-            '1/2 tsp white pepper',
-            '1/2 tsp black pepper',
-            '1/2 tsp salt',
-            '2 garlic',
-            '1 green chili',
-            '2 spring onions'
+            {
+              qty: '450',
+              unit: 'g',
+              name: 'prawns'
+            },
+            {
+              qty: '2',
+              unit: 'TBSP',
+              name: 'cornflour'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'white pepper'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'black pepper'
+            },
+            {
+              qty: '1/2',
+              unit: 'tsp',
+              name: 'salt'
+            },
+            {
+              qty: '2',
+              name: 'garlic'
+            },
+            {
+              qty: '1',
+              name: 'green chilli'
+            },
+            {
+              qty: '2',
+              name: 'spring onions'
+            }
           ],
           instructions: [
-            'Pat prawns dry + bowl + 2 TBSP cornflour + 1/2 tsp white pepper + 1/2 tsp black pepper + 1/2 tsp salt → mix',
-            'Pan + oil + medium heat + 2 garlic + 1/2 green chili + 1 spring onion → crisp',
-            '+ prawns → 1-2 min each side',
-            '+ remove heat + 1/2 green chili + 1 spring onion + adjust seasoning → serve'
+            {
+              instruction: 'Pat prawns dry + bowl + 2 TBSP cornflour + 1/2 tsp white pepper + 1/2 tsp black pepper + 1/2 tsp salt → mix'
+            },
+            {
+              instruction: 'Pan + oil + medium heat + 2 garlic + 1/2 green chili + 1 spring onion → crisp'
+            },
+            {
+              instruction: '+ prawns → 1-2 min each side'
+            },
+            {
+              instruction: '+ remove heat + 1/2 green chili + 1 spring onion + adjust seasoning → serve'
+            }
           ],
           isLive: 'no'
         },
@@ -339,19 +774,49 @@ function seed () {
           type: 'starters',
 
           ingredients: [
-            'basil',
-            '2 garlic',
-            'baguette',
-            '1 TBSP mayonnaise',
-            '2 TBSP butter',
-            'parsley',
-            '1/4 cup cheddar',
-            '1/8 cup gorgonzola,/mozzarella/ parmesan'
+            {
+              name: 'basil'
+            },
+            {
+              qty: '2',
+              name: 'garlic'
+            },
+            {
+              name: 'baguette'
+            },
+            {
+              qty: '1',
+              unit: 'TBSP',
+              name: 'mayonnaise'
+            },
+            {  qty: '2',
+              unit: 'TBSP',
+              name: 'butter'
+            },
+            {
+              name: 'parsley'
+            },
+            {
+              qty: '1/4' ,
+              unit: 'cup',
+              name: 'cheddar'
+            },
+            {
+              qty: '1/8' ,
+              unit: 'cup',
+              name: '1/8 cup gorgonzola,/mozzarella/ parmesan'
+            }
           ],
           instructions: [
-            '1 TBSP mayonnaise + 2 TBSP butter + 2 garlic → smooth',
-            '+ basil + salt + pepper + Cheese (1/4 cup cheddar + 1/8 cup parmesan/blue cheese) + parsley → mix',
-            '+ baguette + cut so bread stays whole + Mixture + foil + oven → 10-15 min, 15-20min from frozen'
+            {
+              instruction: '1 TBSP mayonnaise + 2 TBSP butter + 2 garlic → smooth'
+            },
+            {
+              instruction: '+ basil + salt + pepper + Cheese (1/4 cup cheddar + 1/8 cup parmesan/blue cheese) + parsley → mix'
+            },
+            {
+              instruction: '+ baguette + cut so bread stays whole + Mixture + foil + oven → 10-15 min, 15-20min from frozen'
+            }
           ],
           isLive: 'no'}
       ]

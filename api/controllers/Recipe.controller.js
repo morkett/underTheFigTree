@@ -15,6 +15,7 @@ function getRecipes(req, res) {
 
 function createRecipe(req, res) {
   var recipe = new Recipe(req.body);
+  console.log(req.body);
   recipe.save(function(err) {
     if(err) return res.json({message: 'Could not create recipe' + err});
     res.json({recipe: recipe});
@@ -52,6 +53,7 @@ function updateRecipe(req, res) {
     if(req.body.cuisine) recipe.cuisine = req.body.cuisine;
     if(req.body.serves) recipe.serves = req.body.serves;
     if(req.body.type) recipe.type = req.body.type;
+    if(req.body.type2) recipe.type2 = req.body.type2;
     if(req.body.ingredients) recipe.ingredients = req.body.ingredients;
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;
     if(req.body.instructions) recipe.instructions = req.body.instructions;
@@ -85,6 +87,14 @@ function getRecipeByType (req, res) {
   });
 }
 
+// function addIngredient (req, res) {
+//   Recipe.findById(req.params.id, function (err, doc) {
+//     doc.ingredients.push(req.body.ingredient);
+//     doc.save(function (err) {
+//       res.json(doc);
+//     })
+//   });
+// }
 
 
 module.exports = {

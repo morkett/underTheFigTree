@@ -33,34 +33,78 @@
 <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions">
 </select>
 
-<fieldset  data-ng-repeat="ing in recipe.ing">
+
+
+<div class="ing-container" ng-repeat="ingredient in recipe.recipeData.ingredients">
   <label for="new-recipe-ingredients">ingredients:</label>
-      <input type="text" ng-model="recipe.recipeData.ingredients[$index]" name="" placeholder="Enter employe name">
 
-      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceIng()">-</a>
-   </fieldset>
-   <a class="addfields" ng-click="recipe.addNewChoiceIng()">Add fields</a>
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-qty">qty:</label>
+  <input
+    type="text"
+    id="new-recipe-ingredients-qty"
+    ng-model="ingredient.qty"
+    class="ing-input">
+  </div>
 
-<fieldset  data-ng-repeat="ing_2 in recipe.ing_2">
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-units">units:</label>
+    <input
+      id="new-recipe-ingredients-units"
+      type="text"
+      ng-model="ingredient.unit"
+      class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-name">name:</label>
+    <input
+      id="new-recipe-ingredients-name"
+      type="text"
+      ng-model="ingredient.name"
+      class="ing-input">
+  </div>
+</div>
+
+<div ng-click="recipe.recipeData.ingredients.push({})">Add Ingredient</div>
+
+
+  <div class="ing-container" ng-repeat="ingredient_2 in recipe.recipeData.ingredients_2">
   <label for="new-recipe-ingredients_2">ingredients_2:</label>
-      <input type="text" ng-model="recipe.recipeData.ingredients_2[$index]" name="" placeholder="Enter employe name">
 
-      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceIng_2()">-</a>
-   </fieldset>
-   <a class="addfields" ng-click="recipe.addNewChoiceIng_2()">Add fields</a>
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-qty">qty:</label>
+  <input
+    ng-model="ingredient_2.qty"
+    type="text"
+    id="new-recipe-ingredients_2-qty"
+    class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-units">units:</label>
+    <input
+      id="new-recipe-ingredients_2-units"
+      type="text"
+      ng-model="ingredient_2.unit"
+      class="ing-input"></div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name:</label>
+    <input
+      ng-model="ingredient_2.name"
+      id="new-recipe-ingredients_2-name"
+      type="text"
+      class="ing-input"></div>
+
+    </div>
+    <div ng-click="recipe.recipeData.ingredients_2.push({})">Add Ingredient_2</div>
 
 
-<fieldset  data-ng-repeat="inst in recipe.inst">
+
+  <div class="instsContainer" ng-repeat="instructions in recipe.recipeData.instructions">
   <label for="new-recipe-instructions">instructions:</label>
-      <input type="text" ng-model="recipe.recipeData.instructions[$index]" name="" placeholder="Enter employe name">
-
-      <a class="remove" ng-show="$last" ng-click="recipe.removeChoiceInst()">-</a>
-   </fieldset>
-   <a class="addfields" ng-click="recipe.addNewChoiceInst()">Add fields</a>
+      <input type="text" ng-model="instructions.instruction" name="" placeholder="Enter employe name">
+</div>
+<div ng-click="recipe.recipeData.instructions.push({})">Add Instructions</div>
 
 
    <label for="new-recipe-isLive">isLive:</label>
-   <select id="new-recipe-isLive" name="new-recipe-type2" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
+   <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
    </select>
 
 

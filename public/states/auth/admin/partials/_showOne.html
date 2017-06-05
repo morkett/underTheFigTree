@@ -28,40 +28,90 @@
 <label for="new-recipe-type">Type:</label>
 <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">
 </select>
+
 <label for="new-recipe-type2">Type2:</label>
 <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions">
 </select>
 
+<div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index" class="ing-container">
 <label for="new-recipe-ingredients">ingredients:</label>
+
+<div class="ing-inner-container">
+  <label for="new-recipe-ingredients.qty">qty</label>
 <input
-  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index"
   type="text"
-  id="new-recipe-ingredients"
-  ng-model="recipe.selectedRecipe.recipe.ingredients[$index]">
-<label for="new-recipe-ingredients_2">ingredients_2:</label>
-<input
-  ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index"
-  type="text"
-  id="new-recipe-ingredients_2"
-  ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index]">
-<div>
+  id="new-recipe-ingredients.qty"
+  ng-model="recipe.selectedRecipe.recipe.ingredients[$index].qty"></div>
+
+<div class="ing-inner-container">  <label for="new-recipe-ingredients.unit">unit</label>
+  <input
+    type="text"
+    id="new-recipe-ingredients.unit"
+    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"></div>
+
+  <div class="ing-inner-container">  <label for="new-recipe-ingredients.name">name</label>
+    <input
+      type="text"
+      id="new-recipe-ingredients.name"
+    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name">
+  </div>
+  </div>
+  <div ng-click="recipe.selectedRecipe.recipe.ingredients.push({})">Add Ingredient</div>
+
+
+  <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
+
+
+  <label for="new-recipe-ingredients_2">ingredients_2:</label>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-qty">qty</label>
+  <input
+
+    type="text"
+    id="new-recipe-ingredients_2-qty"
+    ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty"
+    class="ing-inner-container"></div>
+
+<div class="ing-inner-container"><label for="new-recipe-ingredients_2.unit">unit</label>
+    <input
+
+      type="text"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
+      class="ing-inner-container"></div>
+
+<div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name</label>
+    <input
+      id="new-recipe-ingredients_2-name"
+      type="text"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name"
+      class="ing-inner-container"></div>
+    </div>
+
+    <div ng-click="recipe.selectedRecipe.recipe.ingredients_2.push({})">Add Ingredient</div>
+
+
 <label for="new-recipe-instructions">instructions:</label>
 <input
   ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index"
   type="text"
   id="new-recipe-instructions"
   placeholder="placeholder"
-  ng-model="recipe.selectedRecipe.recipe.instructions[$index]">
+  ng-model="recipe.selectedRecipe.recipe.instructions[$index].instruction">
+  <div ng-click="recipe.selectedRecipe.recipe.instructions.push({})">Add Ingredient</div>
 
 
-</div>
+
+
 <label for="new-recipe-isLive">isLive:</label>
 <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.selectedRecipe.recipe.isLive" ng-options="r for r in recipe.isLiveOptions">
 </select>
 
 <div>
-<input type="submit" value="Submit" >
+<input type="submit" value="Submit">
 </div>
 
 </form>
-<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)">Delete</button>
+<button ng-click="recipe.canDeleteToggle()" ng-if="!recipe.allowDelete">Delete</button>
+<p ng-if="recipe.allowDelete">Are You Sure You Want To Delete Recipe?</p>
+<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)" ng-if="recipe.allowDelete">Delete</button>
+<button ng-click="recipe.canDeleteToggle()" ng-if="recipe.allowDelete">Cancel</button>

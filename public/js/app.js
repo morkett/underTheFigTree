@@ -2,7 +2,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
 
   $stateProvider
     .state('login', {
-      url: '/',
+      url: '/test',
       templateUrl: '../states/auth/login.html'
     })
     .state('create', {
@@ -20,7 +20,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       }
     })
     .state('edit', {
-      url: '/admin/edit',
+      url: '/',
       views: {
         '': {templateUrl: '/states/auth/admin/admin.html'},
         'admin-main@edit': {templateUrl: '/states/auth/admin/partials/_edit.html'},
@@ -34,7 +34,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       }
     })
     .state('admin-showOne', {
-      url: '/admin/showOne/:recipeId',
+      url: '/admin/edit/:recipeId',
       views: {
         '': {templateUrl: '/states/auth/admin/admin.html'},
         'admin-main@admin-showOne': {templateUrl: '/states/auth/admin/partials/_showOne.html'},

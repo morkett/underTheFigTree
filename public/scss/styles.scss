@@ -74,6 +74,11 @@ body * {
   flex-direction: column;
 }
 
-// body {
-//   display: none;
-// }
+.ing-all {
+  @include flex($direction: row, $justify:flex-start);
+  padding: 0;
+  margin: 0;
+  li {
+    margin: 0 1px;
+  }
+}

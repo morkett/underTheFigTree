@@ -10,18 +10,20 @@ var RecipeSchema = mongoose.Schema({
   type2: {type: String},
   ingredients: [{
     _id: false,
-    quantity: {type: String},
+    qty: {type: String},
     unit: {type: String},
     name: {type: String, required: true}
   }],
   ingredients_2: [{
     _id: false,
-    quantity: {type: String},
+    title: {type: String},
+    qty: {type: String},
     unit: {type: String},
     name: {type: String}
   }],
   instructions: [{
-    instruction: {type: Array}
+    _id: false,
+    instruction: {type: String}
   }],
   notes: {type: String},
   isLive: {type: String, default: 'no', required: true}

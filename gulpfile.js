@@ -59,7 +59,7 @@ gulp.task('nodemon', function (cb) {
 gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('public/scss/**/*.scss', ['sass']);
   // reload browser when HTML or JS files changed
-  gulp.watch('public/*html', browserSync.reload);
+  gulp.watch('public/**/*html', browserSync.reload);
   gulp.watch('public/js/**/*.js', browserSync.reload);
 });
 

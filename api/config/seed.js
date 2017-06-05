@@ -65,10 +65,17 @@ function seed () {
               name: 'lime'}
           ],
           instructions: [
-            '500g beef steak + marinade ingredients → 20 min',
-            'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min',
-            'coriander + 1/2 lime → serve'
+            {
+              instruction: '500g beef steak + marinade ingredients → 20 min'
+            },
+            {
+              instruction: 'Wok + oil + 1 onion + mix veg → soft’, beef → 2-3 min'
+            },
+            {
+              instruction: 'coriander + 1/2 lime → serve'
+            }
           ],
+
           ingredients_2: [
             {
               quantity: '1',
@@ -109,7 +116,7 @@ function seed () {
             {
               quantity: '3',
               unit: 'tsp',
-              name: 'pepper'}       
+              name: 'pepper'}
           ],
           isLive: 'no'
         }

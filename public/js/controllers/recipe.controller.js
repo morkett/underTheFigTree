@@ -11,41 +11,10 @@ function RecipeController(RecipeFactory, $state, $stateParams){
 
   controller.ing = ['ingredient'];
 
-  controller.addNewChoiceIng = function() {
-    var newItemNo = controller.ing.length + 1;
-    controller.ing.push( 'employed-name-'+newItemNo);
-    console.log('click');
+  controller.allowDelete = false;
+  controller.canDeleteToggle = function(){
+    controller.allowDelete = !controller.allowDelete;
   };
-  controller.removeChoiceIng = function() {
-    var lastItem = controller.ing.length-1;
-    controller.ing.splice(lastItem);
-  };
-
-  controller.ing_2 = ['ingredient_2'];
-
-  controller.addNewChoiceIng_2 = function() {
-    var newItemNo = controller.ing_2.length + 1;
-    controller.ing_2.push( 'employed-name-'+newItemNo);
-    console.log('click');
-  };
-  controller.removeChoiceIng_2 = function() {
-    var lastItem = controller.ing_2.length-1;
-    controller.ing_2.splice(lastItem);
-  };
-
-  controller.inst = ['instruction'];
-
-  controller.addNewChoiceInst = function() {
-    var newItemNo = controller.inst.length + 1;
-    controller.inst.push( 'employed-name-'+newItemNo);
-    console.log('click');
-  };
-
-  controller.removeChoiceInst = function() {
-    var lastItem = controller.inst.length-1;
-    controller.inst.splice(lastItem);
-  };
-
 
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(
@@ -122,10 +91,10 @@ function RecipeController(RecipeFactory, $state, $stateParams){
   };
 
   controller.createClear= function() {
-    controller.recipeData = '';
-    controller.ing.length = 1;
-    controller.ing_2.length = 1;
-    controller.inst.length = 1;
+    controller.recipeData = {};
+    controller.recipeData.ingredients = [{}];
+    controller.recipeData.ingredients_2 = [{}];
+    controller.recipeData.instructions = [{}];
   };
 
 }

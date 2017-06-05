@@ -15,6 +15,7 @@ function getRecipes(req, res) {
 
 function createRecipe(req, res) {
   var recipe = new Recipe(req.body);
+  console.log(req.body);
   recipe.save(function(err) {
     if(err) return res.json({message: 'Could not create recipe' + err});
     res.json({recipe: recipe});
@@ -86,6 +87,14 @@ function getRecipeByType (req, res) {
   });
 }
 
+// function addIngredient (req, res) {
+//   Recipe.findById(req.params.id, function (err, doc) {
+//     doc.ingredients.push(req.body.ingredient);
+//     doc.save(function (err) {
+//       res.json(doc);
+//     })
+//   });
+// }
 
 
 module.exports = {

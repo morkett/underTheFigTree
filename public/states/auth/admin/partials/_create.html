@@ -35,38 +35,43 @@
 
 
 
-<div class="ing-container">
-<label for="new-recipe-ingredients">ingredients:</label>
+<div class="ing-container" ng-repeat="ingredient in recipe.recipeData.ingredients">
+  <label for="new-recipe-ingredients">ingredients:</label>
 
-<div class="ing-inner-container"><label for="new-recipe-ingredients-quantity">quantity:</label>
-<input
-
-  type="text"
-  id="new-recipe-ingredients-quantity"
-  ng-model="recipe.recipeData.ingredients.quantity"
-  class="ing-input"></div>
-
-<div class="ing-inner-container"><label for="new-recipe-ingredients-units">units:</label>
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-quantity">quantity:</label>
   <input
-    id="new-recipe-ingredients-units"
     type="text"
-    ng-model="recipe.recipeData.ingredients.unit"
-    class="ing-input"></div>
-
-<div class="ing-inner-container"><label for="new-recipe-ingredients-name">name:</label>
-  <input
-    id="new-recipe-ingredients-name"
-    type="text"
-    ng-model="recipe.recipeData.ingredients.name"
-    class="ing-input"></div>
+    id="new-recipe-ingredients-quantity"
+    ng-model="ingredient.quantity"
+    class="ing-input">
   </div>
 
-  <div class="ing-container">
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-units">units:</label>
+    <input
+      id="new-recipe-ingredients-units"
+      type="text"
+      ng-model="ingredient.unit"
+      class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-name">name:</label>
+    <input
+      id="new-recipe-ingredients-name"
+      type="text"
+      ng-model="ingredient.name"
+      class="ing-input">
+  </div>
+</div>
+
+<div ng-click="recipe.recipeData.ingredients.push({})">Add Ingredient</div>
+
+
+  <div class="ing-container" ng-repeat="ingredient_2 in recipe.recipeData.ingredients_2">
   <label for="new-recipe-ingredients_2">ingredients_2:</label>
 
   <div class="ing-inner-container"><label for="new-recipe-ingredients_2-quantity">quantity:</label>
   <input
-    ng-model="recipe.recipeData.ingredients_2.quantity"
+    ng-model="ingredient_2.quantity"
     type="text"
     id="new-recipe-ingredients_2-quantity"
     class="ing-input">
@@ -76,23 +81,26 @@
     <input
       id="new-recipe-ingredients_2-units"
       type="text"
-      ng-model="recipe.recipeData.ingredients_2.unit"
+      ng-model="ingredient_2.unit"
       class="ing-input"></div>
 
   <div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name:</label>
     <input
+      ng-model="ingredient_2.name"
       id="new-recipe-ingredients_2-name"
       type="text"
-      ng-model="recipe.recipeData.ingredients_2.name"
       class="ing-input"></div>
+
     </div>
+    <div ng-click="recipe.recipeData.ingredients_2.push({})">Add Ingredient_2</div>
 
 
 
-
+  <div class="instsContainer" ng-repeat="instructions in recipe.recipeData.instructions">
   <label for="new-recipe-instructions">instructions:</label>
-      <input type="text" ng-model="recipe.recipeData.instructions" name="" placeholder="Enter employe name">
-
+      <input type="text" ng-model="instructions.instruction" name="" placeholder="Enter employe name">
+</div>
+<div ng-click="recipe.recipeData.instructions.push({})">Add Instructions</div>
 
 
    <label for="new-recipe-isLive">isLive:</label>

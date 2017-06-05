@@ -2,7 +2,7 @@
 <h2 >All Recipes: </h2>
 
 <div ng-repeat="recipe in recipe.results | filter: searchRecipies track by $index">
-  <h2>{{recipe.title}}</h2>
+  <h2><a ui-sref="admin-showOne({recipeId : recipe._id})">{{recipe.title}}</a></h2>
   <p><strong>cuisine:</strong> {{recipe.cuisine}}</p>
   <p><strong>serves:</strong> {{recipe.serves}}</p>
   <p ng-if="recipe.makes">makes: {{recipe.makes}}</p>

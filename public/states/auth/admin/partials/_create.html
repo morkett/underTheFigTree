@@ -1,11 +1,11 @@
 <form ng-submit="recipe.createRecipe()" ng-init="recipe.createClear()">
 
 <div>
-<label for="new-recipe-title">Title:</label>
+<label for="new-recipe-title">Title * :</label>
 <input
   type="text"
   id="new-recipe-title"
-  placeholder="placeholder"
+  placeholder="recipe title"
   ng-model="recipe.recipeData.title">
 </div>
 
@@ -13,7 +13,7 @@
 <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions">
 </select>
 
-<label for="new-recipe-serves">Serves:</label>
+<label for="new-recipe-serves">Serves * :</label>
 <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.recipeData.serves" ng-options="r for r in recipe.serveOptions">
 </select>
 
@@ -22,15 +22,15 @@
 <input
   type="text"
   id="new-recipe-makes"
-  placeholder="placeholder"
+  placeholder="makes how many"
   ng-model="recipe.recipeData.makes">
 </div>
 
-<label for="new-recipe-type">Type:</label>
-<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions">
+<label for="new-recipe-type">Type * :</label>
+<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions1">
 </select>
-<label for="new-recipe-type2">Type2:</label>
-<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions">
+<label for="new-recipe-type2">Secondary Type:</label>
+<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions2">
 </select>
 
 
@@ -54,7 +54,7 @@
       class="ing-input">
   </div>
 
-  <div class="ing-inner-container"><label for="new-recipe-ingredients-name">name:</label>
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-name">name * :</label>
     <input
       id="new-recipe-ingredients-name"
       type="text"
@@ -97,13 +97,13 @@
 
 
   <div class="instsContainer" ng-repeat="instructions in recipe.recipeData.instructions">
-  <label for="new-recipe-instructions">instructions:</label>
+  <label for="new-recipe-instructions">instructions *:</label>
       <input type="text" ng-model="instructions.instruction" name="" placeholder="Enter employe name">
 </div>
 <div ng-click="recipe.recipeData.instructions.push({})">Add Instructions</div>
 
 
-   <label for="new-recipe-isLive">isLive:</label>
+   <label for="new-recipe-isLive">isLive * :</label>
    <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
    </select>
 

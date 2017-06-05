@@ -7,6 +7,7 @@ function cuisine () {
     restrict: 'E',
     scope: {
       cntr: '=',
+      results: '=',
       cuisine: '@'
     },
 

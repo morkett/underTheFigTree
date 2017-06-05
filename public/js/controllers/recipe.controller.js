@@ -1,19 +1,42 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
 
+  controller.showAll = false;
+  controller.ShowAll = function(){
+    controller.showAll = !controller.showAll;
+  };
+
+
+
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 
   controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
-  controller.typeOptions = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'sides', 'starters', 'veg'];
+  controller.typeOptions2 = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
+
+  controller.typeOptions1 = ['starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
 
-  controller.ing = ['ingredient'];
 
   controller.allowDelete = false;
   controller.canDeleteToggle = function(){
     controller.allowDelete = !controller.allowDelete;
+  };
+
+  controller.allowRemoveIng = false;
+  controller.canRemoveIng = function(){
+    controller.allowRemoveIng = !controller.allowRemoveIng;
+  };
+
+  controller.allowRemoveIng2 = false;
+  controller.canRemoveIng2 = function(){
+    controller.allowRemoveIng2 = !controller.allowRemoveIng2;
+  };
+
+  controller.allowRemoveInst = false;
+  controller.canRemoveInst = function(){
+    controller.allowRemoveInst = !controller.allowRemoveInst;
   };
 
   controller.getRecipes = function() {

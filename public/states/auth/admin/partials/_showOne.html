@@ -5,7 +5,7 @@
 <input
   type="text"
   id="new-recipe-title"
-  placeholder="placeholder"
+  placeholder="title"
   ng-model="recipe.selectedRecipe.recipe.title">
 </div>
 
@@ -22,15 +22,15 @@
 <input
   type="text"
   id="new-recipe-makes"
-  placeholder="placeholder"
+  placeholder="makes"
   ng-model="recipe.selectedRecipe.recipe.makes">
 
 <label for="new-recipe-type">Type:</label>
-<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions">
+<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions1">
 </select>
 
-<label for="new-recipe-type2">Type2:</label>
-<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions">
+<label for="new-recipe-type2">Secondary Type:</label>
+<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions2">
 </select>
 
 <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index" class="ing-container">
@@ -58,6 +58,10 @@
   </div>
   <div ng-click="recipe.selectedRecipe.recipe.ingredients.push({})">Add Ingredient</div>
 
+  <div ng-click="recipe.canRemoveIng()" ng-if="!recipe.allowRemoveIng">Remove Last Ingredient</div>
+  <p ng-if="recipe.allowRemoveIng">Are You Sure You Want To Delete The Last Ingredient?</p>
+  <div ng-if="recipe.allowRemoveIng" ng-click="recipe.selectedRecipe.recipe.ingredients.pop({}); recipe.canRemoveIng()">Remove</div>
+  <div ng-click="recipe.canRemoveIng()" ng-if="recipe.allowRemoveIng">Cancel</div>
 
   <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
 
@@ -87,7 +91,15 @@
       class="ing-inner-container"></div>
     </div>
 
-    <div ng-click="recipe.selectedRecipe.recipe.ingredients_2.push({})">Add Ingredient</div>
+      <div ng-click="recipe.selectedRecipe.recipe.ingredients_2.push({})">Add Ingredient</div>
+
+    <div ng-click="recipe.canRemoveIng2()" ng-if="!recipe.allowRemoveIng2">Remove Last Ingredient_2</div>
+    <p ng-if="recipe.allowRemoveIng2">Are You Sure You Want To Delete The Last Ingredient_2?</p>
+    <div ng-if="recipe.allowRemoveIng2" ng-click="recipe.selectedRecipe.recipe.ingredients_2.pop({}); recipe.canRemoveIng2()">Remove</div>
+    <div ng-click="recipe.canRemoveIng2()" ng-if="recipe.allowRemoveIng2">Cancel</div>
+
+
+
 
 
 <label for="new-recipe-instructions">instructions:</label>
@@ -97,9 +109,12 @@
   id="new-recipe-instructions"
   placeholder="placeholder"
   ng-model="recipe.selectedRecipe.recipe.instructions[$index].instruction">
-  <div ng-click="recipe.selectedRecipe.recipe.instructions.push({})">Add Ingredient</div>
+  <div ng-click="recipe.selectedRecipe.recipe.instructions.push({})">Add Instruction</div>
 
-
+  <div ng-click="recipe.canRemoveInst()" ng-if="!recipe.allowRemoveInst">Remove Last instruction</div>
+  <p ng-if="recipe.allowRemoveInst">Are You Sure You Want To Delete The Last instruction?</p>
+  <div ng-if="recipe.allowRemoveInst" ng-click="recipe.selectedRecipe.recipe.instructions.pop({}); recipe.canRemoveInst()">Remove</div>
+  <div ng-click="recipe.canRemoveInst()" ng-if="recipe.allowRemoveInst">Cancel</div>
 
 
 <label for="new-recipe-isLive">isLive:</label>

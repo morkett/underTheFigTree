@@ -1,7 +1,7 @@
 <div ng-init="recipe.getRecipes()" >
 <h2 >All Recipes: </h2>
 
-<div ng-repeat="recipe in recipe.results | filter: searchRecipies track by $index">
+<div ng-repeat="recipe in recipe.results | filter: searchRecipies | orderBy:'title' track by $index " >
   <h2><a ui-sref="admin-showOne({recipeId : recipe._id})">{{recipe.title}}</a></h2>
   <p><strong>cuisine:</strong> {{recipe.cuisine}}</p>
   <p><strong>serves:</strong> {{recipe.serves}}</p>
@@ -18,6 +18,7 @@
 
   <h3 ng-if="recipe.ingredients_2">ingredients_2:</h3>
     <ul class="ing-all" ng-repeat="ingredient in recipe.ingredients_2 track by $index">
+      <li>{{ingredient.title}}</li>
       <li>{{ingredient.qty}}</li>
       <li>{{ingredient.unit}}</li>
       <li>{{ingredient.name}}</li>

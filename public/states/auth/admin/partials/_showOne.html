@@ -117,7 +117,9 @@
 
 </form>
 
-<button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="!recipe.allowDelete">Delete</button>
+<!-- <button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="!recipe.allowDelete">Delete</button>
 <p ng-if="recipe.allowDelete">Are You Sure You Want To Delete Recipe?</p>
 <button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)" ng-if="recipe.allowDelete">Delete</button>
-<button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="recipe.allowDelete">Cancel</button>
+<button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="recipe.allowDelete">Cancel</button> -->
+
+<deletebtn cntr="recipe.deleteRecipe" recipeid="recipe.selectedRecipe.recipe._id"></deletebtn>

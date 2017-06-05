@@ -63,8 +63,8 @@
   </div>
 </div>
 
-<div ng-click="recipe.recipeData.ingredients.push({})">Add Ingredient</div>
-
+<additem inst="recipe.recipeData.ingredients"></additem>
+  <remove ingarr="recipe.recipeData.ingredients"></remove>
 
   <div class="ing-container" ng-repeat="ingredient_2 in recipe.recipeData.ingredients_2">
   <label for="new-recipe-ingredients_2">ingredients_2:</label>
@@ -92,7 +92,9 @@
       class="ing-input"></div>
 
     </div>
-    <div ng-click="recipe.recipeData.ingredients_2.push({})">Add Ingredient_2</div>
+
+    <additem inst="recipe.recipeData.ingredients_2"></additem>
+      <remove ingarr="recipe.recipeData.ingredients_2"></remove>
 
 
 
@@ -100,8 +102,11 @@
   <label for="new-recipe-instructions">instructions *:</label>
       <input type="text" ng-model="instructions.instruction" name="" placeholder="Enter employe name">
 </div>
-<div ng-click="recipe.recipeData.instructions.push({})">Add Instructions</div>
 
+
+<additem inst="recipe.recipeData.instructions"></additem>
+
+<remove ingarr="recipe.recipeData.instructions"></remove>
 
    <label for="new-recipe-isLive">isLive * :</label>
    <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">

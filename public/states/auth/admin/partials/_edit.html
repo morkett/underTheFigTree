@@ -1,12 +1,25 @@
-<h1>edit</h1>
+
+<!-- <checkboxcusine cuisineoptions="recipe.cuisineOptions"></checkboxcusine> -->
+
+<!-- <cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine> -->
+
 
 <div ng-repeat="cuisine in recipe.cuisineOptions track by $index">
   <label for="{{cuisine}}">{{ cuisine }}</label>
-<input type="radio" name="cuisineSelect" id="{{cuisine}}"  ng-click="recipe.checkboxToggle(recipe.cuisineOptions[$index])"/>
+<input type="radio" name="cuisineSelect" id="{{cuisine}}"  ng-click="recipe.checkboxToggleCus(recipe.cuisineOptions[$index]); recipe.checkboxToggleType('null')"/>
 </div>
 
 <label for="allCuisine">All</label>
-<input type="radio" name="cuisineSelect" id="allCuisine"  ng-click="recipe.checkboxToggle('all')"/>
+<input type="radio" name="cuisineSelect" id="allCuisine"  ng-click="recipe.checkboxToggleCus('all'); recipe.checkboxToggleType('null')"/>
+
+<div ng-repeat="type in recipe.typeOptions1 track by $index">
+  <label for="{{type}}">{{ type }}</label>
+<input type="radio" name="typeSelect" id="{{type}}"  ng-click="recipe.checkboxToggleType(recipe.typeOptions1[$index]);recipe.checkboxToggleCus('null')"/>
+</div>
+
+<label for="allType">All</label>
+<input type="radio" name="typeSelect" id="allType"  ng-click="recipe.checkboxToggleType('all'); recipe.checkboxToggleCus('null')"/>
+
 
 <input type="search"
        ng-model="searchRecipe.title"
@@ -19,5 +32,3 @@
 
 
 <recipes></recipes>
-
-<!-- <cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine> -->

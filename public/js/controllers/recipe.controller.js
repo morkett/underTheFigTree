@@ -1,10 +1,17 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
-controller.checkbox = 'all';
-  controller.checkboxToggle = function(cuisine){
-    controller.checkbox = cuisine;
-    console.log(controller.checkbox);
+  controller.checkboxCus = 'all';
+  controller.checkboxToggleCus = function(cuisine){
+    controller.checkboxCus = cuisine;
   };
+
+  controller.checkboxType = 'all';
+  controller.checkboxToggleType = function(type){
+    controller.checkboxType = type;
+    console.log(controller.checkboxType);
+  };
+
+
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 
   controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
@@ -15,26 +22,6 @@ controller.checkbox = 'all';
 
   controller.isLiveOptions = ['yes', 'no'];
 
-
-  controller.allowDelete = false;
-  controller.canDeleteToggle = function(){
-    controller.allowDelete = !controller.allowDelete;
-  };
-
-  controller.allowRemoveIng = false;
-  controller.canRemoveIng = function(){
-    controller.allowRemoveIng = !controller.allowRemoveIng;
-  };
-
-  controller.allowRemoveIng2 = false;
-  controller.canRemoveIng2 = function(){
-    controller.allowRemoveIng2 = !controller.allowRemoveIng2;
-  };
-
-  controller.allowRemoveInst = false;
-  controller.canRemoveInst = function(){
-    controller.allowRemoveInst = !controller.allowRemoveInst;
-  };
 
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(

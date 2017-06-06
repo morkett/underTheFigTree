@@ -1,6 +1,7 @@
 <!-- <h1 ng-init="recipe.getRecipe()">show one</h1> -->
 <form class="admin-form" ng-submit="recipe.updateRecipe()" ng-init="recipe.getRecipe()">
 <div class="info">
+  <div class="info-inner">
 <div>
 <label for="new-recipe-title">Title:</label>
 <input
@@ -34,7 +35,9 @@
 <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions2">
 </select>
 </div>
-
+  <div class="info-inner info-inner-sml">
+</div>
+</div>
 <div class="admin-ing">
 
     <h2>Ingredients</h2>
@@ -76,6 +79,59 @@
 <div class="add-del-btns">
   <additem inst="recipe.selectedRecipe.recipe.ingredients" class="btns btn1"></additem>
   <remove ingarr="recipe.selectedRecipe.recipe.ingredients" class="btns btn2"></remove>
+</div>
+</div>
+
+
+<div class="admin-ing">
+
+    <h2>Ingredients 2</h2>
+    <div class="ing_2-title">
+    <input
+
+      type="text"
+      id="new-recipe-ingredients_2.title"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[0].title"
+      placeholder="-"></div>
+    <div class="ing-headers">
+      <div class="ing-inner-headers">
+        <h3>Quantity</h3>
+        <h3>Unit</h3>
+        <h3>Ingredient</h3>
+      </div>
+    </div>
+<div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" >
+
+
+<div class="ing-container">
+
+<div class="ing-inner-container">
+<input
+  type="text"
+  id="new-recipe-ingredients_2.qty"
+  ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty"
+  placeholder="-"></div>
+
+<div class="ing-inner-container">
+  <input
+    type="text"
+    id="new-recipe-ingredients_2.unit"
+    ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
+    placeholder="-"></div>
+
+  <div class="ing-inner-container">
+    <input
+      type="text"
+      id="new-recipe-ingredients_2.name"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name"
+      placeholder="-">
+  </div>
+
+</div>
+</div>
+<div class="add-del-btns">
+  <additem inst="recipe.selectedRecipe.recipe.ingredients_2" class="btns btn1"></additem>
+  <remove ingarr="recipe.selectedRecipe.recipe.ingredients_2" class="btns btn2"></remove>
 </div>
 </div>
 

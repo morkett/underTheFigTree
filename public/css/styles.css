@@ -184,9 +184,27 @@ section {
   left: 0; }
 
 .info {
-  width: 40vw;
+  width: 35vw;
   height: 80vh;
-  background: #fff; }
+  background: transparent;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0; }
+  .info .info-inner {
+    height: 60%;
+    width: 100%;
+    background: #fff; }
+  .info .info-inner-sml {
+    height: 35%;
+    width: 100%;
+    background: #fff; }
 
 .admin-ing {
   width: 30vw;
@@ -280,9 +298,20 @@ section {
     margin: 20px 0;
     text-align: center; }
 
+.ing_2-title {
+  height: auto;
+  width: 30vw;
+  position: fixed;
+  -ms-transform: translateY(-60px);
+      transform: translateY(-60px);
+  z-index: 900; }
+  .ing_2-title input {
+    width: 100%;
+    text-align: center; }
+
 .add-del-btns {
   width: 30vw;
-  background: rgba(0, 0, 0, 0.1);
+  background: #fff;
   position: fixed;
   bottom: 10vh;
   border-bottom-right-radius: 2px;
@@ -308,7 +337,8 @@ section {
         flex-direction: column;
     top: 0;
     left: 0;
-    cursor: pointer; }
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.1); }
   .add-del-btns .btn1 {
     border-right: 1px solid rgba(0, 0, 0, 0.07); }
   .add-del-btns .btn2 {

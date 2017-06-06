@@ -44,8 +44,8 @@ function seed () {
           title: 'cambodian marinated beef (beef lok lak)',
           cuisine: 'cambodian',
           serves: 2,
-          type: 'beef',
-
+          type: 'starter',
+          type2: 'beef',
           ingredients: [
             {
               qty: '500',
@@ -75,11 +75,8 @@ function seed () {
               instruction: 'coriander + 1/2 lime → serve'
             }
           ],
-
+          ingredients_2_title: 'marinade',
           ingredients_2: [
-            {
-              title: 'marinade'
-            },
             {
               qty: '1',
               unit: '',
@@ -406,10 +403,8 @@ function seed () {
               name: 'puff pastry'
             }
           ],
+          ingredients_2_title: 'filling',
           ingredients_2: [
-            {
-              title: 'filling'
-            },
             {
               qty: '2',
               name: 'cooked chicken breats'
@@ -569,10 +564,8 @@ function seed () {
               name: 'brown sugar'
             }
           ],
+          ingredients_2_title: 'paste',
           ingredients_2: [
-            {
-              title: 'paste'
-            },
             {
               qty: '6',
               unit: 'cm',
@@ -772,7 +765,6 @@ function seed () {
           serves: 0,
           makes: '1 baguette',
           type: 'starters',
-
           ingredients: [
             {
               name: 'basil'

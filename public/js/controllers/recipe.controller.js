@@ -11,6 +11,10 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     console.log(controller.checkboxType);
   };
 
+  controller.showIng1 = true;
+  controller.toggleIng = function() {
+    controller.showIng1 = !controller.showIng1;
+  };
 
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 

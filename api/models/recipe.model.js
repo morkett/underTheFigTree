@@ -6,7 +6,7 @@ var RecipeSchema = mongoose.Schema({
   cuisine: {type: String},
   serves: {type: Number, required: true},
   makes: {type: String},
-  type: {type: String, required: true},
+  type: {type: String},
   type2: {type: String},
   ingredients: [{
     _id: false,
@@ -14,9 +14,9 @@ var RecipeSchema = mongoose.Schema({
     unit: {type: String},
     name: {type: String, required: true}
   }],
+  ingredients_2_title: {type: String},
   ingredients_2: [{
     _id: false,
-    title: {type: String},
     qty: {type: String},
     unit: {type: String},
     name: {type: String}

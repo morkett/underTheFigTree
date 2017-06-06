@@ -38,9 +38,9 @@
   <div class="info-inner info-inner-sml">
 </div>
 </div>
-<div class="admin-ing">
+<div class="admin-ing" ng-class="{'visible': recipe.showIng1}">
 
-    <h2>Ingredients</h2>
+    <h2 ng-click="recipe.toggleIng()" >Ingredients</h2>
     <div class="ing-headers">
       <div class="ing-inner-headers">
         <h3>Quantity</h3>
@@ -83,15 +83,15 @@
 </div>
 
 
-<div class="admin-ing">
+<div class="admin-ing" ng-class="{'visible': !recipe.showIng1}">
 
-    <h2>Ingredients 2</h2>
+    <h2 ng-click="recipe.toggleIng()">Ingredients 2</h2>
     <div class="ing_2-title">
     <input
 
       type="text"
       id="new-recipe-ingredients_2.title"
-      ng-model="recipe.selectedRecipe.recipe.ingredients_2[0].title"
+      ng-model="recipe.selectedRecipe.recipe.ingredients_2_title"
       placeholder="-"></div>
     <div class="ing-headers">
       <div class="ing-inner-headers">
@@ -110,7 +110,8 @@
   type="text"
   id="new-recipe-ingredients_2.qty"
   ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty"
-  placeholder="-"></div>
+  placeholder="-"
+  ></div>
 
 <div class="ing-inner-container">
   <input
@@ -135,37 +136,6 @@
 </div>
 </div>
 
-  <!-- <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
-
-
-  <label for="new-recipe-ingredients_2">ingredients_2:</label>
-
-  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-qty">qty</label>
-  <input
-
-    type="text"
-    id="new-recipe-ingredients_2-qty"
-    ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty"
-    class="ing-inner-container"></div>
-
-<div class="ing-inner-container"><label for="new-recipe-ingredients_2.unit">unit</label>
-    <input
-
-      type="text"
-      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
-      class="ing-inner-container"></div>
-
-<div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name</label>
-    <input
-      id="new-recipe-ingredients_2-name"
-      type="text"
-      ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name"
-      class="ing-inner-container"></div>
-    </div>
-
-
-<additem inst="recipe.selectedRecipe.recipe.ingredients_2"></additem>
-      <remove ingarr="recipe.selectedRecipe.recipe.ingredients_2"></remove> -->
 
 
 

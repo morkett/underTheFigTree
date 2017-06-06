@@ -1,0 +1,159 @@
+body {
+  z-index: 1;
+  font-family: 'Open Sans', sans-serif;
+  // letter-spacing: .005em;
+  color: $black;
+
+  &:after {
+    @include pseudo;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #283c86;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(left, #45a247, #283c86);
+    background: -o-linear-gradient(left, #45a247, #283c86);
+    background: linear-gradient(to right, #45a247, #283c86);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: -1;
+    opacity: .8;
+    }
+}
+
+.dev-hide {
+  // display: none;
+}
+
+section {
+  @include flex($direction: row);
+}
+
+.admin-form {
+  height: 100vh;
+  width: 100vw;
+  border: $border-dev-red;
+  @include flex($direction: row, $justify: space-around);
+
+
+}
+
+.info {
+  // border: $border-dev-green;
+  width: 40vw;
+  height: 80vh;
+  background: #fff;
+}
+
+.admin-ing {
+  // border: $border-dev-green;
+  width: 30vw;
+  height: 80vh;
+  background: #fff;
+  display: block;
+  position: relative;
+  padding-top: 110px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+
+&:hover {
+box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+  h2 {
+    position: fixed;
+    height: 80px;
+    background: #fff;
+    width: 30vw;
+    text-align: center;
+    transform: translateY(-110px);
+    font-weight: 600;
+    padding-top: 30px;
+    font-size: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    z-index: 5;
+    text-transform: uppercase;
+
+    &:after {
+      @include pseudo;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: -1;
+    }
+  }
+
+  .ing-headers {
+    display: block;
+    // height: 30px;
+    width: 30vw;
+    position: fixed;
+    transform: translateY(-30px);
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+  }
+
+  .ing-inner-headers {
+    @include flex($direction: row, $justify: space-around);
+    height: 30px;
+  }
+}
+
+.ing-container {
+  @include flex($direction: row);
+  // width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.ing-inner-container{
+  @include flex;
+  background: #fff;
+  width: 100%;
+
+  input {
+    width: 80%;
+    background-color: #fff;
+    height: 40px;
+    margin: 20px 0;
+    text-align: center;
+  }
+}
+
+.add-del-btns {
+  width: 30vw;
+  background: rgba(0, 0, 0, 0.1);  position: fixed;
+  bottom: 10vh;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+
+  .btns {
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    @include flex;
+    cursor: pointer;
+  }
+
+  .btn1 {
+    border-right: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .btn2 {
+    border-left: 1px solid rgba(0, 0, 0, 0.07);
+  }
+
+  .btn-inner {
+    @include flex($direction: row, $justify:space-around);
+
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,5 +1,6 @@
-<h1 ng-init="recipe.getRecipe()">show one</h1>
-<form ng-submit="recipe.updateRecipe()">
+<!-- <h1 ng-init="recipe.getRecipe()">show one</h1> -->
+<form class="admin-form" ng-submit="recipe.updateRecipe()" ng-init="recipe.getRecipe()">
+<div class="info">
 <div>
 <label for="new-recipe-title">Title:</label>
 <input
@@ -32,36 +33,53 @@
 <label for="new-recipe-type2">Secondary Type:</label>
 <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions2">
 </select>
+</div>
 
-<div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index" class="ing-container">
-<label for="new-recipe-ingredients">ingredients:</label>
+<div class="admin-ing">
 
+    <h2>Ingredients</h2>
+    <div class="ing-headers">
+      <div class="ing-inner-headers">
+        <h3>Quantity</h3>
+        <h3>Unit</h3>
+        <h3>Ingredient</h3>
+      </div>
+    </div>
+<div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index" >
+
+
+<div class="ing-container">
 <div class="ing-inner-container">
-  <label for="new-recipe-ingredients.qty">qty</label>
 <input
   type="text"
   id="new-recipe-ingredients.qty"
-  ng-model="recipe.selectedRecipe.recipe.ingredients[$index].qty"></div>
+  ng-model="recipe.selectedRecipe.recipe.ingredients[$index].qty"
+  placeholder="-"></div>
 
-<div class="ing-inner-container">  <label for="new-recipe-ingredients.unit">unit</label>
+<div class="ing-inner-container">
   <input
     type="text"
     id="new-recipe-ingredients.unit"
-    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"></div>
+    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"
+    placeholder="-"></div>
 
-  <div class="ing-inner-container">  <label for="new-recipe-ingredients.name">name</label>
+  <div class="ing-inner-container">
     <input
       type="text"
       id="new-recipe-ingredients.name"
-    ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name">
+      ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name"
+      placeholder="-">
   </div>
-  </div>
 
+</div>
+</div>
+<div class="add-del-btns">
+  <additem inst="recipe.selectedRecipe.recipe.ingredients" class="btns btn1"></additem>
+  <remove ingarr="recipe.selectedRecipe.recipe.ingredients" class="btns btn2"></remove>
+</div>
+</div>
 
-<additem inst="recipe.selectedRecipe.recipe.ingredients"></additem>
-  <remove ingarr="recipe.selectedRecipe.recipe.ingredients"></remove>
-
-  <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
+  <!-- <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index" class="ing-container">
 
 
   <label for="new-recipe-ingredients_2">ingredients_2:</label>
@@ -91,11 +109,11 @@
 
 
 <additem inst="recipe.selectedRecipe.recipe.ingredients_2"></additem>
-      <remove ingarr="recipe.selectedRecipe.recipe.ingredients_2"></remove>
+      <remove ingarr="recipe.selectedRecipe.recipe.ingredients_2"></remove> -->
 
 
 
-<label for="new-recipe-instructions">instructions:</label>
+<!-- <label for="new-recipe-instructions">instructions:</label>
 <input
   ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index"
   type="text"
@@ -113,13 +131,9 @@
 
 <div>
 <input type="submit" value="Submit">
-</div>
+</div> -->
 
 </form>
 
-<!-- <button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="!recipe.allowDelete">Delete</button>
-<p ng-if="recipe.allowDelete">Are You Sure You Want To Delete Recipe?</p>
-<button ng-click="recipe.deleteRecipe(recipe.selectedRecipe.recipe._id)" ng-if="recipe.allowDelete">Delete</button>
-<button ng-click="recipe.allowDelete = !recipe.allowDelete" ng-if="recipe.allowDelete">Cancel</button> -->
 
-<deletebtn cntr="recipe.deleteRecipe" recipeid="recipe.selectedRecipe.recipe._id"></deletebtn>
+<!-- <deletebtn cntr="recipe.deleteRecipe" recipeid="recipe.selectedRecipe.recipe._id"></deletebtn> -->

@@ -1,3 +1,63 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+input {
+  -webkit-appearance: none;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 0px solid;
+  height: 20px;
+  width: 160px;
+  outline: none;
+  -webkit-appearance: none;
+  font-family: 'Open Sans', sans-serif; }
+
+input:-webkit-autofill {
+  color: #fff !important; }
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -39,9 +99,6 @@ body {
   margin-bottom: 20px; }
 
 /* FIXME: REMOVE DISPLAY BLOCK */
-body {
-  padding-left: 50px; }
-
 body * {
   display: block; }
 
@@ -58,18 +115,6 @@ body * {
 
 .ing-input {
   display: inline-block; }
-
-.ing-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row; }
-
-.ing-inner-container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column; }
 
 .ing-all {
   display: -ms-flexbox;
@@ -90,3 +135,194 @@ body * {
 script#__bs_script__ {
   opacity: 0;
   height: 0; }
+
+body {
+  z-index: 1;
+  font-family: 'Open Sans', sans-serif;
+  color: #292929; }
+  body:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #283c86;
+    /* fallback for old browsers */
+    background: linear-gradient(to right, #45a247, #283c86);
+    /* Chrome 10-25, Safari 5.1-6 */
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    z-index: -1;
+    opacity: .8; }
+
+section {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0; }
+
+.admin-form {
+  height: 100vh;
+  width: 100vw;
+  border: 1px solid #d32f2f;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0; }
+
+.info {
+  width: 40vw;
+  height: 80vh;
+  background: #fff; }
+
+.admin-ing {
+  width: 30vw;
+  height: 80vh;
+  background: #fff;
+  display: block;
+  position: relative;
+  padding-top: 110px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .admin-ing:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+  .admin-ing h2 {
+    position: fixed;
+    height: 80px;
+    background: #fff;
+    width: 30vw;
+    text-align: center;
+    -ms-transform: translateY(-110px);
+        transform: translateY(-110px);
+    font-weight: 600;
+    padding-top: 30px;
+    font-size: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 5;
+    text-transform: uppercase; }
+    .admin-ing h2:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.1);
+      z-index: -1; }
+  .admin-ing .ing-headers {
+    display: block;
+    width: 30vw;
+    position: fixed;
+    -ms-transform: translateY(-30px);
+        transform: translateY(-30px);
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+  .admin-ing .ing-inner-headers {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    top: 0;
+    left: 0;
+    height: 30px; }
+
+.ing-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+
+.ing-inner-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
+  background: #fff;
+  width: 100%; }
+  .ing-inner-container input {
+    width: 80%;
+    background-color: #fff;
+    height: 40px;
+    margin: 20px 0;
+    text-align: center; }
+
+.add-del-btns {
+  width: 30vw;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  bottom: 10vh;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 40px; }
+  .add-del-btns .btns {
+    width: 50%;
+    text-align: center;
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    top: 0;
+    left: 0;
+    cursor: pointer; }
+  .add-del-btns .btn1 {
+    border-right: 1px solid rgba(0, 0, 0, 0.07); }
+  .add-del-btns .btn2 {
+    border-left: 1px solid rgba(0, 0, 0, 0.07); }
+  .add-del-btns .btn-inner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; }

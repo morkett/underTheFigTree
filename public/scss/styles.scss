@@ -2,6 +2,7 @@
 @import "config";
 @import "mixins";
 
+
 body {
    @include flex;
 }
@@ -40,9 +41,9 @@ body {
   margin-bottom: 20px; }
 
 /* FIXME: REMOVE DISPLAY BLOCK */
-body {
-  padding-left: 50px;
-}
+// body {
+//   padding-left: 50px;
+// }
 body * {
   display: block;
 }
@@ -65,14 +66,14 @@ body * {
   display: inline-block;
 }
 
-.ing-container{
-  display: flex;
-  flex-direction: row;
-}
-.ing-inner-container{
-  display: flex;
-  flex-direction: column;
-}
+// .ing-container{
+//   display: flex;
+//   flex-direction: row;
+// }
+// .ing-inner-container{
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .ing-all {
   @include flex($direction: row, $justify:flex-start);
@@ -88,3 +89,4 @@ script#__bs_script__ {
     opacity: 0;
     height: 0;
 }
+@import "admin";

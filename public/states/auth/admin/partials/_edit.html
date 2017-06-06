@@ -1,10 +1,23 @@
 <h1>edit</h1>
 
+<div ng-repeat="cuisine in recipe.cuisineOptions track by $index">
+  <label for="{{cuisine}}">{{ cuisine }}</label>
+<input type="radio" name="cuisineSelect" id="{{cuisine}}"  ng-click="recipe.checkboxToggle(recipe.cuisineOptions[$index])"/>
+</div>
+
+<label for="allCuisine">All</label>
+<input type="radio" name="cuisineSelect" id="allCuisine"  ng-click="recipe.checkboxToggle('all')"/>
+
 <input type="search"
-  ng-model="searchRecipies">
+       ng-model="searchRecipe.title"
+       placeholder="search title"  >
+<input type="search"
+       ng-model="searchRecipe.cuisine"
+
+       placeholder="search cuisine"  >
 
 
-<!-- <recipes></recipes> -->
-<!-- <cuisine cntr="recipe.getRecipeByCuisine" cuisine="chinese"></cuisine> -->
 
-<cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine>
+<recipes></recipes>
+
+<!-- <cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine> -->

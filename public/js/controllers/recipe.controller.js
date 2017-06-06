@@ -1,13 +1,10 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
-
-  controller.showAll = false;
-  controller.ShowAll = function(){
-    controller.showAll = !controller.showAll;
+controller.checkbox = 'all';
+  controller.checkboxToggle = function(cuisine){
+    controller.checkbox = cuisine;
+    console.log(controller.checkbox);
   };
-
-
-
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 
   controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];

@@ -4,8 +4,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window){
   // controller.count = $('div').length;
 
   controller.numItems = function(className) {
-
- return $window.document.getElementsByClassName(className).length;
+    return $window.document.getElementsByClassName(className).length;
   };
 
   controller.showIng1 = true;

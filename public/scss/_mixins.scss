@@ -1,14 +1,11 @@
 ////////  MIXINS ////////
-
 //////// PSEUDO ////////
 @mixin pseudo($display: block, $pos: absolute, $content: "") {
   content: $content;
   display: $display;
   position: $pos;
 }
-
 //////// FLEXBOX ////////
-
 @mixin flex($display: flex, $direction: column, $justify: center, $align: center) {
   display: $display;
   justify-content: $justify;
@@ -17,9 +14,7 @@
   top: 0;
   left: 0;
 }
-
 //////// FONTS ////////
-
 @mixin font-properties($letter-spacing, $font-size, $line-height: 1) {
   font-family: $font-family;
   font-size: $font-size;

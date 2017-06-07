@@ -65,5 +65,17 @@ input {-webkit-appearance: none; box-shadow: none !important;
      outline: none;
      -webkit-appearance:none;
      font-family: 'Open Sans', sans-serif;
+
+
 }
 input:-webkit-autofill { color: #fff !important};
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+textarea::-webkit-input-placeholder {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}

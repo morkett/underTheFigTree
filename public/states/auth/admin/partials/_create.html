@@ -1,8 +1,4 @@
-<form class="admin-form admin-form-create"
-      name="admin-form"
-      ng-submit="recipe.createRecipe()"
-      ng-init="recipe.createClear()"
-      ng-class="{'navActiveMain': recipe.navActive}">
+<form class="admin-form admin-form-create" name="admin-form" ng-submit="recipe.createRecipe()" ng-init="recipe.createClear()" ng-class="{'navActiveMain': recipe.navActive}" ng-click="recipe.navActive = false">
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
@@ -10,37 +6,46 @@
       </div>
 
 
-      <div class="ing-inner-container"><label for="new-recipe-cuisine">cuisine:</label>
+      <div class="ing-inner-container">
         <span class="drop-down"></span>
-        <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions">
+        <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions" placholder="cuisine">
+          <option value="" disabled>- cuisine -</option>
           </select>
       </div>
 
 
-      <div class="ing-inner-container"> <label for="new-recipe-serves">Serves:</label>
+      <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.recipeData.serves" ng-options="r for r in recipe.serveOptions">
+          <option value="" disabled>- servers -</option>
+
           </select>
       </div>
 
-      <div class="ing-inner-container"><label for="new-recipe-makes">Makes:</label>
+      <div class="ing-inner-container">
         <input autocomplete="off" type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.recipeData.makes" class="info-makes"></div>
 
-      <div class="ing-inner-container"><label for="new-recipe-type">Type:</label>
+      <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions1">
+          <option value="" disabled>- type -</option>
+
           </select>
       </div>
 
-      <div class="ing-inner-container"><label for="new-recipe-type2">Secondary Type:</label>
+      <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions2">
+          <option value="" disabled>- secondary type -</option>
+
           </select>
       </div>
 
-      <div class="ing-inner-container"><label for="new-recipe-isLive">isLive:</label>
+      <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
+          <option value="" disabled>- live -</option>
+
           </select>
       </div>
     </div>
@@ -142,7 +147,7 @@
         <div class="ing-inner-container inst-inner-container" ng-repeat="instructions in recipe.recipeData.instructions track by $index">
           <div class="numbers">
             <p>{{$index+1}}</p>
-            <textarea type="text" id="new-recipe-instructions" placeholder="placeholder" ng-model="recipe.recipeData.instructions[$index].instruction"></textarea>
+            <textarea type="text" id="new-recipe-instructions" placeholder="- enter instruction -" ng-model="recipe.recipeData.instructions[$index].instruction"></textarea>
           </div>
         </div>
 

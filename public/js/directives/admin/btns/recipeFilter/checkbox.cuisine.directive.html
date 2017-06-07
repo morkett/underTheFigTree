@@ -1,0 +1,7 @@
+<div ng-repeat="cuisine in cuisineoptions track by $index">
+  <label for="{{cuisine}}">{{ cuisine }}</label>
+<input autocomplete=off type="radio" name="cuisineSelect" id="{{cuisine}}"  ng-click="checkboxToggleCus(cuisineoptions[$index])"/>
+</div>
+
+<!-- <label for="allCuisine">All</label>
+<input autocomplete=off type="radio" name="cuisineSelect" id="allCuisine"  ng-click="recipe.checkboxToggleCus('all'); recipe.checkboxToggleType('null')"/> -->

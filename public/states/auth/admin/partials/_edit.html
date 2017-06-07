@@ -1,0 +1,34 @@
+
+<!-- <checkboxcusine cuisineoptions="recipe.cuisineOptions"></checkboxcusine> -->
+
+<!-- <cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine> -->
+
+
+<div ng-repeat="cuisine in recipe.cuisineOptions track by $index">
+  <label for="{{cuisine}}">{{ cuisine }}</label>
+<input autocomplete=off type="radio" name="select" id="{{cuisine}}"  ng-click="recipe.checkboxToggleCus(recipe.cuisineOptions[$index]); recipe.checkboxToggleType('null')"/>
+</div>
+
+<label for="allCuisine">All</label>
+<input autocomplete=off type="radio" name="select" id="allCuisine"  ng-click="recipe.checkboxToggleCus('all'); recipe.checkboxToggleType('null')"/>
+
+<div ng-repeat="type in recipe.typeOptions1 track by $index">
+  <label for="{{type}}">{{ type }}</label>
+<input autocomplete=off type="radio" name="select" id="{{type}}"  ng-click="recipe.checkboxToggleType(recipe.typeOptions1[$index]);recipe.checkboxToggleCus('null')"/>
+</div>
+
+<label for="allType">All</label>
+<input autocomplete=off type="radio" name="select" id="allType"  ng-click="recipe.checkboxToggleType('all'); recipe.checkboxToggleCus('null')"/>
+
+
+<input autocomplete=off type="search"
+       ng-model="searchRecipe.title"
+       placeholder="search title"  >
+<input autocomplete=off type="search"
+       ng-model="searchRecipe.cuisine"
+
+       placeholder="search cuisine"  >
+
+
+
+<recipes></recipes>

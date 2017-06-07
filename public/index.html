@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+  <head>
+    <title>Under The Fig Tree</title>
+
+      <!-- META DATA -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+
+      <!-- CDNs -->
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+      <script src="//www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+      <script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+      <script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+      <!-- JS files --->
+      <script src="js/app.js"></script>
+      <script src="js/factories/auth.factory.js" charset="utf-8"></script>
+      <script src="js/factories/recipe.factory.js" charset="utf-8"></script>
+      <script src="js/controllers/auth.controller.js" charset="utf-8"></script>
+      <script src="js/controllers/recipe.controller.js" charset="utf-8"></script>
+      <script src="js/controllers/cuisine.controller.js" charset="utf-8"></script>
+      <script src="js/controllers/type.controller.js" charset="utf-8"></script>
+
+      <!-- directives -->
+      <script src="js/directives/admin/allRecipes/allRecipes.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/remove/remove.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/add/add.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/delete/delete.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/recipeFilter/checkbox.cuisine.directive.js" charset="utf-8"></script>
+
+      <!--build:css css/styles.min.css-->
+      <link type="text/css" rel="stylesheet" href="css/styles.css" />
+      <!--endbuild-->
+
+
+  </head>
+
+  <body>
+  <section ng-controller="RecipeController as recipe" ui-view>
+
+  </section>
+
+
+
+
+
+  </body>
+  <!-- build:js js/external.min.js-->
+
+  <!-- endbuild -->
+</html>

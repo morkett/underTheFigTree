@@ -1,0 +1,36 @@
+<div ng-init="recipe.getRecipes()" >
+<h2 >All Recipes: </h2>
+
+<div
+
+  ng-repeat="r in recipe.results | filter:searchRecipe| orderBy:'title' track by $index" >
+  <div ng-if="recipe.checkboxCus === r.cuisine || recipe.checkboxCus === 'all' || recipe.checkboxType === r.type || recipe.checkboxType === 'all'">
+  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a></h2>
+  <p><strong>cuisine:</strong> {{r.cuisine}}</p>
+  <p><strong>serves:</strong> {{r.serves}}</p>
+  <p ng-if="r.makes">makes: {{r.makes}}</p>
+  <p><strong>type:</strong> {{r.type}}</p>
+  <p ng-if="r.type2"><strong>type2:</strong> {{r.type2}}</p>
+
+  <h3>ingredients:</h3>
+    <ul class="ing-all" ng-repeat="ingredient in r.ingredients track by $index">
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+
+  <h3 ng-if="r.ingredients_2.length === -1">ingredients_2:</h3>
+    <ul class="ing-all" ng-repeat="ingredient in r.ingredients_2 track by $index">
+      <li>{{ingredient.title}}</li>
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+
+  <h3>instructions:</h3>
+    <ul ng-repeat="instruction in r.instructions track by $index">
+      <li >{{instruction.instruction}}</li>
+    </ul>
+</div>
+</div>
+</div>

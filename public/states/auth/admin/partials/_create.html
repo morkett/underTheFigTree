@@ -1,0 +1,121 @@
+<form ng-submit="recipe.createRecipe()" ng-init="recipe.createClear()">
+
+<div>
+<label for="new-recipe-title">Title * :</label>
+<input autocomplete=off
+  type="text"
+  id="new-recipe-title"
+  placeholder="recipe title"
+  ng-model="recipe.recipeData.title">
+</div>
+
+<label for="new-recipe-cuisine">Cuisine:</label>
+<select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions">
+</select>
+
+<label for="new-recipe-serves">Serves * :</label>
+<select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.recipeData.serves" ng-options="r for r in recipe.serveOptions">
+</select>
+
+<div>
+<label for="new-recipe-makes">Makes:</label>
+<input autocomplete=off
+  type="text"
+  id="new-recipe-makes"
+  placeholder="makes how many"
+  ng-model="recipe.recipeData.makes">
+</div>
+
+<label for="new-recipe-type">Type * :</label>
+<select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions1">
+</select>
+<label for="new-recipe-type2">Secondary Type:</label>
+<select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions2">
+</select>
+
+
+
+<div class="ing-container" ng-repeat="ingredient in recipe.recipeData.ingredients">
+  <label for="new-recipe-ingredients">ingredients:</label>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-qty">qty:</label>
+  <input autocomplete=off
+    type="text"
+    id="new-recipe-ingredients-qty"
+    ng-model="ingredient.qty"
+    class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-units">units:</label>
+    <input autocomplete=off
+      id="new-recipe-ingredients-units"
+      type="text"
+      ng-model="ingredient.unit"
+      class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients-name">name * :</label>
+    <input autocomplete=off
+      id="new-recipe-ingredients-name"
+      type="text"
+      ng-model="ingredient.name"
+      class="ing-input">
+  </div>
+</div>
+
+<additem inst="recipe.recipeData.ingredients"></additem>
+  <remove ingarr="recipe.recipeData.ingredients"></remove>
+
+  <div class="ing-container" ng-repeat="ingredient_2 in recipe.recipeData.ingredients_2">
+  <label for="new-recipe-ingredients_2">ingredients_2:</label>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-qty">qty:</label>
+  <input autocomplete=off
+    ng-model="ingredient_2.qty"
+    type="text"
+    id="new-recipe-ingredients_2-qty"
+    class="ing-input">
+  </div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-units">units:</label>
+    <input autocomplete=off
+      id="new-recipe-ingredients_2-units"
+      type="text"
+      ng-model="ingredient_2.unit"
+      class="ing-input"></div>
+
+  <div class="ing-inner-container"><label for="new-recipe-ingredients_2-name">name:</label>
+    <input autocomplete=off
+      ng-model="ingredient_2.name"
+      id="new-recipe-ingredients_2-name"
+      type="text"
+      class="ing-input"></div>
+
+    </div>
+
+    <additem inst="recipe.recipeData.ingredients_2"></additem>
+      <remove ingarr="recipe.recipeData.ingredients_2"></remove>
+
+
+
+  <div class="instsContainer" ng-repeat="instructions in recipe.recipeData.instructions">
+  <label for="new-recipe-instructions">instructions *:</label>
+      <input autocomplete=off type="text" ng-model="instructions.instruction" name="" placeholder="Enter employe name">
+</div>
+
+
+<additem inst="recipe.recipeData.instructions"></additem>
+
+<remove ingarr="recipe.recipeData.instructions"></remove>
+
+   <label for="new-recipe-isLive">isLive * :</label>
+   <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.recipeData.isLive" ng-options="r for r in recipe.isLiveOptions">
+   </select>
+
+
+
+<div>
+<input autocomplete=off type="submit" value="Create Recipe" class="createBtn">
+</div>
+
+</form>

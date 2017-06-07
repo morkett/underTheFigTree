@@ -9,7 +9,7 @@
       <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.recipeData.cuisine" ng-options="r for r in recipe.cuisineOptions" placholder="cuisine">
-          <option value="" disabled>- cuisine -</option>
+          <option value="">- cuisine -</option>
           </select>
       </div>
 
@@ -23,12 +23,19 @@
       </div>
 
       <div class="ing-inner-container">
-        <input autocomplete="off" type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.recipeData.makes" class="info-makes"></div>
+        <!-- <input autocomplete="off" type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.recipeData.makes" class="info-makes"> -->
+
+        <span class="drop-down"></span>
+        <select id="new-recipe-makes" name="new-recipe-makes" ng-model="recipe.recipeData.makes" ng-options="r for r in recipe.makeOptions">
+          <option value="" >-  makes -</option>
+
+          </select>
+      </div>
 
       <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.recipeData.type" ng-options="r for r in recipe.typeOptions1">
-          <option value="" disabled>- type -</option>
+          <option value="">- type -</option>
 
           </select>
       </div>
@@ -36,7 +43,7 @@
       <div class="ing-inner-container">
         <span class="drop-down"></span>
         <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.recipeData.type2" ng-options="r for r in recipe.typeOptions2">
-          <option value="" disabled>- secondary type -</option>
+          <option value="" >- secondary type -</option>
 
           </select>
       </div>

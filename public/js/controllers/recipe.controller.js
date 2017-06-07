@@ -23,6 +23,7 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     controller.showIng1 = !controller.showIng1;
   };
 
+  controller.makeOptions = [5,10,15,20,25,30,40,45,50,55,60];
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 
   controller.cuisineOptions = ['cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];

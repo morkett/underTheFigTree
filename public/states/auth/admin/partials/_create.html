@@ -11,6 +11,7 @@
                type="text" id="new-recipe-title"
                name="test"
                placeholder="title"
+               required
                ng-model="recipe.recipeData.title"
                class="{'dirty': recipe.admin-form.$dirty}">
       </div>
@@ -31,7 +32,8 @@
         <select id="new-recipe-serves"
                 name="new-recipe-serves"
                 ng-model="recipe.recipeData.serves"
-                ng-options="r for r in recipe.serveOptions">
+                ng-options="r for r in recipe.serveOptions"
+                required>
           <option value="" disabled>- servers -</option>
           </select>
       </div>
@@ -71,7 +73,8 @@
         <select id="new-recipe-isLive"
                 name="new-recipe-isLive"
                 ng-model="recipe.recipeData.isLive"
-                ng-options="r for r in recipe.isLiveOptions">
+                ng-options="r for r in recipe.isLiveOptions"
+                required>
           <option value="" disabled>- live -</option>
         </select>
       </div>
@@ -124,7 +127,8 @@
           <input autocomplete="off"
                  type="text" id="new-recipe-ingredients.name"
                  ng-model="recipe.recipeData.ingredients[$index].name"
-                 placeholder="-">
+                 placeholder="-"
+                 required>
         </div>
 
       </div>
@@ -198,7 +202,9 @@
             <p>{{$index+1}}</p>
             <textarea type="text" id="new-recipe-instructions"
                       placeholder="- enter instruction"
-                      ng-model="recipe.recipeData.instructions[$index].instruction"></textarea>
+                      ng-model="recipe.recipeData.instructions[$index].instruction"
+                      required>
+            </textarea>
           </div>
         </div>
       </div>
@@ -210,7 +216,7 @@
   </div>
 
   <div class="btn-save">
-    <input autocomplete="off" type="submit" value="Save changes">
+    <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid">
   </div>
 
 </form>

@@ -23,7 +23,7 @@ var RecipeSchema = mongoose.Schema({
   }],
   instructions: [{
     _id: false,
-    instruction: {type: String}
+    instruction: {type: String, required: true}
   }],
   notes: {type: String},
   isLive: {type: String, default: 'no', required: true},

@@ -1,4 +1,4 @@
-function RecipeController(RecipeFactory, $state, $stateParams, $window){
+function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout){
   var controller = this;
 
   // controller.count = $('div').length;
@@ -71,7 +71,10 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window){
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);
-          // $state.go('edit');
+
+          $timeout(function() {
+            $state.go('edit');
+          }, 1000);
         },
      function error(error) {
        console.warn('Error creating recipe:',error);
@@ -96,7 +99,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window){
     RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {
         console.log('deleted',res);
-        $state.go('edit');
+        $timeout(function() {
+          $state.go('edit');
+        }, 1000);
       },
       function error(err){
         console.warn('Error deleting recipe',err);
@@ -108,7 +113,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window){
     RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
       function success(res) {
         console.log('recipe updated', res);
-        $state.go('edit');
+        $timeout(function() {
+          $state.go('edit');
+        }, 1000);
       },
       function error(err){
         console.warn('error updating recipie', err);
@@ -142,7 +149,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window){
 
 
 
-RecipeController.$inject = ['RecipeFactory', '$state', '$stateParams', '$window'];
+RecipeController.$inject = ['RecipeFactory', '$state', '$stateParams', '$window', '$timeout'];
 angular
   .module('myApp')
   .controller('RecipeController', RecipeController);

@@ -2,7 +2,7 @@
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
-        <input type="text" id="new-recipe-title" placeholder="title" ng-model="recipe.selectedRecipe.recipe.title">
+        <input autocomplete=off type="text" id="new-recipe-title" placeholder="title" ng-model="recipe.selectedRecipe.recipe.title">
       </div>
 
 
@@ -16,7 +16,7 @@
 </select></div>
 
       <div class="ing-inner-container"><label for="new-recipe-makes">Makes:</label>
-        <input type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.selectedRecipe.recipe.makes"></div>
+        <input autocomplete=off type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.selectedRecipe.recipe.makes"></div>
 
       <div class="ing-inner-container"><label for="new-recipe-type">Type:</label>
         <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions1">
@@ -56,13 +56,13 @@
 
       <div class="ing-container">
         <div class="ing-inner-container">
-          <input type="text" id="new-recipe-ingredients.qty" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].qty" placeholder="-"></div>
+          <input autocomplete=off type="text" id="new-recipe-ingredients.qty" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].qty" placeholder="-"></div>
 
         <div class="ing-inner-container">
-          <input type="text" id="new-recipe-ingredients.unit" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit" placeholder="-"></div>
+          <input autocomplete=off type="text" id="new-recipe-ingredients.unit" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit" placeholder="-"></div>
 
         <div class="ing-inner-container ing-name">
-          <input type="text" id="new-recipe-ingredients.name" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name" placeholder="-">
+          <input autocomplete=off type="text" id="new-recipe-ingredients.name" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name" placeholder="-">
         </div>
 
       </div>
@@ -76,7 +76,7 @@
 
   <div class="admin-ing" ng-class="{'visible': !recipe.showIng1}">
     <div class="ing_2-title">
-      <input type="text" id="new-recipe-ingredients_2.title" ng-model="recipe.selectedRecipe.recipe.ingredients_2_title" placeholder="-"></div>
+      <input autocomplete=off type="text" id="new-recipe-ingredients_2.title" ng-model="recipe.selectedRecipe.recipe.ingredients_2_title" placeholder="-"></div>
     <!-- <h2>Ingredients 2</h2> -->
 
     <div class="switch-container">
@@ -99,13 +99,13 @@
       <div class="ing-container">
 
         <div class="ing-inner-container">
-          <input type="text" id="new-recipe-ingredients_2.qty" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty" placeholder="-"></div>
+          <input autocomplete=off type="text" id="new-recipe-ingredients_2.qty" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].qty" placeholder="-"></div>
 
         <div class="ing-inner-container">
-          <input type="text" id="new-recipe-ingredients_2.unit" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit" placeholder="-"></div>
+          <input autocomplete=off type="text" id="new-recipe-ingredients_2.unit" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit" placeholder="-"></div>
 
         <div class="ing-inner-container">
-          <input type="text" id="new-recipe-ingredients_2.name" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name" placeholder="-">
+          <input autocomplete=off type="text" id="new-recipe-ingredients_2.name" ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name" placeholder="-">
         </div>
 
       </div>
@@ -143,7 +143,7 @@
 
 
   <div class="btn-save">
-    <input type="submit" value="Save changes">
+    <input autocomplete=off type="submit" value="Save changes">
   </div>
 
 </form>

@@ -8,6 +8,11 @@
       ng-click="recipe.toggleAdminNav()"
       ng-if="'admin-showOne'| isState"
       >More</span>
+<span class="temp"
+      ng-class="{'navActiveMain': recipe.navActive}"
+      ng-click="recipe.toggleAdminNav()"
+      ng-if="'create'| isState"
+      >More</span>
 <nav class="admin-nav" ng-class="{'navActive': recipe.navActive}">
   <h1>Under the Figtree - Admin</h1>
   <a ng-if="'create' | isState" ui-sref="edit">show all</a>

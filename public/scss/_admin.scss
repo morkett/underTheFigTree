@@ -4,7 +4,6 @@ section {
   // letter-spacing: .005em;
   color: $black;
 
-
   &:after {
     @include pseudo;
     top: 0;
@@ -19,7 +18,6 @@ section {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: -1;
     opacity: 0.8;
-
   }
 }
 
@@ -57,7 +55,6 @@ section {
       box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     }
-
 
     h2 {
       position: fixed;
@@ -108,7 +105,6 @@ section {
   // transform: translateY(-110px);
   font-weight: 600;
   padding-top: 10px;
-
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   z-index: 5;
   text-transform: uppercase;
@@ -126,10 +122,10 @@ section {
   input {
     font-size: 20px;
     width: 100%;
+    height: 100%;
     text-align: center;
   }
 }
-
 
 .admin-ing,
 .admin-inst {
@@ -190,6 +186,12 @@ section {
   .ing-inner-headers {
     @include flex($direction: row, $justify: space-around);
     height: 30px;
+    flex: .5;
+    text-align: center;
+  }
+
+  .flex {
+    flex: .7;
   }
 }
 
@@ -206,11 +208,11 @@ section {
   // border: 1px solid red;
 }
 
-
 .ing-inner-container {
   @include flex;
   background: #fff;
   width: 100%;
+  flex:.3;
 
   input {
     width: 80%;
@@ -219,29 +221,55 @@ section {
     margin: 20px 0;
     text-align: center;
   }
-}
 
+}
+.ing-name {
+  flex: .7;
+}
 .inst-container {
   border-bottom: none;
+  @include flex;
 }
+
 .inst-inner-container {
   border-bottom: none;
-  input {
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  }
+  // input {
+  //   width: 100%;
+  //
+  // }
 }
 
 .ing_2-title {
   height: auto;
   width: 30vw;
   position: fixed;
-  transform: translateY(-60px);
-  z-index: 900;
+  // transform: translateY(-60px);
+  // z-index: 900;
+  // position: fixed;
+  height: 80px;
+  background: #fff;
+  // width: 35vw;
+  // text-align: center;
+  transform: translateY(-110px);
+  // font-weight: 600;
+  // // padding-top: 10px;
+  // font-size: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  z-index: 5;
+  text-transform: uppercase;
 
   input {
-    width: 100%;
+    width: 30vw;
+    height: 80px;
     text-align: center;
+    font-weight: 600;
+// padding-top: 30px;
+transform: translateY(-0px);
+// background: red;
+font-size: 20px;
+background: rgba(0, 0, 0, 0.1);
+text-transform: uppercase;
+
   }
 }
 
@@ -290,7 +318,7 @@ section {
 
 .btn-save {
   position: absolute;
-  bottom: 2%;
+  top: 2%;
   right: 50%;
   transform: translateX(50%);
   background: rgba(299,299,299,1);
@@ -299,6 +327,10 @@ section {
   z-index: 5;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  input {
+    cursor: pointer;
+  }
 
   &:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -320,6 +352,7 @@ section {
   }
 }
 //switch
+
 .switch {
   display: inline-block;
   height: 20px;
@@ -378,3 +411,29 @@ section {
   right: 40px;
   z-index: 900;
 }
+
+.numbers {
+  width: 100%;
+  @include flex($justify:center, $direction: row);
+
+  p {
+    height: 40px;
+  }
+
+  #new-recipe-instructions {
+    resize: vertical;
+    min-width: 90%;
+    background-color: #fff;
+    min-height: 40px;
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+}
+
+// .ing-name {
+//   flex: 1;
+// }

@@ -28,9 +28,14 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
+//
+// ol, ul {
+//   list-style: none;
+// }
 
-ol, ul {
-  list-style: none;
+ol {
+  list-style: lower-latin;
+  list-style-position: inside;
 }
 
 blockquote, q {

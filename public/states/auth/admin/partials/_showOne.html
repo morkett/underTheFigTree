@@ -2,43 +2,42 @@
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
-        <input type="text" id="new-recipe-title" placeholder="title"
-         ng-model="recipe.selectedRecipe.recipe.title">
+        <input type="text" id="new-recipe-title" placeholder="title" ng-model="recipe.selectedRecipe.recipe.title">
       </div>
 
 
       <div class="ing-inner-container"><label for="new-recipe-cuisine">cuisine:</label>
-      <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.selectedRecipe.recipe.cuisine" ng-options="r for r in recipe.cuisineOptions">
+        <select id="new-recipe-cuisine" name="new-recipe-cuisine" ng-model="recipe.selectedRecipe.recipe.cuisine" ng-options="r for r in recipe.cuisineOptions">
 </select></div>
 
 
-    <div class="ing-inner-container">  <label for="new-recipe-serves">Serves:</label>
-      <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.selectedRecipe.recipe.serves" ng-options="r for r in recipe.serveOptions">
+      <div class="ing-inner-container"> <label for="new-recipe-serves">Serves:</label>
+        <select id="new-recipe-serves" name="new-recipe-serves" ng-model="recipe.selectedRecipe.recipe.serves" ng-options="r for r in recipe.serveOptions">
 </select></div>
 
       <div class="ing-inner-container"><label for="new-recipe-makes">Makes:</label>
-      <input type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.selectedRecipe.recipe.makes"></div>
+        <input type="text" id="new-recipe-makes" placeholder="makes" ng-model="recipe.selectedRecipe.recipe.makes"></div>
 
       <div class="ing-inner-container"><label for="new-recipe-type">Type:</label>
-      <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions1">
+        <select id="new-recipe-type" name="new-recipe-type" ng-model="recipe.selectedRecipe.recipe.type" ng-options="r for r in recipe.typeOptions1">
 </select></div>
 
       <div class="ing-inner-container"><label for="new-recipe-type2">Secondary Type:</label>
-      <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions2">
+        <select id="new-recipe-type2" name="new-recipe-type2" ng-model="recipe.selectedRecipe.recipe.type2" ng-options="r for r in recipe.typeOptions2">
 </select></div>
 
-<div class="ing-inner-container"><label for="new-recipe-isLive">isLive:</label>
-<select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.selectedRecipe.recipe.isLive" ng-options="r for r in recipe.isLiveOptions">
+      <div class="ing-inner-container"><label for="new-recipe-isLive">isLive:</label>
+        <select id="new-recipe-isLive" name="new-recipe-isLive" ng-model="recipe.selectedRecipe.recipe.isLive" ng-options="r for r in recipe.isLiveOptions">
 </select></div>
     </div>
 
     <div class="info-inner info-inner-sml">
       <h2>misc</h2>
     </div>
-</div>
+  </div>
 
   <div class="admin-ing" ng-class="{'visible': recipe.showIng1}">
-    <div class="switch-container" ng-if="recipe.selectedRecipe.recipe.ingredients_2_title">
+    <div class="switch-container">
       <div class="switch" ng-click="recipe.toggleIng()">
         <div class="slider round" ng-class="{'sliderClicked': !recipe.showIng1}"></div>
       </div>
@@ -49,7 +48,7 @@
       <div class="ing-inner-headers">
         <h3>Quantity</h3>
         <h3>Unit</h3>
-        <h3>Ingredient</h3>
+        <h3 class="flex">Ingredient</h3>
       </div>
     </div>
     <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients track by $index">
@@ -62,7 +61,7 @@
         <div class="ing-inner-container">
           <input type="text" id="new-recipe-ingredients.unit" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit" placeholder="-"></div>
 
-        <div class="ing-inner-container">
+        <div class="ing-inner-container ing-name">
           <input type="text" id="new-recipe-ingredients.name" ng-model="recipe.selectedRecipe.recipe.ingredients[$index].name" placeholder="-">
         </div>
 
@@ -76,8 +75,9 @@
 
 
   <div class="admin-ing" ng-class="{'visible': !recipe.showIng1}">
-
-    <h2 ng-click="recipe.toggleIng()">Ingredients 2</h2>
+    <div class="ing_2-title">
+      <input type="text" id="new-recipe-ingredients_2.title" ng-model="recipe.selectedRecipe.recipe.ingredients_2_title" placeholder="-"></div>
+    <!-- <h2>Ingredients 2</h2> -->
 
     <div class="switch-container">
       <div class="switch" ng-click="recipe.toggleIng()">
@@ -85,8 +85,7 @@
       </div>
     </div>
 
-    <div class="ing_2-title">
-      <input type="text" id="new-recipe-ingredients_2.title" ng-model="recipe.selectedRecipe.recipe.ingredients_2_title" placeholder="-"></div>
+
     <div class="ing-headers">
       <div class="ing-inner-headers">
         <h3>Quantity</h3>
@@ -119,16 +118,14 @@
 
 
   <div class="admin-inst">
-
-    <h2 ng-click="recipe.toggleIng()">Instructions</h2>
-
+    <h2>Instructions</h2>
     <div>
-
-
       <div class="ing-container inst-container">
-
-        <div class="ing-inner-container inst-inner-container">
-          <input ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index" type="text" id="new-recipe-instructions" placeholder="placeholder" ng-model="recipe.selectedRecipe.recipe.instructions[$index].instruction">
+        <div class="ing-inner-container inst-inner-container" ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index">
+          <div class="numbers">
+            <p>{{$index+1}}</p>
+            <textarea type="text" id="new-recipe-instructions" placeholder="placeholder" ng-model="recipe.selectedRecipe.recipe.instructions[$index].instruction"></textarea>
+          </div>
         </div>
 
 

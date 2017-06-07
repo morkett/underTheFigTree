@@ -26,8 +26,9 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1; }
 
-ol, ul {
-  list-style: none; }
+ol {
+  list-style: lower-latin;
+  list-style-position: inside; }
 
 blockquote, q {
   quotes: none; }
@@ -265,6 +266,7 @@ section {
   .recipe-title input {
     font-size: 20px;
     width: 100%;
+    height: 100%;
     text-align: center; }
 
 .admin-ing,
@@ -332,7 +334,14 @@ section {
         flex-direction: row;
     top: 0;
     left: 0;
-    height: 30px; }
+    height: 30px;
+    -ms-flex: .5;
+        flex: .5;
+    text-align: center; }
+  .admin-ing .flex,
+  .admin-inst .flex {
+    -ms-flex: .7;
+        flex: .7; }
 
 .admin-inst {
   display: block;
@@ -363,7 +372,9 @@ section {
   top: 0;
   left: 0;
   background: #fff;
-  width: 100%; }
+  width: 100%;
+  -ms-flex: .3;
+      flex: .3; }
   .ing-inner-container input {
     width: 80%;
     background-color: #fff;
@@ -371,25 +382,47 @@ section {
     margin: 20px 0;
     text-align: center; }
 
+.ing-name {
+  -ms-flex: .7;
+      flex: .7; }
+
 .inst-container {
-  border-bottom: none; }
+  border-bottom: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0; }
 
 .inst-inner-container {
   border-bottom: none; }
-  .inst-inner-container input {
-    width: 100%;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
 
 .ing_2-title {
   height: auto;
   width: 30vw;
   position: fixed;
-  -ms-transform: translateY(-60px);
-      transform: translateY(-60px);
-  z-index: 900; }
+  height: 80px;
+  background: #fff;
+  -ms-transform: translateY(-110px);
+      transform: translateY(-110px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  z-index: 5;
+  text-transform: uppercase; }
   .ing_2-title input {
-    width: 100%;
-    text-align: center; }
+    width: 30vw;
+    height: 80px;
+    text-align: center;
+    font-weight: 600;
+    -ms-transform: translateY(0px);
+        transform: translateY(0px);
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    text-transform: uppercase; }
 
 .add-del-btns {
   width: 30vw;
@@ -446,7 +479,7 @@ section {
 
 .btn-save {
   position: absolute;
-  bottom: 2%;
+  top: 2%;
   right: 50%;
   -ms-transform: translateX(50%);
       transform: translateX(50%);
@@ -456,6 +489,8 @@ section {
   z-index: 5;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .btn-save input {
+    cursor: pointer; }
   .btn-save:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
@@ -519,3 +554,29 @@ section {
   top: 10px;
   right: 40px;
   z-index: 900; }
+
+.numbers {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0; }
+  .numbers p {
+    height: 40px; }
+  .numbers #new-recipe-instructions {
+    resize: vertical;
+    min-width: 90%;
+    background-color: #fff;
+    min-height: 40px;
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07); }

@@ -22,7 +22,6 @@ function deleteBtn () {
       scope.removeEmptyObj = function () {
         scope.cntr(scope.recipeid);
       };
-
     }
   };
 }

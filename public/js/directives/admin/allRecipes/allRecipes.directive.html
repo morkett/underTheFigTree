@@ -1,11 +1,18 @@
-<div ng-init="recipe.getRecipes()" >
-<h2 >All Recipes: </h2>
+<div ng-init="recipe.getRecipes(); recipe.navOn()" id="allRes">
 
+
+
+</div>
+  <p ng-if="recipe.numItems('count') !== 0">No of Recipes: {{recipe.numItems('count')}}</p>
 <div
 
-  ng-repeat="r in recipe.results | filter:searchRecipe| orderBy:'title' track by $index" >
-  <div ng-if="recipe.checkboxCus === r.cuisine || recipe.checkboxCus === 'all' || recipe.checkboxType === r.type || recipe.checkboxType === 'all'">
+  ng-repeat="r in recipe.results | filter:searchRecipe| orderBy:'title' track by $index"
+  ng-class="{'count': recipe.checkboxCus === r.cuisine || recipe.checkboxType === r.type || recipe.checkboxType2 === r.type2 ||recipe.checkboxCus === 'all'}">
+
+  <div ng-if="recipe.checkboxCus === r.cuisine || recipe.checkboxCus === 'all' || recipe.checkboxType === r.type ||
+  recipe.checkboxType === 'all' || recipe.checkboxType2 === r.type2 ||  recipe.checkboxType2 === 'all' ">
   <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a></h2>
+  <strong>{{r.length}}</strong>
   <p><strong>cuisine:</strong> {{r.cuisine}}</p>
   <p><strong>serves:</strong> {{r.serves}}</p>
   <p ng-if="r.makes">makes: {{r.makes}}</p>

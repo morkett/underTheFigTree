@@ -153,7 +153,8 @@ body * {
   font-style: italic; }
 
 .admin-form-create .info .ng-dirty {
-  font-weight: bold; }
+  font-weight: bold;
+  font-style: normal; }
 
 .admin-form-create .admin-ing .ng-dirty {
   font-weight: bold;
@@ -185,7 +186,8 @@ body * {
   top: 0;
   left: 0;
   font-family: 'Open Sans', sans-serif;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow-y: scroll; }
   .admin-nav a {
     display: block;
     margin: 0 10px;
@@ -553,6 +555,42 @@ body * {
     background: rgba(0, 0, 0, 0.1);
     text-transform: uppercase; }
 
+.filter-label {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0;
+  border: 1px solid red; }
+
+.btn-filter {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0; }
+  .btn-filter span {
+    height: 13px;
+    width: 13px;
+    background: #fff;
+    border-radius: 20px;
+    display: block; }
+
 .add-del-btns {
   width: 30vw;
   background: #fff;
@@ -622,6 +660,37 @@ body * {
   .btn-save input {
     cursor: pointer; }
   .btn-save:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.btn-delete {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0;
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  left: 50%;
+  -ms-transform: translateX(-50%) translateY(0%) !important;
+      transform: translateX(-50%) translateY(0%) !important;
+  background: white;
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 20px;
+  width: 160px; }
+  .btn-delete input {
+    cursor: pointer; }
+  .btn-delete:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
@@ -726,6 +795,51 @@ body * {
   -ms-transform: translateX(20vw);
       transform: translateX(20vw);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.search-bar-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100px;
+  margin: 0 30%; }
+
+.search-bar {
+  border: 4px solid #fff;
+  border-radius: 40px;
+  height: 40px;
+  width: 60%;
+  top: 30px;
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  background: #44a87d; }
+  .search-bar::-webkit-input-placeholder {
+    color: #fff;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .search-bar:focus::-webkit-input-placeholder {
+    color: transparent;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.edit-container {
+  min-height: 100vh;
+  overflow: scroll;
+  width: 100vw;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.all-recipes {
+  height: 600px;
+  border: 1px solid red;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100vw; }
 
 .temp {
   position: absolute;

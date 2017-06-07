@@ -1,11 +1,24 @@
-function RecipeController(RecipeFactory, $state, $stateParams){
+function RecipeController(RecipeFactory, $state, $stateParams, $window){
   var controller = this;
+
+  // controller.count = $('div').length;
+
+  controller.numItems = function(className) {
+
+ return $window.document.getElementsByClassName(className).length;
+  };
+
+  controller.showIng1 = true;
+  controller.showIng1 = false;
+  controller.toggleIng = function() {
+    controller.showIng1 = !controller.showIng1;
+    controller.showIng2 = !controller.showIng2;
+  };
 
   controller.navActive = false;
   controller.toggleAdminNav = function() {
     controller.navActive = !controller.navActive;
   };
-
 
   controller.checkboxCus = 'all';
   controller.checkboxToggleCus = function(cuisine){
@@ -15,12 +28,19 @@ function RecipeController(RecipeFactory, $state, $stateParams){
   controller.checkboxType = 'all';
   controller.checkboxToggleType = function(type){
     controller.checkboxType = type;
-    console.log(controller.checkboxType);
+  };
+  controller.checkboxType2 = 'all';
+  controller.checkboxToggleType2 = function(type){
+    controller.checkboxType2 = type;
+    console.log(type);
   };
 
-  controller.showIng1 = true;
-  controller.toggleIng = function() {
-    controller.showIng1 = !controller.showIng1;
+  controller.select= function(item) {
+    controller.selected = item;
+  };
+
+  controller.isActive = function(item) {
+    return controller.selected === item;
   };
 
   controller.makeOptions = [5,10,15,20,25,30,40,45,50,55,60];
@@ -116,11 +136,14 @@ function RecipeController(RecipeFactory, $state, $stateParams){
     controller.recipeData.instructions = [{}];
   };
 
+  controller.navOn = function() {
+    controller.navActive = true;
+  };
 }
 
 
 
-RecipeController.$inject = ['RecipeFactory', '$state', '$stateParams'];
+RecipeController.$inject = ['RecipeFactory', '$state', '$stateParams', '$window'];
 angular
   .module('myApp')
   .controller('RecipeController', RecipeController);

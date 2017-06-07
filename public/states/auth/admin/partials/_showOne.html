@@ -4,7 +4,7 @@
       ng-init="recipe.getRecipe()"
       ng-class="{'navActiveMain': recipe.navActive}"
       ng-click="recipe.navActive = false">
-      
+
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
@@ -171,4 +171,4 @@
 </form>
 
 
-<!-- <deletebtn cntr="recipe.deleteRecipe" recipeid="recipe.selectedRecipe.recipe._id"></deletebtn> -->
+<deletebtn cntr="recipe.deleteRecipe" recipeid="recipe.selectedRecipe.recipe._id" class="btn-delete"></deletebtn>

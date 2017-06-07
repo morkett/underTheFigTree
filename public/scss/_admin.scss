@@ -11,7 +11,7 @@
   @include flex($justify: flex-start);
   font-family: 'Open Sans', sans-serif;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
-
+  overflow-y: scroll;
 
 
 
@@ -372,6 +372,30 @@
   }
 }
 
+.filter-label {
+  @include flex($direction:row,$justify:space-between);
+  border: 1px solid red;
+  
+
+}
+
+.btn-filter {
+  position: relative;
+  height: 20px;
+  width: 20px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  @include flex;
+  span {
+    height: 13px;
+    width: 13px;
+    background: #fff;
+    border-radius: 20px;
+    display: block;
+  }
+
+}
+
 .add-del-btns {
   width: 30vw;
   background: #fff;
@@ -430,6 +454,34 @@
 
   input {
     cursor: pointer;
+  }
+
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  }
+}
+
+.btn-delete {
+    @include flex($direction: row, $justify:space-around);
+  position: absolute;
+  top: auto;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(0%)!important;
+  background: rgba(299,299,299,1);
+  border-radius: 2px;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  height: 20px;
+    width: 160px;
+
+
+  input {
+    cursor: pointer;
+
   }
 
   &:hover {
@@ -548,8 +600,51 @@
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+.search-bar-container {
+  @include flex($justify:flex-start);
+  width: 40%;
+  height: 100px;
+  margin: 0 30%;
+}
 
+.search-bar {
+  border: 4px solid #fff;
+  border-radius: 40px;
+  height: 40px;
+  width: 60%;
+  top: 30px;
 
+  text-align: center;
+  color: #fff;
+  position: absolute;
+  background: rgba(68,168,125,1);
+
+  &::-webkit-input-placeholder {
+    color: #fff;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  }
+  &:focus::-webkit-input-placeholder{
+    color: transparent;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+  }
+}
+
+.edit-container {
+  min-height: 100vh;
+  overflow: scroll;
+  width: 100vw;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.all-recipes {
+  height: 600px;
+  border: 1px solid red;
+  position: fixed;
+  overflow-y: scroll;
+  width: 100vw;
+}
 
 //dev
 .temp {

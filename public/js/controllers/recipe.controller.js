@@ -1,12 +1,20 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
-
-  controller.showAll = false;
-  controller.ShowAll = function(){
-    controller.showAll = !controller.showAll;
+  controller.checkboxCus = 'all';
+  controller.checkboxToggleCus = function(cuisine){
+    controller.checkboxCus = cuisine;
   };
 
+  controller.checkboxType = 'all';
+  controller.checkboxToggleType = function(type){
+    controller.checkboxType = type;
+    console.log(controller.checkboxType);
+  };
 
+  controller.showIng1 = true;
+  controller.toggleIng = function() {
+    controller.showIng1 = !controller.showIng1;
+  };
 
   controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
 
@@ -18,26 +26,6 @@ function RecipeController(RecipeFactory, $state, $stateParams){
 
   controller.isLiveOptions = ['yes', 'no'];
 
-
-  controller.allowDelete = false;
-  controller.canDeleteToggle = function(){
-    controller.allowDelete = !controller.allowDelete;
-  };
-
-  controller.allowRemoveIng = false;
-  controller.canRemoveIng = function(){
-    controller.allowRemoveIng = !controller.allowRemoveIng;
-  };
-
-  controller.allowRemoveIng2 = false;
-  controller.canRemoveIng2 = function(){
-    controller.allowRemoveIng2 = !controller.allowRemoveIng2;
-  };
-
-  controller.allowRemoveInst = false;
-  controller.canRemoveInst = function(){
-    controller.allowRemoveInst = !controller.allowRemoveInst;
-  };
 
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(
@@ -104,8 +92,8 @@ function RecipeController(RecipeFactory, $state, $stateParams){
   controller.getRecipeByCuisine = function(cat) {
     RecipeFactory.getRecipeByCuisine(cat).then(
      function success(success) {
-       console.log('success getting specific recipe by cuisine');
-       controller.cuisine = success.data;
+       console.log('success getting specific recipe by cuisine', success.data);
+       controller.results = success.data;
      },
      function error(error) {
        console.warn('Could not get specific cuisine: ', error);

@@ -17,6 +17,8 @@
       <script src="//cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
       <!-- JS files --->
       <script src="js/app.js"></script>
       <script src="js/factories/auth.factory.js" charset="utf-8"></script>
@@ -28,26 +30,10 @@
 
       <!-- directives -->
       <script src="js/directives/admin/allRecipes/allRecipes.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/indian/indian.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/cambodian/cambodian.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/pakistani/pakistani.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/english/english.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/italian/italian.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/chinese/chinese.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/cuisine/thai/thai.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/baking/baking.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/beef/beef.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/chicken/chicken.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/fish/fish.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/lamb/lamb.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/mince/mince.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/pork/pork.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/prawns/prawns.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/seafood/seafood.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/sides/sides.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/starters/starters.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/recipeData/type/veg/veg.directive.js" charset="utf-8"></script>
-      <script src="js/directives/admin/filter/filter.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/remove/remove.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/add/add.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/delete/delete.directive.js" charset="utf-8"></script>
+      <script src="js/directives/admin/btns/recipeFilter/checkbox.cuisine.directive.js" charset="utf-8"></script>
 
       <!--build:css css/styles.min.css-->
       <link type="text/css" rel="stylesheet" href="css/styles.css" />
@@ -57,7 +43,6 @@
   </head>
 
   <body>
-  <h1>Under The Fig Tree - Dev</h1>
   <section ng-controller="RecipeController as recipe" ui-view>
 
   </section>

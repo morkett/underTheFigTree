@@ -4,11 +4,11 @@
   <section class="login" ng-if="!auth.user">
     <div>
       Email:
-      <input type="text" ng-model="auth.email">
+      <input autocomplete=off type="text" ng-model="auth.email">
     </div>
     <div>
       Password:
-      <input type="password" ng-model="auth.password">
+      <input autocomplete=off type="password" ng-model="auth.password">
     </div>
     <button ng-click="auth.signIn()">Sign In</button>
     <p ng-if="auth.error">

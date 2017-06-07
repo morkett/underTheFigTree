@@ -89,7 +89,7 @@ body * {
 .info .ng-dirty {
   font-weight: bold;
   font-style: italic;
-  
+
 }
 .admin-ing .ng-dirty {
   font-weight: bold;
@@ -98,6 +98,22 @@ body * {
 .admin-inst .ng-dirty {
   font-weight: bold;
   font-style: italic;
+}
+
+.admin-form-create {
+  .info .ng-dirty {
+    font-weight: bold;
+    // font-style: italic;
+
+  }
+  .admin-ing .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+  .admin-inst .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
 }
 @import "admin";
 

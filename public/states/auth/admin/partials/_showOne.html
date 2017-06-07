@@ -1,4 +1,8 @@
-<form class="admin-form" name="admin-form" ng-submit="recipe.updateRecipe()" ng-init="recipe.getRecipe()">
+<form class="admin-form"
+      name="admin-form"
+      ng-submit="recipe.updateRecipe()"
+      ng-init="recipe.getRecipe()"
+      ng-class="{'navActiveMain': recipe.navActive}">
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">

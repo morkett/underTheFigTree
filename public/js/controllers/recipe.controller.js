@@ -1,5 +1,12 @@
 function RecipeController(RecipeFactory, $state, $stateParams){
   var controller = this;
+
+  controller.navActive = false;
+  controller.toggleAdminNav = function() {
+    controller.navActive = !controller.navActive;
+  };
+
+
   controller.checkboxCus = 'all';
   controller.checkboxToggleCus = function(cuisine){
     controller.checkboxCus = cuisine;

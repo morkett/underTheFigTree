@@ -26,10 +26,12 @@ var RecipeSchema = mongoose.Schema({
     instruction: {type: String}
   }],
   notes: {type: String},
-  isLive: {type: String, default: 'no', required: true}
-},{
-  timestamps: true,
-  versionKey: false
-});
+  isLive: {type: String, default: 'no', required: true},
+  img: {type: Array}
+},
+  {
+    timestamps: true,
+    versionKey: false
+  });
 
 module.exports = mongoose.model('Recipe', RecipeSchema);

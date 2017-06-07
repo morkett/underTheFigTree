@@ -84,9 +84,26 @@ body * {
   }
 }
 
+
+
+.info .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+  
+}
+.admin-ing .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+.admin-inst .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+@import "admin";
+
+
 //dev
 script#__bs_script__ {
     opacity: 0;
     height: 0;
 }
-@import "admin";

@@ -118,7 +118,11 @@ function seed () {
               unit: 'tsp',
               name: 'pepper'}
           ],
-          isLive: 'no'
+          isLive: 'no',
+          img: [
+            'food1.png',
+            'food2.png'
+          ]
         },
         {
           title: 'green beans with toasted mustard and garlic',

@@ -133,9 +133,17 @@ body * {
   .ing-all li {
     margin: 0 1px; }
 
-script#__bs_script__ {
-  opacity: 0;
-  height: 0; }
+.info .ng-dirty {
+  font-weight: bold;
+  font-style: italic; }
+
+.admin-ing .ng-dirty {
+  font-weight: bold;
+  font-style: italic; }
+
+.admin-inst .ng-dirty {
+  font-weight: bold;
+  font-style: italic; }
 
 section {
   z-index: 1;
@@ -202,11 +210,14 @@ section {
   .info:hover {
     box-shadow: none; }
   .info .info-inner {
-    height: 60%;
+    height: 63.5%;
     width: 100%;
+    padding-top: 50px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: scroll;
+    position: relative; }
     .info .info-inner:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
@@ -216,6 +227,8 @@ section {
       background: #fff;
       width: 35vw;
       text-align: center;
+      -ms-transform: translateY(-50px);
+          transform: translateY(-50px);
       font-weight: 600;
       padding-top: 10px;
       font-size: 20px;
@@ -232,6 +245,37 @@ section {
         width: 100%;
         background: rgba(0, 0, 0, 0.1);
         z-index: -1; }
+    .info .info-inner select {
+      width: 100%;
+      text-align: center;
+      text-align-last: center;
+      height: 40px;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      z-index: 20;
+      cursor: pointer; }
+    .info .info-inner .info-makes {
+      height: 10px; }
+    .info .info-inner .drop-down:before {
+      content: "";
+      display: block;
+      position: absolute;
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+      right: 10px;
+      height: 20px;
+      width: 20px;
+      background: red;
+      background: url("/images/arrow_drop.png");
+      background-size: contain;
+      z-index: 10; }
+    .info .info-inner option {
+      text-align: center; }
   .info .info-inner-sml {
     height: 35%;
     width: 100%;
@@ -241,6 +285,16 @@ section {
     .info .info-inner-sml:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    .info .info-inner-sml img {
+      height: 100px;
+      width: 100px; }
+    .info .info-inner-sml .info-img {
+      vertical-align: top;
+      display: inline-block;
+      width: auto;
+      height: 40px;
+      -ms-transform: translateY(-20px);
+          transform: translateY(-20px); }
 
 .recipe-title {
   position: fixed;
@@ -248,10 +302,12 @@ section {
   background: white;
   width: 35vw;
   text-align: center;
+  -ms-transform: translateY(-50px);
+      transform: translateY(-50px);
   font-weight: 600;
   padding-top: 10px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  z-index: 5;
+  z-index: 25;
   text-transform: uppercase; }
   .recipe-title:after {
     content: "";
@@ -264,10 +320,12 @@ section {
     background: rgba(0, 0, 0, 0.1);
     z-index: -1; }
   .recipe-title input {
-    font-size: 20px;
+    font-size: 15px;
     width: 100%;
     height: 100%;
-    text-align: center; }
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize; }
 
 .admin-ing,
 .admin-inst {
@@ -335,13 +393,13 @@ section {
     top: 0;
     left: 0;
     height: 30px;
-    -ms-flex: .5;
-        flex: .5;
+    -ms-flex: 0.5;
+        flex: 0.5;
     text-align: center; }
   .admin-ing .flex,
   .admin-inst .flex {
-    -ms-flex: .7;
-        flex: .7; }
+    -ms-flex: 0.7;
+        flex: 0.7; }
 
 .admin-inst {
   display: block;
@@ -373,8 +431,8 @@ section {
   left: 0;
   background: #fff;
   width: 100%;
-  -ms-flex: .3;
-      flex: .3; }
+  -ms-flex: 0.3;
+      flex: 0.3; }
   .ing-inner-container input {
     width: 80%;
     background-color: #fff;
@@ -383,8 +441,8 @@ section {
     text-align: center; }
 
 .ing-name {
-  -ms-flex: .7;
-      flex: .7; }
+  -ms-flex: 0.7;
+      flex: 0.7; }
 
 .inst-container {
   border-bottom: none;
@@ -580,3 +638,13 @@ section {
     outline: none;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+
+.ing-inner-img {
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+script#__bs_script__ {
+  opacity: 0;
+  height: 0; }

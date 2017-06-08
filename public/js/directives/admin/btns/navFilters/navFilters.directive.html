@@ -2,7 +2,7 @@
   <span></span>
 </span>
 <h2>Filter by Cuisine</h2>
-<div ng-repeat="cuisine in recipe.cuisineOptions track by $index">
+<div ng-repeat="cuisine in recipe.cuisineOptions track by $index" ng-if="recipe.cuisineOptions[$index] !== '-' ">
   <div class="filter-label ">
   <h3>{{cuisine}}</h3>
   <label for="{{cuisine}}" class="btn-filter {{cuisine}}"><span ng-if="recipe.checkboxCus === recipe.cuisineOptions[$index]"></span></label>

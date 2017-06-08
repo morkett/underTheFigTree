@@ -1,0 +1,29 @@
+<span class="nav-reveal nav-reveal-filter"
+      ng-class="{'navActiveBtn': recipe.navActive}"
+      ng-click="recipe.toggleAdminNav()"
+      ng-if="recipe.navActive === false"
+      >filters</span>
+<span class="nav-reveal"
+      ng-class="{'navActiveBtn': recipe.navActive}"
+      ng-click="recipe.toggleAdminNav()"
+      ng-if="'admin-showOne'| isState"
+      >More</span>
+<span class="nav-reveal"
+      ng-class="{'navActiveBtn': recipe.navActive}"
+      ng-click="recipe.toggleAdminNav()"
+      ng-if="'create'| isState"
+      >More</span>
+
+      <a ng-if="'create' | isState" ui-sref="edit" class="nav-reveal nav-btns">show all</a>
+      <a ng-if="'admin-showOne'| isState" ui-sref="edit" class="nav-reveal nav-btns">show all</a>
+
+      <a ng-if="'admin-showOne'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
+      <a ng-if="'edit'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
+<nav class="admin-nav" ng-class="{'navActive': recipe.navActive}">
+  <!-- <h1>Under the Figtree - Admin</h1> -->
+
+
+<filter ng-if="'edit'| isState"></filter>
+
+</nav>
+<div ui-view="admin-main" ng-init="recipe.showIng1 = true; recipe.navActive = false" class="admin-main" ng-click="recipe.navActive = false"></div>

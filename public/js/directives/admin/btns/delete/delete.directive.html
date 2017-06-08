@@ -1,0 +1,4 @@
+
+<div ng-click="toggleDelete()" ng-if="!allowDelete" class="btn-delete">Delete</div>
+<div ng-if="allowDelete" ng-click="removeEmptyObj(); toggleDelete()" class="btn-delete-yes">Yes</div>
+<div ng-click="toggleDelete()" ng-if="allowDelete" class="btn-delete-cancel">Cancel</div>

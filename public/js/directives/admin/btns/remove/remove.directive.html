@@ -1,0 +1,9 @@
+
+<div ng-click="toggleRemove()" ng-if="!allowRemove" class="btn-inner">-
+<!-- <p ng-if="allowRemove">Are You Sure You Want To Remove This?</p> -->
+</div>
+
+<div class="btn-inner" ng-if="allowRemove">
+<div ng-click="removeEmptyObj(); toggleRemove()">Delete</div>
+<div ng-click="toggleRemove()" >Cancel</div>
+</div>

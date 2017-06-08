@@ -1,0 +1,67 @@
+<div ng-init="recipe.getRecipes(); recipe.navOn()" id="allRes">
+
+  <!-- <p ng-if="recipe.numItems('count') !== 0">No of Recipes: {{recipe.numItems('count')}}</p> -->
+<div
+  ng-model = "searchRecipe"
+  ng-repeat="r in recipe.results | filter:searchRecipe| orderBy:'title' track by $index"
+  ng-class="{'count': recipe.checkboxCus === r.cuisine
+  || recipe.checkboxType === r.type
+  || recipe.checkboxType2 === r.type2
+  ||recipe.checkboxCus === 'all'}"
+  ng-if="recipe.checkboxCus === r.cuisine
+       || recipe.checkboxCus === 'all'
+       || recipe.checkboxType === r.type
+       ||recipe.checkboxType === 'all'
+       || recipe.checkboxType2 === r.type2
+       ||  recipe.checkboxType2 === 'all' ">
+
+<div class="allRecipes-container">
+  <div
+       class="title">
+  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a></h2>
+  </div>
+  <div class="recipe-details-container">
+
+
+  <p><strong>cuisine</strong> {{r.cuisine}}</p>
+  <p><strong>serves</strong> {{r.serves}}</p>
+  <p ng-if="r.makes"><strong>makes</strong> {{r.makes}}</p>
+  <p><strong>type</strong> {{r.type}}</p>
+  <p ng-if="r.type2"><strong>type2:</strong> {{r.type2}}</p>
+  </div>
+
+</div>
+
+<div class="recipe-headers">
+  <h3>ingredients</h3>
+  <h3 ng-if="r.ingredients_2[$index]">ingredients_2</h3>
+  <h3>instructions</h3>
+
+</div>
+
+<div class="sub-info-container">
+  <div class="sub-info">
+    <ul class="ing-all"
+        ng-repeat="ingredient in r.ingredients track by $index">
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+  </div>
+  <div class="sub-info" ng-if="r.ingredients_2[$index]">
+    <ul class="ing-all"
+        ng-repeat="ingredient in r.ingredients_2 track by $index">
+      <li>{{ingredient.title}}</li>
+      <li>{{ingredient.qty}}</li>
+      <li>{{ingredient.unit}}</li>
+      <li>{{ingredient.name}}</li>
+    </ul>
+</div>
+<div class="sub-info">
+    <ul ng-repeat="instruction in r.instructions track by $index">
+      <li >{{instruction.instruction}}</li>
+    </ul>
+</div>
+</div>
+</div>
+</div>

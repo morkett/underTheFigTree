@@ -1,0 +1,123 @@
+@import "resets";
+@import "config";
+@import "mixins";
+
+body {
+  @include flex;
+}
+
+.home-wrap {
+  // height: 100vh;
+  width: 100vw;
+  border: $border-dev-red;
+}
+
+.recipe {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+// STYLES GO HERE //
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+}
+
+.home-wrap {
+  width: 100vw;
+  border: 1px solid #d32f2f;
+}
+
+.recipe {
+  border-bottom: 2px solid black;
+  margin-bottom: 20px;
+}
+/* FIXME: REMOVE DISPLAY BLOCK */
+// body {
+//   padding-left: 50px;
+// }
+
+body * {
+  display: block;
+}
+
+.addfields {
+  cursor: pointer;
+  border: 1px solid green;
+  background: green;
+}
+
+.createBtn {
+  background: blue;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.ing-input {
+  display: inline-block;
+}
+// .ing-container{
+//   display: flex;
+//   flex-direction: row;
+// }
+// .ing-inner-container{
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.ing-all {
+  @include flex($direction: row, $justify:flex-start);
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0 1px;
+  }
+}
+
+.info .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-ing .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-inst .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-form-create {
+  .info .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .admin-ing .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .admin-inst .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+}
+@import "admin";
+//dev
+script#__bs_script__ {
+  opacity: 0;
+  height: 0;
+}

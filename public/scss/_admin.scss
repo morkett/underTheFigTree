@@ -836,6 +836,8 @@ strong {
   background: rgba(68,168,125,1);
 }
 
+
+
 .nav-reveal-filter {
   opacity: 0;
   animation: fade-in 0.3s cubic-bezier(.25,.8,.25,1) 0.3s forwards;
@@ -875,6 +877,8 @@ strong {
     color: #fff;
     text-decoration: none;
   }
+
+
 }
 
 .close-nav {
@@ -986,4 +990,10 @@ strong {
   to {
     opacity: 1;
   }
+}
+
+.btn-showAll-edit {
+  transform: translateX(-100%) translateY(-50%)!important;
+  transform: translateX(calc(-100% - 5px)) translateY(-50%)!important;
+
 }

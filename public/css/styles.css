@@ -1302,6 +1302,12 @@ strong {
   to {
     opacity: 1; } }
 
+.btn-showAll-edit {
+  -ms-transform: translateX(-100%) translateY(-50%) !important;
+      transform: translateX(-100%) translateY(-50%) !important;
+  -ms-transform: translateX(calc(-100% - 5px)) translateY(-50%) !important;
+      transform: translateX(calc(-100% - 5px)) translateY(-50%) !important; }
+
 script#__bs_script__ {
   opacity: 0;
   height: 0; }

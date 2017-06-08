@@ -288,7 +288,10 @@ function seed () {
           ],
           instructions: [
             {
-
+              instruction: 'All ingredients + enough water → mix'
+            },
+            {
+              instruction: 'Pan + oil + bhajiya → fry'
             }
           ],
           ingredients_2: [{}],

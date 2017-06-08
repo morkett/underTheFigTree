@@ -22,8 +22,9 @@
                 name="new-recipe-cuisine"
                 ng-model="recipe.recipeData.cuisine"
                 ng-options="r for r in recipe.cuisineOptions"
-                placholder="cuisine">
-          <option value="">- cuisine -</option>
+                placholder="cuisine"
+                required>
+          <option value="" disabled>- cuisine -</option>
         </select>
       </div>
 
@@ -43,8 +44,9 @@
         <select id="new-recipe-makes"
                 name="new-recipe-makes"
                 ng-model="recipe.recipeData.makes"
-                ng-options="r for r in recipe.makeOptions">
-          <option value="" >-  makes -</option>
+                ng-options="r for r in recipe.makeOptions"
+                required>
+          <option value="" disabled>-  makes -</option>
         </select>
       </div>
 
@@ -53,8 +55,9 @@
         <select id="new-recipe-type"
                 name="new-recipe-type"
                 ng-model="recipe.recipeData.type"
-                ng-options="r for r in recipe.typeOptions1">
-          <option value="">- type -</option>
+                ng-options="r for r in recipe.typeOptions1"
+                required>
+          <option value="" disabled>- type -</option>
         </select>
       </div>
 
@@ -63,8 +66,9 @@
         <select id="new-recipe-type2"
                 name="new-recipe-type2"
                 ng-model="recipe.recipeData.type2"
-                ng-options="r for r in recipe.typeOptions2">
-          <option value="" >- secondary type -</option>
+                ng-options="r for r in recipe.typeOptions2"
+                required>
+          <option value="" disabled>- secondary type -</option>
         </select>
       </div>
 

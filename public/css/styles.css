@@ -925,14 +925,14 @@ body * {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
 .all-recipes {
-  height: 600px;
+  height: 700px;
   position: fixed;
   overflow-y: scroll;
   width: 65vw; }
 
 .edit-container {
   width: 100vw;
-  padding-top: 100px;
+  padding-top: 130px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
@@ -983,7 +983,8 @@ body * {
     -ms-flex-direction: column;
         flex-direction: column;
     top: 0;
-    left: 0; }
+    left: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
     .allRecipes-container .title a {
       color: #292929;
       text-decoration: none; }
@@ -1006,7 +1007,8 @@ body * {
   margin-bottom: 3px;
   background: #e0e0e0;
   background: #e0e0e0;
-  height: auto; }
+  height: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .sub-info-container {
   display: -ms-flexbox;
@@ -1054,9 +1056,33 @@ strong {
   margin-right: 5px;
   background: #fff;
   -ms-flex: 1;
-      flex: 1; }
+      flex: 1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .sub-info ul {
-    padding: 10px; }
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    top: 0;
+    left: 0; }
+  .sub-info li {
+    font-size: 15px;
+    -ms-flex: .1;
+        flex: .1;
+    text-align: left; }
+  .sub-info li:nth-child(2) {
+    -ms-flex: .2;
+        flex: .2; }
+  .sub-info li:last-of-type {
+    -ms-flex: 1;
+        flex: 1;
+    text-align: left; }
 
 .sub-info:last-of-type {
   margin-right: 0; }
@@ -1197,6 +1223,12 @@ strong {
     left: 0; }
   .recipe-headers h3:last-of-type {
     margin-right: 0; }
+
+.counter {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px; }
 
 script#__bs_script__ {
   opacity: 0;

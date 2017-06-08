@@ -42,14 +42,14 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     return controller.selected === item;
   };
 
-  controller.makeOptions = [5,10,15,20,25,30,40,45,50,55,60];
-  controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
+  controller.makeOptions = ['-',5,10,15,20,25,30,40,45,50,55,60];
+  controller.serveOptions = ['-',1,2,3,4,5,6,7,8,9,10];
 
   controller.cuisineOptions = ['-','cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
-  controller.typeOptions2 = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
+  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
 
-  controller.typeOptions1 = ['starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
+  controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
 

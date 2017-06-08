@@ -709,7 +709,9 @@ body * {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
-.btn-delete, .btn-delete-cancel, .btn-delete-yes {
+.btn-delete,
+.btn-delete-cancel,
+.btn-delete-yes {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
@@ -740,14 +742,19 @@ body * {
   color: #fff;
   font-size: 15px;
   font-weight: 400; }
-  .btn-delete input, .btn-delete-cancel input, .btn-delete-yes input {
+  .btn-delete input,
+  .btn-delete-cancel input,
+  .btn-delete-yes input {
     cursor: pointer;
     color: #fff; }
-  .btn-delete:hover, .btn-delete-cancel:hover, .btn-delete-yes:hover {
+  .btn-delete:hover,
+  .btn-delete-cancel:hover,
+  .btn-delete-yes:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
-.btn-delete-cancel, .btn-delete-yes {
+.btn-delete-cancel,
+.btn-delete-yes {
   display: block;
   width: 100px;
   text-align: center;
@@ -948,6 +955,12 @@ body * {
       flex-direction: column;
   top: 0;
   left: 0; }
+  .allRecipes-container p {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    padding-bottom: 5px;
+    text-transform: capitalize; }
   .allRecipes-container .title {
     background: #fff;
     width: 100%;
@@ -955,7 +968,27 @@ body * {
     text-align: center;
     background: #e0e0e0;
     background: #e0e0e0;
-    height: 30px; }
+    height: 30px;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    top: 0;
+    left: 0; }
+    .allRecipes-container .title a {
+      color: #292929;
+      text-decoration: none; }
+      .allRecipes-container .title a:hover, .allRecipes-container .title a:visited {
+        color: #292929; }
 
 .recipe-details-container {
   display: -ms-flexbox;
@@ -972,7 +1005,8 @@ body * {
   background: #fff;
   margin-bottom: 3px;
   background: #e0e0e0;
-  background: #e0e0e0; }
+  background: #e0e0e0;
+  height: auto; }
 
 .sub-info-container {
   display: -ms-flexbox;
@@ -990,10 +1024,31 @@ body * {
   .sub-info-container h3 {
     background: #e0e0e0;
     background: #e0e0e0;
-    height: 30px; }
+    height: 30px;
+    text-transform: capitalize;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    top: 0;
+    left: 0; }
+
+strong {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+  background: #e0e0e0;
+  background: #e0e0e0;
+  height: 100%;
+  width: 100%; }
 
 .sub-info {
-  min-height: 30vw;
+  height: 55vh;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-right: 5px;
@@ -1065,7 +1120,7 @@ body * {
   text-decoration: none;
   left: auto;
   top: 5%;
-  right: 0%;
+  right: 0;
   -ms-transform: translateX(0) translateY(-50%);
       transform: translateX(0) translateY(-50%);
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -1107,6 +1162,41 @@ body * {
       background: #fff;
       -ms-transform: rotate(-90deg);
           transform: rotate(-90deg); }
+
+.recipe-headers {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0; }
+  .recipe-headers h3 {
+    margin-right: 5px;
+    background: #fff;
+    -ms-flex: 1;
+    flex: 1;
+    background: #e0e0e0;
+    background: #e0e0e0;
+    height: 30px;
+    text-transform: capitalize;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    top: 0;
+    left: 0; }
+  .recipe-headers h3:last-of-type {
+    margin-right: 0; }
 
 script#__bs_script__ {
   opacity: 0;

@@ -23,19 +23,24 @@
   <div class="recipe-details-container">
 
 
-  <strong>{{r.length}}</strong>
-  <p><strong>cuisine:</strong> {{r.cuisine}}</p>
-  <p><strong>serves:</strong> {{r.serves}}</p>
-  <p ng-if="r.makes"><strong>makes:</strong> {{r.makes}}</p>
-  <p><strong>type:</strong> {{r.type}}</p>
+  <p><strong>cuisine</strong> {{r.cuisine}}</p>
+  <p><strong>serves</strong> {{r.serves}}</p>
+  <p ng-if="r.makes"><strong>makes</strong> {{r.makes}}</p>
+  <p><strong>type</strong> {{r.type}}</p>
   <p ng-if="r.type2"><strong>type2:</strong> {{r.type2}}</p>
   </div>
 
 </div>
 
+<div class="recipe-headers">
+  <h3>ingredients</h3>
+  <h3 ng-if="r.ingredients_2[$index]">ingredients_2</h3>
+  <h3>instructions</h3>
+
+</div>
+
 <div class="sub-info-container">
   <div class="sub-info">
-  <h3>ingredients:</h3>
     <ul class="ing-all"
         ng-repeat="ingredient in r.ingredients track by $index">
       <li>{{ingredient.qty}}</li>
@@ -44,7 +49,6 @@
     </ul>
   </div>
   <div class="sub-info" ng-if="r.ingredients_2[$index]">
-  <h3>ingredients_2:</h3>
     <ul class="ing-all"
         ng-repeat="ingredient in r.ingredients_2 track by $index">
       <li>{{ingredient.title}}</li>
@@ -54,7 +58,6 @@
     </ul>
 </div>
 <div class="sub-info">
-  <h3>instructions:</h3>
     <ul ng-repeat="instruction in r.instructions track by $index">
       <li >{{instruction.instruction}}</li>
     </ul>

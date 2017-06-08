@@ -170,7 +170,7 @@ function seed () {
         },
         {
           title: 'grilled lamb kebabs (mutton tikka)',
-          cuisine: '',
+          cuisine: '-',
           serves: 4,
           type: 'starters',
 

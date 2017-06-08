@@ -800,7 +800,7 @@ function seed () {
             {
               qty: '1/8' ,
               unit: 'cup',
-              name: '1/8 cup gorgonzola,/mozzarella/ parmesan'
+              name: 'gorgonzola,/mozzarella/ parmesan'
             }
           ],
           instructions: [

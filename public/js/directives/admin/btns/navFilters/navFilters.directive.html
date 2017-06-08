@@ -1,50 +1,53 @@
+<span class="close-nav" ng-click="recipe.toggleAdminNav()">
+  <span></span>
+</span>
 <h2>Filter by Cuisine</h2>
 <div ng-repeat="cuisine in recipe.cuisineOptions track by $index">
-  <div class="filter-label">
-  <h2>{{cuisine}}</h2>
+  <div class="filter-label ">
+  <h3>{{cuisine}}</h3>
   <label for="{{cuisine}}" class="btn-filter {{cuisine}}"><span ng-if="recipe.checkboxCus === recipe.cuisineOptions[$index]"></span></label>
   </div>
-  <input autocomplete="off" type="radio" name="select" id="{{cuisine}}" ng-click="recipe.checkboxToggleCus(recipe.cuisineOptions[$index]); recipe.checkboxToggleType('null'); recipe.checkboxToggleType2('null')" />
+  <input autocomplete="off" type="radio" name="select" id="{{cuisine}}" class="navFilters" ng-click="recipe.checkboxToggleCus(recipe.cuisineOptions[$index]); recipe.checkboxToggleType('null'); recipe.checkboxToggleType2('null')" />
 </div>
 
 
 <div class="filter-label">
-<h2>all cuisine</h2>
+<h3>all cuisine</h3>
 <label for="allCuisine" class="btn-filter"><span ng-if="recipe.checkboxCus === 'all'"></span></label>
 </div>
-<input autocomplete="off" type="radio" name="select" id="allCuisine" ng-click="recipe.checkboxToggleCus('all'); recipe.checkboxToggleType('null');recipe.checkboxToggleType2('null')" />
+<input autocomplete="off" type="radio" name="select" id="allCuisine" class="navFilters" ng-click="recipe.checkboxToggleCus('all'); recipe.checkboxToggleType('null');recipe.checkboxToggleType2('null')" />
 
 
 <h2>Filter by Type</h2>
 
 <div ng-repeat="type in recipe.typeOptions1 track by $index">
-  <div class="filter-label">
-  <h2>{{type}}</h2>
+  <div class="filter-label ">
+  <h3>{{type}}</h3>
   <label for="{{type}}" class="btn-filter"><span ng-if="recipe.checkboxType === recipe.typeOptions1[$index]"></span></label>
   </div>
-  <input autocomplete="off" type="radio" name="select" id="{{type}}" ng-click="recipe.checkboxToggleType(recipe.typeOptions1[$index]);recipe.checkboxToggleCus('null');recipe.checkboxToggleType2('null')" />
+  <input autocomplete="off" type="radio" name="select" id="{{type}}" class="navFilters" ng-click="recipe.checkboxToggleType(recipe.typeOptions1[$index]);recipe.checkboxToggleCus('null');recipe.checkboxToggleType2('null')" />
 </div>
 
 
 <div class="filter-label">
-<h2>all type</h2>
+<h3>all type</h3>
 <label for="allType" class="btn-filter"><span ng-if="recipe.checkboxType === 'all'"></span></label>
 </div>
-<input autocomplete="off" type="radio" name="select" id="allType" ng-click="recipe.checkboxToggleType('all'); recipe.checkboxToggleCus('null');recipe.checkboxToggleType2('null')" />
+<input autocomplete="off" type="radio" name="select" id="allType" class="navFilters" ng-click="recipe.checkboxToggleType('all'); recipe.checkboxToggleCus('null');recipe.checkboxToggleType2('null')" />
 
 
-
+<h2>Filter by Type2</h2>
 <div ng-repeat="type2 in recipe.typeOptions2 track by $index">
   <div class="filter-label">
-  <h2>{{type2}}</h2>
-  <label for="{{type2}}" class="btn-filter"><span ng-if="recipe.checkboxType2 === recipe.typeOptions2[$index]"></span></label>
+  <h3>{{type2}}</h3>
+  <label for="{{type2}}" class="btn-filter "><span ng-if="recipe.checkboxType2 === recipe.typeOptions2[$index]"></span></label>
   </div>
-  <input autocomplete="off" type="radio" name="select" id="{{type2}}" ng-click="recipe.checkboxToggleType2(recipe.typeOptions2[$index]);recipe.checkboxToggleCus('null');recipe.checkboxToggleType('null')" />
+  <input autocomplete="off" type="radio" name="select" id="{{type2}}" ng-click="recipe.checkboxToggleType2(recipe.typeOptions2[$index]);recipe.checkboxToggleCus('null');recipe.checkboxToggleType('null')" class="navFilters"/>
 </div>
 
 
 <div class="filter-label">
-<h2>all type2</h2>
+<h3>all type2</h3>
 <label for="allType2" class="btn-filter"><span ng-if="recipe.checkboxType2 === 'all'"></span></label>
 </div>
 <input autocomplete="off" type="radio" name="select" id="allType2" ng-click="recipe.checkboxToggleType2('all'); recipe.checkboxToggleCus('null');recipe.checkboxToggleType('null')" />

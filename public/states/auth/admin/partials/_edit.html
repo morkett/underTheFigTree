@@ -2,15 +2,15 @@
 
 <!-- <cuisine cntr="recipe.getRecipeByCuisine" results="recipe.results" cuisine="indian"></cuisine> -->
 
-<div class="edit-container" ng-class="{'navActiveMain': recipe.navActive}">
+<div class="edit-container"   ng-class="{'navActiveMainEdit': recipe.navActive}">
   <div class="search-bar-container">
     <input autocomplete="off"
            type="search"
            ng-model="searchRecipe"
            placeholder="search"
-           class="search-bar">
+           class="search-bar"
+           id="search">
   </div>
-  <h2>All Recipes: </h2>
 
 <recipes class="all-recipes"></recipes>
 

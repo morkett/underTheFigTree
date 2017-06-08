@@ -685,6 +685,7 @@
   }
 
   .title {
+    position: relative;
     background: #fff;
     width: 100%;
     margin-bottom: 3px;
@@ -921,6 +922,28 @@ strong {
   margin-bottom: 10px;
 }
 
-.test {
-  // height: auto;
+.isLive {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  border: 1px solid grey;
+  background: #00c853;
+  border-radius: 50%;
+  box-shadow: rgba(0, 200, 83, 1) 0 0 5px;
+}
+
+.notLive {
+  background: lightgrey;
+  box-shadow: none;
+}
+
+.isLiveEdit {
+  position: relative;
+  display: block;
+  transform: translateY(-100%) translateX(400%);
+  right: 0;
+
 }

@@ -18,7 +18,7 @@
       </div>
 
       <div class="ing-inner-container">
-        <label for="new-recipe-cuisine">cuisine:</label>
+        <label for="new-recipe-cuisine">Cuisine</label>
         <span class="drop-down"></span>
         <select id="new-recipe-cuisine"
                 name="new-recipe-cuisine"
@@ -31,7 +31,7 @@
 
 
       <div class="ing-inner-container">
-        <label for="new-recipe-serves">Serves:</label>
+        <label for="new-recipe-serves">Serves</label>
         <span class="drop-down"></span>
         <select id="new-recipe-serves"
                 name="new-recipe-serves"
@@ -43,6 +43,8 @@
       </div>
 
       <div class="ing-inner-container">
+        <label for="new-recipe-makes"> Makes</label>
+
         <span class="drop-down"></span>
         <select id="new-recipe-makes"
                 name="new-recipe-makes"
@@ -54,7 +56,7 @@
       </div>
 
       <div class="ing-inner-container">
-        <label for="new-recipe-type">Type:</label>
+        <label for="new-recipe-type">Type</label>
         <span class="drop-down"></span>
         <select id="new-recipe-type"
                 name="new-recipe-type"
@@ -66,7 +68,7 @@
       </div>
 
       <div class="ing-inner-container">
-        <label for="new-recipe-type2">Secondary Type:</label>
+        <label for="new-recipe-type2">Secondary Type</label>
         <span class="drop-down"></span>
         <select id="new-recipe-type2"
                 name="new-recipe-type2"
@@ -78,7 +80,7 @@
       </div>
 
       <div class="ing-inner-container">
-        <label for="new-recipe-isLive">isLive:</label>
+        <label for="new-recipe-isLive">isLive<span class="isLive isLiveEdit" ng-class="{'notLive': recipe.selectedRecipe.recipe.isLive === 'no' }"></span></label>
         <span class="drop-down"></span>
         <select id="new-recipe-isLive"
                 name="new-recipe-isLive"

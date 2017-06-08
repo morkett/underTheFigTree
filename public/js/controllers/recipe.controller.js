@@ -42,6 +42,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     return controller.selected === item;
   };
 
+  controller.unitsOptions = ['g','cups','ml','tsp', 'tbsp'];
   controller.makeOptions = ['-',5,10,15,20,25,30,40,45,50,55,60];
   controller.serveOptions = ['-',1,2,3,4,5,6,7,8,9,10];
 

@@ -87,7 +87,7 @@ function seed () {
               name: 'garlic'},
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'ginger'},
             {
               qty: '1/2',
@@ -95,23 +95,23 @@ function seed () {
               name: 'lime'},
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'sugar'},
             {
               qty: '3',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'soy sauce'},
             {
               qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'oyster sauce'},
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'fish sauce'},
             {
               qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'ketchup'},
             {
               qty: '3',
@@ -142,7 +142,7 @@ function seed () {
             },
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'butter'
             },
             {
@@ -159,7 +159,7 @@ function seed () {
           instructions:
           [
             {
-              instruction: 'Pan + oil + 1 TBSP butter + medium heat + 3/4 tsp mustard seeds → pops'
+              instruction: 'Pan + oil + 1 tbsp butter + medium heat + 3/4 tsp mustard seeds → pops'
             },
             {
               instruction: '↓ low heat + 4 garlic + 450g green beans + 3/4 tsp chili flakes + salt + cover → 20 min/cooked'
@@ -177,7 +177,7 @@ function seed () {
           ingredients: [
             {
               qty: '3',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'oil'
             },
             {
@@ -252,7 +252,7 @@ function seed () {
             },
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'coriander leaves'
             },
             {
@@ -356,7 +356,7 @@ function seed () {
             },
             {
               qty: '3',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'tamarind'
             },
             {
@@ -381,7 +381,7 @@ function seed () {
               instruction: '+ 4 tomatoes + 2 garlic + 1 tsp cumin + 1 tsp chili + 1 tsp turmeric + 1 tsp'
             },
             {
-              instruction: 'coriander + 1 potato + 2 TBSP tamarind + salt + enough water→ simmer until cooked'
+              instruction: 'coriander + 1 potato + 2 tbsp tamarind + salt + enough water→ simmer until cooked'
             },
             {
               instruction: '+ 1 can chickpeas → 10 min'
@@ -422,7 +422,7 @@ function seed () {
             },
             {
               qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'basil leaves'
             },
             {
@@ -431,7 +431,7 @@ function seed () {
             },
             {
               qty: '4',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'cream cheese'
             },
             {
@@ -473,7 +473,7 @@ function seed () {
               instruction: 'all filling ingredients → mix'
             },
             {
-              instruction: 'Puff pastry + filling + (1 egg + 1 TBSP water → beat) + oven → 15-18 min'
+              instruction: 'Puff pastry + filling + (1 egg + 1 tbsp water → beat) + oven → 15-18 min'
             }
           ],
           isLive: 'no'
@@ -567,7 +567,7 @@ function seed () {
             },
             {
               qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'brown sugar'
             }
           ],
@@ -596,7 +596,7 @@ function seed () {
             },
             {
               qty: '3',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'soy sauce'
             },
             {
@@ -647,12 +647,12 @@ function seed () {
             },
             {
               qty: '6',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'honey'
             },
             {
               qty: '3',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'fish sauce'
             },
             {
@@ -662,7 +662,7 @@ function seed () {
             },
             {
               qty: '4',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'rice wine vinegar'
             },
             {
@@ -672,7 +672,7 @@ function seed () {
             },
             {
               qty: '1/2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'brown sugar'
             },
             {
@@ -719,7 +719,7 @@ function seed () {
             },
             {
               qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'cornflour'
             },
             {
@@ -752,7 +752,7 @@ function seed () {
           ],
           instructions: [
             {
-              instruction: 'Pat prawns dry + bowl + 2 TBSP cornflour + 1/2 tsp white pepper + 1/2 tsp black pepper + 1/2 tsp salt → mix'
+              instruction: 'Pat prawns dry + bowl + 2 tbsp cornflour + 1/2 tsp white pepper + 1/2 tsp black pepper + 1/2 tsp salt → mix'
             },
             {
               instruction: 'Pan + oil + medium heat + 2 garlic + 1/2 green chili + 1 spring onion → crisp'
@@ -785,11 +785,11 @@ function seed () {
             },
             {
               qty: '1',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'mayonnaise'
             },
             {  qty: '2',
-              unit: 'TBSP',
+              unit: 'tbsp',
               name: 'butter'
             },
             {
@@ -808,7 +808,7 @@ function seed () {
           ],
           instructions: [
             {
-              instruction: '1 TBSP mayonnaise + 2 TBSP butter + 2 garlic → smooth'
+              instruction: '1 tbsp mayonnaise + 2 tbsp butter + 2 garlic → smooth'
             },
             {
               instruction: '+ basil + salt + pepper + Cheese (1/4 cup cheddar + 1/8 cup parmesan/blue cheese) + parsley → mix'

@@ -133,10 +133,14 @@
         </div>
 
         <div class="ing-inner-container">
-          <input autocomplete="off"
-                 type="text" id="new-recipe-ingredients.unit"
-                 ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"
-                 placeholder="-">
+                 <select id="new-recipe-units"
+                         name="new-recipe-units"
+                         ng-model="recipe.selectedRecipe.recipe.ingredients[$index].unit"
+                         ng-options="r for r in recipe.unitsOptions"
+                         placholder="-"
+                         >
+                   <option value="" disabled>-</option>
+                 </select>
         </div>
 
         <div class="ing-inner-container ing-name">
@@ -175,7 +179,7 @@
       <div class="ing-inner-headers">
         <h3>Quantity</h3>
         <h3>Unit</h3>
-        <h3>Ingredient</h3>
+        <h3 class="flex">Ingredient</h3>
       </div>
     </div>
     <div ng-repeat="ingredient in recipe.selectedRecipe.recipe.ingredients_2 track by $index">
@@ -189,12 +193,16 @@
         </div>
 
         <div class="ing-inner-container">
-          <input autocomplete="off"
-                 type="text" id="new-recipe-ingredients_2.unit"
-                 ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
-                 placeholder="-"></div>
+           <select id="new-recipe-units_2"
+                   name="new-recipe-units_2"
+                   ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].unit"
+                   ng-options="r for r in recipe.unitsOptions"
+                   placholder="-">
+             <option value="" disabled>-</option>
+          </select>
+        </div>
 
-        <div class="ing-inner-container">
+        <div class="ing-inner-container ing-name">
           <input autocomplete="off"
                  type="text" id="new-recipe-ingredients_2.name"
                  ng-model="recipe.selectedRecipe.recipe.ingredients_2[$index].name"

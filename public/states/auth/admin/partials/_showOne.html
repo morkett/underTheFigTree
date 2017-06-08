@@ -1,3 +1,8 @@
+<div class="message" ng-if="recipe.showMessage">
+  <p ng-if="recipe.showMessageUpdated">Recipe Updated</p>
+  <p ng-if="recipe.showMessageDelete">Recipe Deleted</p>
+</div>
+
 <form class="admin-form"
       name="admin-form"
       ng-submit="recipe.updateRecipe()"
@@ -96,7 +101,7 @@
       <h2>image</h2>
       <div class="ing-inner-container ing-inner-img"
            ng-repeat="img in recipe.selectedRecipe.recipe.img | limitTo: 1 track by $index">
-        <img src="/images/food/{{img}}" alt="">
+        <img ng-src="/images/food/{{img}}" alt="">
         <input autocomplete="off"
               type="text" id="img"
               placeholder="img src"

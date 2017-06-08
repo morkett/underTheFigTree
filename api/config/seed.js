@@ -43,9 +43,10 @@ function seed () {
         {
           title: 'cambodian marinated beef (beef lok lak)',
           cuisine: 'cambodian',
-          serves: 2,
+          serves: '2',
           type: 'starter',
           type2: 'beef',
+          makes: '-',
           ingredients: [
             {
               qty: '500',
@@ -127,8 +128,10 @@ function seed () {
         {
           title: 'green beans with toasted mustard and garlic',
           cuisine: 'indian',
-          serves: 4,
+          serves: '4',
           type: 'sides',
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '450',
@@ -171,9 +174,10 @@ function seed () {
         {
           title: 'grilled lamb kebabs (mutton tikka)',
           cuisine: '',
-          serves: 4,
+          serves: '4',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '3',
@@ -231,9 +235,10 @@ function seed () {
         {
           title: 'onion bhajiyas',
           cuisine: 'indian',
-          serves: 4,
+          serves: '4',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '2',
@@ -301,9 +306,10 @@ function seed () {
         {
           title: 'mums chana masala',
           cuisine: 'indian',
-          serves: 4,
+          serves: '4',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '1',
@@ -397,9 +403,10 @@ function seed () {
         {
           title: 'chicken florentine puffs',
           cuisine: 'english',
-          serves: 4,
+          serves: '4',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '1',
@@ -481,9 +488,10 @@ function seed () {
         {
           title: 'mum\'s spring rolls',
           cuisine: 'chinese',
-          serves: 0,
+          serves: '0',
           makes: '30',
           type: 'starters',
+          type2: '-',
           ingredients: [
             {
               qty: '1',
@@ -558,9 +566,10 @@ function seed () {
         {
           title: 'thai coconut-chili prawn skewers',
           cuisine: 'thai',
-          serves: 4,
+          serves: '4',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               name: 'prawns'
@@ -628,7 +637,7 @@ function seed () {
         {
           title: 'sticky sticks',
           cuisine: 'chinese',
-          serves: 4,
+          serves: '4',
           type: 'starters',
 
           ingredients: [
@@ -708,9 +717,10 @@ function seed () {
         {
           title: 'salt and pepper prawns',
           cuisine: 'chinese',
-          serves: 2,
+          serves: '2',
           type: 'starters',
-
+          type2: '-',
+          makes: '-',
           ingredients: [
             {
               qty: '450',
@@ -769,9 +779,10 @@ function seed () {
         {
           title: 'garlic bread',
           cuisine: 'italian',
-          serves: 0,
+          serves: '0',
           makes: '1 baguette',
           type: 'starters',
+          type2: '-',
           ingredients: [
             {
               name: 'basil'

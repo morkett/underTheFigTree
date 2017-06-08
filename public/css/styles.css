@@ -295,10 +295,12 @@ body * {
     background: #159957;
     /* fallback for old browsers */
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #155799, #159957);
+    background: linear-gradient(to top, rgba(21, 87, 153, 0.7), rgba(21, 153, 87, 0.7)), url("../images/food/bg3.png");
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
-    opacity: 0.8; }
+    opacity: 1; }
 
 .admin-main {
   display: -ms-flexbox;
@@ -920,7 +922,7 @@ body * {
   text-align: center;
   color: #fff;
   position: absolute;
-  background: #44a87d; }
+  background: rgba(68, 168, 125, 0.8); }
   .search-bar::-webkit-input-placeholder {
     color: #fff;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
@@ -1272,6 +1274,33 @@ strong {
   -ms-transform: translateY(-100%) translateX(400%);
       transform: translateY(-100%) translateX(400%);
   right: 0; }
+
+.message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99999;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  animation: msg-fade-in 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards; }
+
+@keyframes msg-fade-in {
+  to {
+    opacity: 1; } }
 
 script#__bs_script__ {
   opacity: 0;

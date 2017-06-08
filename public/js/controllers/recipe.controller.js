@@ -1,7 +1,9 @@
 function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout){
   var controller = this;
 
-  // controller.count = $('div').length;
+  controller.showMessage = false;
+  controller.showMessageUpdated = false;
+  controller.showMessageDeleted = false;
 
   controller.numItems = function(className) {
     return $window.document.getElementsByClassName(className).length;
@@ -43,8 +45,8 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   };
 
   controller.unitsOptions = ['-','g','cups','ml','tsp', 'tbsp'];
-  controller.makeOptions = ['-',5,10,15,20,25,30,40,45,50,55,60];
-  controller.serveOptions = ['-',1,2,3,4,5,6,7,8,9,10];
+  controller.makeOptions = ['-','5','10','15','20','25','30','40','45','50','55','60'];
+  controller.serveOptions = ['-','1','2','3','4','5','6','7','8','9','10'];
 
   controller.cuisineOptions = ['-','cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
@@ -72,8 +74,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);
-
+          controller.showMessage = true;
           $timeout(function() {
+            controller.showMessage = false;
             $state.go('edit');
           }, 1000);
         },
@@ -100,7 +103,12 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {
         console.log('deleted',res);
+        controller.showMessage = true;
+        controller.showMessageUpdated = false;
+        controller.showMessageDeleted = true;
         $timeout(function() {
+          controller.showMessage = false;
+          controller.showMessageDeleted = false;
           $state.go('edit');
         }, 1000);
       },
@@ -114,7 +122,12 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
       function success(res) {
         console.log('recipe updated', res);
+        controller.showMessage = true;
+        controller.showMessageUpdated = true;
+        controller.showMessageDeleted = false;
         $timeout(function() {
+          controller.showMessage = false;
+          controller.showMessageUpdated = false;
           $state.go('edit');
         }, 1000);
       },

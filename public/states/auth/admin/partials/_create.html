@@ -122,10 +122,19 @@
                   placeholder="-"></div>
 
         <div class="ing-inner-container">
-          <input autocomplete="off"
+          <select id="new-recipe-units"
+                  name="new-recipe-units"
+                  ng-model="recipe.recipeData.ingredients[$index].unit"
+                  ng-options="r for r in recipe.unitsOptions"
+                  placholder="-"
+                  >
+            <option value="" disabled>-</option>
+          </select>
+        </div>
+          <!-- <input autocomplete="off"
                   type="text" id="new-recipe-ingredients.unit"
                   ng-model="recipe.recipeData.ingredients[$index].unit"
-                  placeholder="-"></div>
+                  placeholder="-"></div> -->
 
         <div class="ing-inner-container ing-name">
           <input autocomplete="off"
@@ -205,7 +214,7 @@
           <div class="numbers">
             <p>{{$index+1}}</p>
             <textarea type="text" id="new-recipe-instructions"
-                      placeholder="- enter instruction"
+                      placeholder="- enter instruction -"
                       ng-model="recipe.recipeData.instructions[$index].instruction"
                       required>
             </textarea>

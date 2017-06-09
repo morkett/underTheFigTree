@@ -136,6 +136,7 @@
       margin-bottom: 10px;
     }
 
+
     .info-makes {
       height: 10px;
     }
@@ -303,6 +304,14 @@
   width: 100%;
   flex: 0.3;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  #new-recipe-isLive {
+    margin-bottom: 0;
+  }
+
   input {
     width: 80%;
     background-color: transparent;
@@ -338,7 +347,7 @@
   // position: fixed;
   height: 80px;
   background: #e0e0e0;
-  background: $white-trans;
+  background: $headers;
   // width: 35vw;
   // text-align: center;
   transform: translateY(-110px);
@@ -724,6 +733,10 @@
     text-transform: capitalize;
     @include flex;
     box-shadow: $box-shadow;
+    border-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
 
     a {
       color: $black;
@@ -746,6 +759,7 @@
   height: auto;
   height: 50px;
   box-shadow: $box-shadow;
+  // border-radius: 2px;
 }
 
 .sub-info-container {
@@ -785,6 +799,9 @@ strong {
   background: $white-trans;
   flex: 1;
   box-shadow: $box-shadow;
+  border-radius: 2px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 
   ul {
     padding: 10px;
@@ -959,6 +976,9 @@ strong {
   color: #fff;
   text-align: center;
   margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 2px;
+  background: $white-trans;
 }
 
 .isLive {

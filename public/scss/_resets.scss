@@ -160,3 +160,30 @@ textarea:focus::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+
+*::placeholder {
+  color: $black;
+}
+
+.all-recipes::-webkit-scrollbar {
+    display: none;
+}
+
+.sub-info::-webkit-scrollbar {
+  display: none;
+
+}
+
+.admin-ing::-webkit-scrollbar {
+  display: none;
+
+}
+.admin-inst::-webkit-scrollbar {
+  display: none;
+
+}
+
+.info-inner::-webkit-scrollbar {
+  display: none;
+
+}

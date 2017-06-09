@@ -1,7 +1,7 @@
 <span class="nav-reveal nav-reveal-filter"
       ng-class="{'navActiveBtn': recipe.navActive}"
       ng-click="recipe.toggleAdminNav()"
-      ng-if="recipe.navActive === false"
+      ng-if="recipe.navActive === false; 'none'| isState"
       >filters</span>
 <span class="nav-reveal"
       ng-class="{'navActiveBtn': recipe.navActive}"

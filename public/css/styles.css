@@ -146,6 +146,30 @@ textarea:focus::-webkit-input-placeholder {
 textarea::-webkit-input-placeholder {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
+*::-webkit-input-placeholder {
+  color: #292929; }
+
+*:-ms-input-placeholder {
+  color: #292929; }
+
+*::placeholder {
+  color: #292929; }
+
+.all-recipes::-webkit-scrollbar {
+  display: none; }
+
+.sub-info::-webkit-scrollbar {
+  display: none; }
+
+.admin-ing::-webkit-scrollbar {
+  display: none; }
+
+.admin-inst::-webkit-scrollbar {
+  display: none; }
+
+.info-inner::-webkit-scrollbar {
+  display: none; }
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -352,6 +376,7 @@ body * {
     width: 100%;
     padding-top: 50px;
     background: #fff;
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: scroll;
@@ -364,6 +389,7 @@ body * {
       height: 40px;
       background: #e0e0e0;
       background: #e0e0e0;
+      background: white;
       width: 35vw;
       text-align: center;
       -ms-transform: translateY(-50px);
@@ -388,7 +414,7 @@ body * {
       appearance: none;
       z-index: 20;
       cursor: pointer;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       margin-bottom: 10px; }
     .info .info-inner .info-makes {
       height: 10px; }
@@ -409,7 +435,7 @@ body * {
   .info .info-inner-sml {
     height: 35%;
     width: 100%;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.5);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
     .info .info-inner-sml:hover {
@@ -430,7 +456,7 @@ body * {
   position: fixed;
   height: 40px;
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: white;
   width: 35vw;
   text-align: center;
   -ms-transform: translateY(-50px);
@@ -453,7 +479,7 @@ body * {
   display: none;
   width: 30vw;
   height: 80vh;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   position: relative;
   padding-top: 110px;
   padding-bottom: 40px;
@@ -471,7 +497,7 @@ body * {
     position: fixed;
     height: 80px;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: white;
     width: 30vw;
     text-align: center;
     -ms-transform: translateY(-110px);
@@ -480,6 +506,7 @@ body * {
     padding-top: 30px;
     font-size: 20px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     z-index: 5;
     text-transform: uppercase;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -491,8 +518,7 @@ body * {
     position: fixed;
     -ms-transform: translateY(-30px);
         transform: translateY(-30px);
-    background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 50; }
   .admin-ing .ing-inner-headers,
@@ -510,7 +536,8 @@ body * {
     height: 30px;
     -ms-flex: 0.5;
         flex: 0.5;
-    text-align: center; }
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .admin-ing .flex,
   .admin-inst .flex {
     -ms-flex: 0.7;
@@ -531,7 +558,7 @@ body * {
       flex-direction: row;
   top: 0;
   left: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
   .ing-container select {
     width: 100%;
     text-align: center;
@@ -558,13 +585,13 @@ body * {
       flex-direction: column;
   top: 0;
   left: 0;
-  background: #fff;
+  background: transparent;
   width: 100%;
   -ms-flex: 0.3;
       flex: 0.3; }
   .ing-inner-container input {
     width: 80%;
-    background-color: #fff;
+    background-color: transparent;
     height: 40px;
     margin: 20px 0;
     text-align: center; }
@@ -595,7 +622,7 @@ body * {
   position: fixed;
   height: 80px;
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: rgba(255, 255, 255, 0.5);
   -ms-transform: translateY(-110px);
       transform: translateY(-110px);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -611,7 +638,7 @@ body * {
         transform: translateY(0px);
     font-size: 20px;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: transparent;
     text-transform: uppercase; }
 
 .filter-label {
@@ -683,16 +710,16 @@ body * {
     left: 0;
     cursor: pointer;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
     .add-del-btns .btns:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
       transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .add-del-btns .btn1 {
-    border-right: 1px solid rgba(0, 0, 0, 0.07); }
+    border-right: 1px solid rgba(0, 0, 0, 0.08); }
   .add-del-btns .btn2 {
-    border-left: 1px solid rgba(0, 0, 0, 0.07); }
+    border-left: 1px solid rgba(0, 0, 0, 0.08); }
   .add-del-btns .btn-inner {
     display: -ms-flexbox;
     display: flex;
@@ -714,7 +741,7 @@ body * {
   -ms-transform: translateX(50%) translateY(-50%) !important;
       transform: translateX(50%) translateY(-50%) !important;
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: white;
   background: transparent;
   border: 2px solid #fff;
   border-radius: 2px;
@@ -726,7 +753,7 @@ body * {
     cursor: pointer;
     color: #fff; }
   .btn-save:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
 .btn-delete,
@@ -749,7 +776,7 @@ body * {
   -ms-transform: translateX(-50%) translateY(50%);
       transform: translateX(-50%) translateY(50%);
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: white;
   background: transparent;
   border: 1px solid #fff;
   border-radius: 2px;
@@ -864,14 +891,14 @@ body * {
   .numbers #new-recipe-instructions {
     resize: vertical;
     min-width: 90%;
-    background-color: #fff;
+    background-color: transparent;
     min-height: 40px;
     height: auto;
     margin: 20px 0;
     text-align: center;
     outline: none;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07); }
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); }
 
 .ing-inner-img {
   -ms-flex-direction: column;
@@ -922,9 +949,11 @@ body * {
   text-align: center;
   color: #fff;
   position: absolute;
-  background: rgba(68, 168, 125, 0.8); }
+  background: rgba(255, 255, 255, 0.2); }
   .search-bar::-webkit-input-placeholder {
     color: #fff;
+    font-weight: bold;
+    letter-spacing: .03em;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
   .search-bar:focus::-webkit-input-placeholder {
     color: transparent;
@@ -977,18 +1006,16 @@ body * {
   left: 0; }
   .allRecipes-container p {
     width: 100%;
-    background: #fff;
     text-align: center;
     padding-bottom: 5px;
     text-transform: capitalize; }
   .allRecipes-container .title {
     position: relative;
-    background: #fff;
     width: 100%;
     margin-bottom: 3px;
     text-align: center;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: white;
     height: 30px;
     font-size: 15px;
     width: 100%;
@@ -1024,11 +1051,11 @@ body * {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
   margin-bottom: 3px;
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: rgba(255, 255, 255, 0.5);
   height: auto;
+  height: 50px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .sub-info-container {
@@ -1062,12 +1089,23 @@ body * {
     left: 0; }
 
 strong {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 5px;
   background: #e0e0e0;
-  background: #e0e0e0;
+  background: white;
   height: 100%;
+  height: 25px;
   width: 100%; }
 
 .sub-info {
@@ -1075,13 +1113,13 @@ strong {
   overflow-y: scroll;
   overflow-x: hidden;
   margin-right: 5px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.5);
   -ms-flex: 1;
       flex: 1;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .sub-info ul {
     padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     display: -ms-flexbox;
     display: flex;
     -ms-flex-pack: start;
@@ -1121,9 +1159,22 @@ strong {
   left: 0; }
 
 .navFilters {
-  position: absolute; }
+  position: absolute;
+  -ms-transform: translateY(-25px);
+      transform: translateY(-25px);
+  cursor: pointer; }
 
 .nav-reveal {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
   border: 2px solid #fff;
   position: absolute;
   top: 0;
@@ -1140,7 +1191,12 @@ strong {
       transform: translateX(0) translateY(-50%);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background: #44a87d; }
+  background: rgba(255, 255, 255, 0.5);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: .05em; }
+  .nav-reveal a {
+    display: block; }
 
 .nav-reveal-filter {
   opacity: 0;
@@ -1224,11 +1280,10 @@ strong {
   left: 0; }
   .recipe-headers h3 {
     margin-right: 5px;
-    background: #fff;
     -ms-flex: 1;
     flex: 1;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: white;
     height: 30px;
     text-transform: capitalize;
     text-align: center;

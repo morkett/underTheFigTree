@@ -2,7 +2,7 @@
 
   <p ng-if="recipe.numItems('count') !== -1" class="counter">No of Recipes: {{recipe.numItems('count')}}</p>
 <div
-  class="test"
+  class="count"
   ng-repeat="r in recipe.results | filter: searchRecipe | orderBy:'title' track by $index"
   ng-class="{'count': recipe.checkboxCus === r.cuisine
   || recipe.checkboxType === r.type
@@ -30,7 +30,7 @@
   <p><strong>serves</strong> {{r.serves}}</p>
   <p ng-if="r.makes"><strong>makes</strong> {{r.makes}}</p>
   <p><strong>type</strong> {{r.type}}</p>
-  <p ng-if="r.type2"><strong>type2:</strong> {{r.type2}}</p>
+  <p ng-if="r.type2"><strong>type2</strong> {{r.type2}}</p>
   </div>
 
 </div>

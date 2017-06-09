@@ -1,7 +1,9 @@
 function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout){
   var controller = this;
 
-  // controller.count = $('div').length;
+  controller.showMessage = false;
+  controller.showMessageUpdated = false;
+  controller.showMessageDeleted = false;
 
   controller.numItems = function(className) {
     return $window.document.getElementsByClassName(className).length;
@@ -19,6 +21,10 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     controller.navActive = !controller.navActive;
   };
 
+  controller.checkboxIsLive = 'all';
+  controller.checkboxToggleIsLive = function(isLive){
+    controller.checkboxIsLive = isLive;
+  };
   controller.checkboxCus = 'all';
   controller.checkboxToggleCus = function(cuisine){
     controller.checkboxCus = cuisine;
@@ -31,7 +37,6 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.checkboxType2 = 'all';
   controller.checkboxToggleType2 = function(type){
     controller.checkboxType2 = type;
-    console.log(type);
   };
 
   controller.select= function(item) {
@@ -42,14 +47,15 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     return controller.selected === item;
   };
 
-  controller.makeOptions = [5,10,15,20,25,30,40,45,50,55,60];
-  controller.serveOptions = [0,1,2,3,4,5,6,7,8,9,10];
+  controller.unitsOptions = ['-','g','cups','ml','tsp', 'tbsp'];
+  controller.makeOptions = ['-','5','10','15','20','25','30','40','45','50','55','60'];
+  controller.serveOptions = ['-','1','2','3','4','5','6','7','8','9','10'];
 
   controller.cuisineOptions = ['-','cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
-  controller.typeOptions2 = ['baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
+  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
 
-  controller.typeOptions1 = ['starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
+  controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
 
@@ -71,8 +77,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
         function success(response) {
        //redirects to another state
           console.log('Created new recipe: ', response);
-
+          controller.showMessage = true;
           $timeout(function() {
+            controller.showMessage = false;
             $state.go('edit');
           }, 1000);
         },
@@ -99,7 +106,12 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {
         console.log('deleted',res);
+        controller.showMessage = true;
+        controller.showMessageUpdated = false;
+        controller.showMessageDeleted = true;
         $timeout(function() {
+          controller.showMessage = false;
+          controller.showMessageDeleted = false;
           $state.go('edit');
         }, 1000);
       },
@@ -113,7 +125,12 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     RecipeFactory.editOne(controller.selectedRecipe.recipe).then(
       function success(res) {
         console.log('recipe updated', res);
+        controller.showMessage = true;
+        controller.showMessageUpdated = true;
+        controller.showMessageDeleted = false;
         $timeout(function() {
+          controller.showMessage = false;
+          controller.showMessageUpdated = false;
           $state.go('edit');
         }, 1000);
       },

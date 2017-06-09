@@ -52,10 +52,12 @@
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #155799, #159957);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #155799, #159957);
+    background: linear-gradient(to top, rgba(21, 87, 153, .7), rgba(21, 153, 87, .7)), url('../images/food/bg3.png');
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
-    opacity: 0.8;
+    opacity: 1;
   }
 }
 
@@ -88,6 +90,7 @@
     width: 100%;
     padding-top: 50px;
     background: #fff;
+    background: $white-trans;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     overflow: scroll;
@@ -103,13 +106,14 @@
       height: 40px;
       background: #e0e0e0;
       background: rgba(224, 224, 224, 1);
+      background: $headers;
       width: 35vw;
       text-align: center;
       transform: translateY(-50px);
       font-weight: 600;
       padding-top: 10px;
       font-size: 20px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      box-shadow: $box-shadow;
       z-index: 5;
       text-transform: uppercase;
     }
@@ -128,9 +132,10 @@
       appearance: none;
       z-index: 20;
       cursor: pointer;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      border-bottom: $border-btm;
       margin-bottom: 10px;
     }
+
 
     .info-makes {
       height: 10px;
@@ -155,12 +160,12 @@
   .info-inner-sml {
     height: 35%;
     width: 100%;
-    background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: $white-trans;
+    box-shadow: $box-shadow;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
     &:hover {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      box-shadow: $box-shadow-hover;
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     }
 
@@ -183,13 +188,13 @@
   position: fixed;
   height: 40px;
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $headers;
   width: 35vw;
   text-align: center;
   transform: translateY(-50px);
   font-weight: 600;
   padding-top: 10px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   z-index: 25;
   text-transform: uppercase;
 
@@ -209,36 +214,38 @@
   display: none;
   width: 30vw;
   height: 80vh;
-  background: #fff;
+  background: $white-trans;
   position: relative;
   padding-top: 110px;
   padding-bottom: 40px;
   overflow-y: scroll;
   overflow-x: hidden;
   border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   opacity: 0;
 
   &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: $box-shadow-hover;
   }
 
   h2 {
     position: fixed;
     height: 80px;
     background: #e0e0e0;
-    background: rgba(224, 224, 224, 1);
+    background: $headers;
     width: 30vw;
     text-align: center;
     transform: translateY(-110px);
     font-weight: 600;
     padding-top: 30px;
     font-size: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: $box-shadow;
+    border-bottom: $border-btm;
     z-index: 5;
     text-transform: uppercase;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 50;
   }
 
   .ing-headers {
@@ -247,9 +254,9 @@
     width: 30vw;
     position: fixed;
     transform: translateY(-30px);
-    background: #fff;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background: $headers;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 50;
   }
 
   .ing-inner-headers {
@@ -257,6 +264,7 @@
     height: 30px;
     flex: 0.5;
     text-align: center;
+    box-shadow: $box-shadow;
   }
 
   .flex {
@@ -271,24 +279,50 @@
 
 .ing-container {
   @include flex($direction: row);
-  // width: 100%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-  // height: 10%;
-  // border: 1px solid red;
+  border-bottom: $border-btm;
+  select {
+    width: 100%;
+    text-align: center;
+    text-align-last: center;
+    height: 100%;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    z-index: 20;
+    cursor: pointer;
+    // border: 1px solid red;
+  }
 }
 
 .ing-inner-container {
   @include flex;
-  background: #fff;
+  background: transparent;
   width: 100%;
   flex: 0.3;
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  #new-recipe-isLive {
+    margin-bottom: 0;
+  }
+
   input {
     width: 80%;
-    background-color: #fff;
+    background-color: transparent;
     height: 40px;
     margin: 20px 0;
     text-align: center;
+    font-size: 15px;
+  }
+
+  select {
+    font-size: 15px;
   }
 }
 
@@ -303,9 +337,13 @@
 
 .inst-inner-container {
   border-bottom: none;
-  // input {
-  //   width: 100%;
-  //
+
+  textarea {
+    font-size: 15px;
+  }
+
+  // textarea::-webkit-scrollbar {
+  //   display: none;
   // }
 }
 
@@ -318,16 +356,17 @@
   // position: fixed;
   height: 80px;
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $headers;
   // width: 35vw;
   // text-align: center;
   transform: translateY(-110px);
   // font-weight: 600;
   // // padding-top: 10px;
   // font-size: 20px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   z-index: 5;
   text-transform: uppercase;
+  z-index: 50;
 
   input {
     width: 30vw;
@@ -337,7 +376,7 @@
     transform: translateY(-0px); // background: red;
     font-size: 20px;
     background: #e0e0e0;
-    background: rgba(224, 224, 224, 1);
+    background: transparent;
     text-transform: uppercase;
   }
 }
@@ -377,6 +416,7 @@
   align-items: center;
   height: 40px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 50;
 
   .btns {
     width: 50%;
@@ -385,22 +425,22 @@
     @include flex;
     cursor: pointer;
     background: #e0e0e0;
-    background: rgba(224, 224, 224, 1);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: $headers;
+    box-shadow: $box-shadow;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
     &:hover {
-      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      box-shadow: $box-shadow-hover;
       transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     }
   }
 
   .btn1 {
-    border-right: 1px solid rgba(0, 0, 0, 0.07);
+    border-right: $border-btm;
   }
 
   .btn2 {
-    border-left: 1px solid rgba(0, 0, 0, 0.07);
+    border-left: $border-btm;
   }
 
   .btn-inner {
@@ -417,13 +457,13 @@
   right: 50%;
   transform: translateX(50%) translateY(-50%)!important;
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $headers;
   background: transparent;
   border: 2px solid #fff;
   border-radius: 2px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
   input {
@@ -438,7 +478,7 @@
   &:hover {
     // background: #fff;
     // color: #000;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: $box-shadow;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 }
@@ -453,13 +493,13 @@
   left: 50%;
   transform: translateX(-50%) translateY(50%);
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $headers;
   background: transparent;
   border: 1px solid #fff;
   border-radius: 2px;
   cursor: pointer;
   z-index: 5;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   height: 20px;
   width: 160px;
@@ -473,7 +513,7 @@
   }
 
   &:hover {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: $box-shadow-hover;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 }
@@ -578,14 +618,14 @@
   #new-recipe-instructions {
     resize: vertical;
     min-width: 90%;
-    background-color: #fff;
+    background-color: transparent;
     min-height: 40px;
     height: auto;
     margin: 20px 0;
     text-align: center;
     outline: none;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+    border-bottom: $border-btm;
   }
 }
 
@@ -601,7 +641,7 @@
 
 .navActiveMain {
   transform: translateX(20vw);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -619,7 +659,7 @@
 }
 
 .search-bar {
-  border: 4px solid #fff;
+  border: 2px solid #fff;
   border-radius: 40px;
   height: 40px;
   width: 60%;
@@ -629,10 +669,12 @@
   text-align: center;
   color: #fff;
   position: absolute;
-  background: rgba(68,168,125,1);
+  background: rgba(255,255,255,.2);
 
   &::-webkit-input-placeholder {
     color: #fff;
+    font-weight: bold;
+    letter-spacing: .03em;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 
@@ -660,7 +702,7 @@
 }
 
 .all-recipes {
-  height: 600px;
+  height: 700px;
   position: fixed;
   overflow-y: scroll;
   width: 65vw;
@@ -669,7 +711,7 @@
 
 .edit-container {
   width: 100vw;
-  padding-top: 100px;
+  padding-top: 130px;
   @include flex;
 }
 
@@ -678,19 +720,20 @@
 
   p {
     width: 100%;
-    background: #fff;
+    // background: $white-trans;
     text-align: center;
     padding-bottom: 5px;
     text-transform: capitalize;
   }
 
   .title {
-    background: #fff;
+    position: relative;
+
     width: 100%;
     margin-bottom: 3px;
     text-align: center;
     background: #e0e0e0;
-    background: rgba(224, 224, 224, 1);
+    background: $headers;
     height: 30px;
     font-size: 15px;
     width: 100%;
@@ -698,6 +741,11 @@
     font-weight: bold;
     text-transform: capitalize;
     @include flex;
+    box-shadow: $box-shadow;
+    border-radius: 2px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+
 
     a {
       color: $black;
@@ -714,11 +762,13 @@
 .recipe-details-container {
   @include flex($direction: row, $justify:space-around, $align: flex-start);
   width: 100%;
-  background: #fff;
   margin-bottom: 3px;
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $white-trans;
   height: auto;
+  height: 50px;
+  box-shadow: $box-shadow;
+  // border-radius: 2px;
 }
 
 .sub-info-container {
@@ -737,12 +787,14 @@
 }
 
 strong {
+  @include flex;
   font-weight: bold;
   text-transform: capitalize;
   margin-bottom: 5px;
   background: #e0e0e0;
-  background: rgba(224, 224, 224, 1);
+  background: $headers;
   height: 100%;
+  height: 25px;
   width: 100%;
 }
 
@@ -753,11 +805,35 @@ strong {
   overflow-x: hidden;
   // margin: 0 10px;
   margin-right: 5px;
-  background: #fff;
+  background: $white-trans;
   flex: 1;
+  box-shadow: $box-shadow;
+  border-radius: 2px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 
   ul {
     padding: 10px;
+    border-bottom: $border-btm;
+    @include flex($direction:row, $justify:flex-start);
+  }
+
+  li {
+    font-size: 15px;
+    // width: 10%;
+    flex: 0.1;
+    text-align: left;
+    // border: 1px solid red;
+  }
+
+  li:nth-child(2) {
+    flex: 0.2;
+  }
+
+  li:last-of-type {
+    // width: 70%;
+    flex: 1;
+    text-align: left;
   }
 }
 
@@ -772,9 +848,12 @@ strong {
 
 .navFilters {
   position: absolute;
+  transform: translateY(-25px);
+  cursor: pointer;
 }
 
 .nav-reveal {
+  @include flex;
   border: 2px solid #fff;
   position: absolute;
   top: 0;
@@ -790,8 +869,17 @@ strong {
   transform: translateX(0) translateY(-50%);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
-  background: rgba(68,168,125,1);
+  background: $white-trans;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 15px;
+  letter-spacing: .05em;
+
+  a {
+    display: block;
+  }
 }
+
+
 
 .nav-reveal-filter {
   opacity: 0;
@@ -805,7 +893,7 @@ strong {
 
 .navActiveBtn {
   transform: translateX(20vw) translateY(-50%);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  box-shadow: $box-shadow;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
@@ -813,7 +901,6 @@ strong {
   position: fixed;
   display: block;
   margin: 0 10px;
-  // background: rgba(229,229,229,1);
   height: 25px;
   width: 80px;
   border-radius: 2px;
@@ -832,6 +919,8 @@ strong {
     color: #fff;
     text-decoration: none;
   }
+
+
 }
 
 .close-nav {
@@ -867,11 +956,10 @@ strong {
 
   h3 {
     margin-right: 5px;
-    background: #fff;
     -ms-flex: 1;
     flex: 1;
     background: #e0e0e0;
-    background: #e0e0e0;
+    background: $headers;
     height: 30px;
     text-transform: capitalize;
     text-align: center;
@@ -890,4 +978,66 @@ strong {
   h3:last-of-type {
     margin-right: 0;
   }
+}
+
+.counter {
+  width: 100%;
+  color: $black;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 2px;
+  background: $headers;
+}
+
+.isLive {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  height: 15px;
+  width: 15px;
+  border: 1px solid grey;
+  background: #00c853;
+  border-radius: 50%;
+  box-shadow: rgba(0, 200, 83, 1) 0 0 5px;
+}
+
+.notLive {
+  background: lightgrey;
+  box-shadow: none;
+}
+
+.isLiveEdit {
+  position: relative;
+  display: block;
+  transform: translateY(-100%) translateX(400%);
+  right: 0;
+}
+
+.message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0,0,0,.5);
+  z-index: 99999;
+  @include flex;
+  opacity: 0;
+  color: #fff;
+  font-size: 60px;
+  animation: msg-fade-in 0.3s cubic-bezier(.25,.8,.25,1) forwards;
+}
+
+@keyframes msg-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.btn-showAll-edit {
+  transform: translateX(-100%) translateY(-50%)!important;
+  transform: translateX(calc(-100% - 5px)) translateY(-50%)!important;
+
 }

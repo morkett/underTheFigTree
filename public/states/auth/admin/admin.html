@@ -1,7 +1,7 @@
 <span class="nav-reveal nav-reveal-filter"
       ng-class="{'navActiveBtn': recipe.navActive}"
       ng-click="recipe.toggleAdminNav()"
-      ng-if="recipe.navActive === false"
+      ng-if="recipe.navActive === false; 'none'| isState"
       >filters</span>
 <span class="nav-reveal"
       ng-class="{'navActiveBtn': recipe.navActive}"
@@ -15,7 +15,7 @@
       >More</span>
 
       <a ng-if="'create' | isState" ui-sref="edit" class="nav-reveal nav-btns">show all</a>
-      <a ng-if="'admin-showOne'| isState" ui-sref="edit" class="nav-reveal nav-btns">show all</a>
+      <a ng-if="'admin-showOne'| isState" ui-sref="edit" class="nav-reveal nav-btns btn-showAll-edit">show all</a>
 
       <a ng-if="'admin-showOne'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
       <a ng-if="'edit'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
@@ -23,7 +23,7 @@
   <!-- <h1>Under the Figtree - Admin</h1> -->
 
 
-<filter ng-if="'edit'| isState"></filter>
+<filter ng-if="'edit'| isState" class="filter"></filter>
 
 </nav>
-<div ui-view="admin-main" ng-init="recipe.showIng1 = true; recipe.navActive = false" class="admin-main" ng-click="recipe.navActive = false"></div>
+<div ui-view="admin-main" ng-init="recipe.showIng1 = true; recipe.navActive = false" class="admin-main"></div>

@@ -54,6 +54,7 @@ function updateRecipe(req, res) {
     if(req.body.serves) recipe.serves = req.body.serves;
     if(req.body.type) recipe.type = req.body.type;
     if(req.body.type2) recipe.type2 = req.body.type2;
+    if(req.body.makes) recipe.makes = req.body.makes;
     if(req.body.ingredients) recipe.ingredients = req.body.ingredients;
     if(req.body.ingredients_2_title) recipe.ingredients_2_title = req.body.ingredients_2_title;
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;

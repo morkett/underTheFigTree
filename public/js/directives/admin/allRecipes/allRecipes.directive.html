@@ -1,40 +1,47 @@
 <div ng-init="recipe.getRecipes(); recipe.navOn()" id="allRes">
 
-  <!-- <p ng-if="recipe.numItems('count') !== 0">No of Recipes: {{recipe.numItems('count')}}</p> -->
+  <p ng-if="recipe.numItems('count') !== -1" class="counter">No of Recipes: {{recipe.numItems('count')}}</p>
 <div
-  ng-model = "searchRecipe"
-  ng-repeat="r in recipe.results | filter:searchRecipe| orderBy:'title' track by $index"
+  class="count"
+  ng-repeat="r in recipe.results | filter: searchRecipe | orderBy:'title' track by $index"
   ng-class="{'count': recipe.checkboxCus === r.cuisine
   || recipe.checkboxType === r.type
   || recipe.checkboxType2 === r.type2
-  ||recipe.checkboxCus === 'all'}"
+  || recipe.checkboxIsLive === r.isLive
+  ||recipe.checkboxCus === 'all'
+  ||recipe.checkboxType === 'all'
+  ||recipe.checkboxType2 === 'all'
+  ||recipe.checkboxIsLive === 'all'}"
   ng-if="recipe.checkboxCus === r.cuisine
        || recipe.checkboxCus === 'all'
        || recipe.checkboxType === r.type
        ||recipe.checkboxType === 'all'
        || recipe.checkboxType2 === r.type2
-       ||  recipe.checkboxType2 === 'all' ">
+       ||  recipe.checkboxType2 === 'all'
+       || recipe.checkboxIsLive === r.isLive
+       ||  recipe.checkboxIsLive === 'all' ">
 
 <div class="allRecipes-container">
   <div
        class="title">
-  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a></h2>
+  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a><span class="isLive" ng-class="{'notLive': r.isLive === 'no' }"></span></h2>
+
   </div>
   <div class="recipe-details-container">
 
 
-  <p><strong>cuisine</strong> {{r.cuisine}}</p>
+  <p><strong>cuisine</strong> <span class="blank" ng-if="r.cuisine.length === -1"></span>{{r.cuisine}}</p>
   <p><strong>serves</strong> {{r.serves}}</p>
   <p ng-if="r.makes"><strong>makes</strong> {{r.makes}}</p>
   <p><strong>type</strong> {{r.type}}</p>
-  <p ng-if="r.type2"><strong>type2:</strong> {{r.type2}}</p>
+  <p ng-if="r.type2"><strong>type2</strong> {{r.type2}}</p>
   </div>
 
 </div>
 
 <div class="recipe-headers">
   <h3>ingredients</h3>
-  <h3 ng-if="r.ingredients_2[$index]">ingredients_2</h3>
+  <h3 ng-if="r.ingredients_2[$index]">{{r.ingredients_2_title}}</h3>
   <h3>instructions</h3>
 
 </div>
@@ -42,18 +49,17 @@
 <div class="sub-info-container">
   <div class="sub-info">
     <ul class="ing-all"
-        ng-repeat="ingredient in r.ingredients track by $index">
+        ng-repeat="ingredient in r.ingredients | orderBy:'unit' track by $index">
       <li>{{ingredient.qty}}</li>
       <li>{{ingredient.unit}}</li>
-      <li>{{ingredient.name}}</li>
+      <li ng-if="ingredient.name">{{ingredient.name}}</li>
     </ul>
   </div>
   <div class="sub-info" ng-if="r.ingredients_2[$index]">
     <ul class="ing-all"
-        ng-repeat="ingredient in r.ingredients_2 track by $index">
-      <li>{{ingredient.title}}</li>
-      <li>{{ingredient.qty}}</li>
-      <li>{{ingredient.unit}}</li>
+        ng-repeat="ingredient in r.ingredients_2 | orderBy:'unit' track by $index">
+      <li >{{ingredient.qty}}</li>
+      <li >{{ingredient.unit}}</li>
       <li>{{ingredient.name}}</li>
     </ul>
 </div>

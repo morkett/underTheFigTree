@@ -4,7 +4,7 @@ var RecipeSchema = mongoose.Schema({
   title: {type: String, required: true},
   publicText: {type: String},
   cuisine: {type: String},
-  serves: {type: Number, required: true},
+  serves: {type: String, required: true},
   makes: {type: String},
   type: {type: String},
   type2: {type: String},

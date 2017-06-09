@@ -170,6 +170,9 @@ textarea::-webkit-input-placeholder {
 .info-inner::-webkit-scrollbar {
   display: none; }
 
+.admin-nav::-webkit-scrollbar {
+  display: none; }
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -598,7 +601,10 @@ body * {
     background-color: transparent;
     height: 40px;
     margin: 20px 0;
-    text-align: center; }
+    text-align: center;
+    font-size: 15px; }
+  .ing-inner-container select {
+    font-size: 15px; }
 
 .ing-name {
   -ms-flex: 0.7;
@@ -619,6 +625,8 @@ body * {
 
 .inst-inner-container {
   border-bottom: none; }
+  .inst-inner-container textarea {
+    font-size: 15px; }
 
 .ing_2-title {
   height: auto;
@@ -1312,12 +1320,12 @@ strong {
 
 .counter {
   width: 100%;
-  color: #fff;
+  color: #292929;
   text-align: center;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 2px;
-  background: rgba(255, 255, 255, 0.5); }
+  background: white; }
 
 .isLive {
   position: absolute;

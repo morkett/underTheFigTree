@@ -7,15 +7,19 @@
   ng-class="{'count': recipe.checkboxCus === r.cuisine
   || recipe.checkboxType === r.type
   || recipe.checkboxType2 === r.type2
+  || recipe.checkboxIsLive === r.isLive
   ||recipe.checkboxCus === 'all'
   ||recipe.checkboxType === 'all'
-  ||recipe.checkboxType2 === 'all'}"
+  ||recipe.checkboxType2 === 'all'
+  ||recipe.checkboxIsLive === 'all'}"
   ng-if="recipe.checkboxCus === r.cuisine
        || recipe.checkboxCus === 'all'
        || recipe.checkboxType === r.type
        ||recipe.checkboxType === 'all'
        || recipe.checkboxType2 === r.type2
-       ||  recipe.checkboxType2 === 'all' ">
+       ||  recipe.checkboxType2 === 'all'
+       || recipe.checkboxIsLive === r.isLive
+       ||  recipe.checkboxIsLive === 'all' ">
 
 <div class="allRecipes-container">
   <div

@@ -21,6 +21,10 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     controller.navActive = !controller.navActive;
   };
 
+  controller.checkboxIsLive = 'all';
+  controller.checkboxToggleIsLive = function(isLive){
+    controller.checkboxIsLive = isLive;
+  };
   controller.checkboxCus = 'all';
   controller.checkboxToggleCus = function(cuisine){
     controller.checkboxCus = cuisine;
@@ -33,7 +37,6 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.checkboxType2 = 'all';
   controller.checkboxToggleType2 = function(type){
     controller.checkboxType2 = type;
-    console.log(type);
   };
 
   controller.select= function(item) {

@@ -52,7 +52,7 @@
 <input autocomplete="off" type="radio" name="select" id="allType" class="navFilters" ng-click="recipe.checkboxToggleType('all'); recipe.checkboxToggleCus('null');recipe.checkboxToggleType2('null'); recipe.checkboxToggleIsLive('null');" />
 
 
-<h2>Filter by Type2</h2>
+<h2>Filter by Secondary Type</h2>
 <div ng-repeat="type2 in recipe.typeOptions2 track by $index" ng-if="recipe.typeOptions2[$index] !== '-'">
   <div class="filter-label">
   <h3>{{type2}}</h3>

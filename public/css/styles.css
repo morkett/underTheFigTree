@@ -688,7 +688,9 @@ body * {
     width: 13px;
     background: #fff;
     border-radius: 20px;
-    display: block; }
+    display: block;
+    -ms-transform: translateX(-0.5px) translateY(-0.5px);
+        transform: translateX(-0.5px) translateY(-0.5px); }
 
 .add-del-btns {
   width: 30vw;

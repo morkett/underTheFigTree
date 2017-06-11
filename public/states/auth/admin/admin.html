@@ -21,7 +21,12 @@
       <a ng-if="'edit'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
 <nav class="admin-nav" ng-class="{'navActive': recipe.navActive}">
   <!-- <h1>Under the Figtree - Admin</h1> -->
-
+  <form method="POST" action='/upload/single' enctype="multipart/form-data">
+    <div>
+      <input name='file' type='file'>
+    </div>
+    <input type="submit"/>
+  </form>
 
 <filter ng-if="'edit'| isState" class="filter"></filter>
 

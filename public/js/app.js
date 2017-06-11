@@ -2,8 +2,12 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
 
   $stateProvider
     .state('login', {
-      url: '/test',
+      url: '/admin/login',
       templateUrl: '../states/auth/login.html'
+    })
+    .state('uploadTest', {
+      url: '/admin/upload',
+      templateUrl: '../states/auth/admin/uploadTest.html'
     })
     .state('create', {
       url: '/admin/create',
@@ -70,7 +74,7 @@ function AuthCatcher($rootScope, $state) {
 
 
 angular
-  .module('myApp', ['ui.router','firebase'])
+  .module('myApp', ['ui.router','firebase','ngclipboard'])
   .constant('API_URL', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher);

@@ -1,6 +1,6 @@
 <div ng-init="recipe.getRecipes(); recipe.navOn()" id="allRes">
 
-  <p ng-if="recipe.numItems('count') !== -1" class="counter">No of Recipes: {{recipe.numItems('count')}}</p>
+
 <div
   class="count"
   ng-repeat="r in recipe.results | filter: searchRecipe | orderBy:'title' track by $index"

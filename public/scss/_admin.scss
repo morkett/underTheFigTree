@@ -177,7 +177,7 @@
     .info-img {
       vertical-align: top;
       display: inline-block;
-      width: auto;
+      width: 90%;
       height: 40px;
       transform: translateY(-20px);
     }
@@ -713,7 +713,8 @@
 .edit-container {
   width: 100vw;
   padding-top: 130px;
-  @include flex;
+  @include flex($justify:flex-start);
+
 }
 
 .allRecipes-container {
@@ -774,7 +775,7 @@
 
 .sub-info-container {
   @include flex($direction: row, $justify:flex-start, $align: flex-start);
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   overflow: hidden;
 
   h3 {
@@ -982,13 +983,15 @@ strong {
 }
 
 .counter {
-  width: 100%;
+  width: 65vw;
   color: $black;
   text-align: center;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 2px;
   background: $headers;
+  position: absolute;
+transform: translateY(-40px);
 }
 
 .isLive {

@@ -11,7 +11,7 @@
            class="search-bar"
            id="search">
   </div>
-
+<p ng-if="recipe.numItems('count') !== -1" class="counter">No of Recipes: {{recipe.numItems('count')}}</p>
 <recipes class="all-recipes"></recipes>
 
 </div>

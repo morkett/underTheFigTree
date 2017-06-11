@@ -450,7 +450,7 @@ body * {
     .info .info-inner-sml .info-img {
       vertical-align: top;
       display: inline-block;
-      width: auto;
+      width: 90%;
       height: 40px;
       -ms-transform: translateY(-20px);
           transform: translateY(-20px); }
@@ -998,8 +998,8 @@ body * {
   padding-top: 130px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   -ms-flex-align: center;
       align-items: center;
   -ms-flex-direction: column;
@@ -1086,7 +1086,7 @@ body * {
       flex-direction: row;
   top: 0;
   left: 0;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   overflow: hidden; }
   .sub-info-container h3 {
     background: #e0e0e0;
@@ -1321,13 +1321,16 @@ strong {
     margin-right: 0; }
 
 .counter {
-  width: 100%;
+  width: 65vw;
   color: #292929;
   text-align: center;
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 2px;
-  background: white; }
+  background: white;
+  position: absolute;
+  -ms-transform: translateY(-40px);
+      transform: translateY(-40px); }
 
 .isLive {
   position: absolute;

@@ -5,14 +5,14 @@
       >filters</span>
 <span class="nav-reveal"
       ng-class="{'navActiveBtn': recipe.navActive}"
-      ng-click="recipe.toggleAdminNav()"
+      ng-click="recipe.toggleNotes()"
       ng-if="'admin-showOne'| isState"
-      >More</span>
+      >Notes</span>
 <span class="nav-reveal"
       ng-class="{'navActiveBtn': recipe.navActive}"
-      ng-click="recipe.toggleAdminNav()"
+      ng-click="recipe.toggleNotes()"
       ng-if="'create'| isState"
-      >More</span>
+      >Notes</span>
 
       <a ng-if="'create' | isState" ui-sref="edit" class="nav-reveal nav-btns">show all</a>
       <a ng-if="'admin-showOne'| isState" ui-sref="edit" class="nav-reveal nav-btns btn-showAll-edit">show all</a>
@@ -20,13 +20,13 @@
       <a ng-if="'admin-showOne'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
       <a ng-if="'edit'| isState" ui-sref="create" class="nav-reveal nav-btns">create</a>
 <nav class="admin-nav" ng-class="{'navActive': recipe.navActive}">
-  <!-- <h1>Under the Figtree - Admin</h1> -->
-  <form method="POST" action='/upload/single' enctype="multipart/form-data">
+
+  <!-- <form method="POST" action='/upload/single' enctype="multipart/form-data" ng-if="'admin-showOne'| isState">
     <div>
       <input name='file' type='file'>
     </div>
     <input type="submit"/>
-  </form>
+  </form> -->
 
 <filter ng-if="'edit'| isState" class="filter"></filter>
 

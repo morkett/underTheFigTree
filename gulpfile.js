@@ -18,10 +18,6 @@ gulp.task('sass', function() {
     }));
 });
 
-
-
-
-
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
@@ -63,9 +59,6 @@ gulp.task('watch', ['browserSync', 'sass'], function (){
   gulp.watch('public/js/**/*.js', browserSync.reload);
 });
 
-
-
-
 // Collects js together - minify + put in dist folder
 var useref = require('gulp-useref');
 var cssnano = require('gulp-cssnano');
@@ -80,7 +73,6 @@ gulp.task('useref', function(){
     .pipe(gulpIf('*.css', cssnano()))
     .pipe(gulp.dest('dist'));
 });
-
 
 //image optimising
 var imagemin = require('gulp-imagemin');
@@ -107,8 +99,6 @@ gulp.task('clean:dist', function() {
 gulp.task('cache:clear', function (callback) {
   return cache.clearAll(callback);
 });
-
-
 
 // sass + watch + sync with 'gulp' command only
 gulp.task('default', function (callback) {

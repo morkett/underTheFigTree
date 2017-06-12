@@ -27,7 +27,7 @@ var RecipeSchema = mongoose.Schema({
   }],
   notes: {type: String},
   isLive: {type: String, default: 'no', required: true},
-  img: {type: Array}
+  img: { type: Array }
 },
   {
     timestamps: true,

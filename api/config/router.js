@@ -21,16 +21,19 @@ var upload = multer({
     s3: conf,
     bucket: 'under-the-fig-tree',
     acl: 'public-read',
-    secretAccessKey: 'tAMVlBXjX++GHk+x8xB14zqCNomI4e1+JtPFP1L0',
-    accessKeyId: 'AKIAJWO72TFEUELFKUBA',
+    secretAccessKey: process.env.AWS_KEY,
+    accessKeyId: process.env.AWS_ID,
     region: 'US Standard',
     contentType: function(req, file, next) {
+      console.log('UPLOADED THE FILE');
+      console.log(file);
+      // req.body.img = file
       next(null, file.mimetype);
     }
   })
 });
 router.get('/api/recipes', RecipeController.getRecipes);
-router.post('/api/recipes', RecipeController.createRecipe);
+router.post('/api/recipes', upload.single('img'), RecipeController.createRecipe);
 
 router.route('/api/recipes/:id')
   .get(RecipeController.getRecipe)

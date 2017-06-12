@@ -2,12 +2,16 @@
   <p>Recipe Create</p>
 </div>
 
+<div class="btn-save">
+  <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid"
+  ng-click="recipe.createRecipe(); recipe.notesActive = false">
+</div>
+
 <form class="admin-form admin-form-create"
       name="admin-form"
-      ng-submit="recipe.createRecipe()"
       ng-init="recipe.createClear()"
-      ng-class="{'navActiveMain': recipe.navActive}"
-      ng-click="recipe.navActive = false">
+      ng-class="{'notesActiveMain': recipe.notesActive}"
+      ng-click="recipe.notesActive = false">
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
@@ -91,12 +95,29 @@
 
     <div class="info-inner info-inner-sml">
       <h2>image</h2>
-    
+    <!--
       <input autocomplete="off"
               type="text" id="img"
               placeholder="img src"
               ng-model="recipe.recipeData.img"
-              class="info-img">
+              class="info-img"> -->
+              <!-- <form method="POST" action='/upload/single' enctype="multipart/form-data" > -->
+                <div>
+                  <input name="file" type="file" fileread="recipe.recipeData.img">
+                </div>
+                <!-- <input type="submit"/> -->
+              <!-- </form> -->
+    </div>
+  </div>
+
+  <div class="info info-notes">
+    <div class="info-inner">
+      <div class="recipe-title">
+        <h1>Public Notes</h1>
+      </div>
+      <textarea type="text" id="new-recipe-instructions"
+                placeholder="- enter instruction -"
+                ng-model="recipe.recipeData.notes"></textarea>
     </div>
   </div>
 
@@ -217,7 +238,7 @@
         <div class="ing-inner-container inst-inner-container"
              ng-repeat="instructions in recipe.recipeData.instructions track by $index">
           <div class="numbers">
-            <p>{{$index+1}}</p>
+            <p>{{$index+1}}.</p>
             <textarea type="text" id="new-recipe-instructions"
                       placeholder="- enter instruction -"
                       ng-model="recipe.recipeData.instructions[$index].instruction"
@@ -232,9 +253,4 @@
       <remove ingarr="recipe.recipeData.instructions" class="btns btn1"></remove>
     </div>
   </div>
-
-  <div class="btn-save">
-    <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid">
-  </div>
-
 </form>

@@ -21,6 +21,12 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     controller.navActive = !controller.navActive;
   };
 
+  controller.notesActive = false;
+  controller.toggleNotes = function() {
+    console.log('hit');
+    controller.notesActive = !controller.notesActive;
+  };
+
   controller.checkboxIsLive = 'all';
   controller.checkboxToggleIsLive = function(isLive){
     controller.checkboxIsLive = isLive;
@@ -63,7 +69,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(
       function(success) {
-        console.log('getRecipe: controller.recipe:', success);
+        console.log('getRecipes: controller.recipe:', success);
         controller.results = success.data;
       },
       function (error) {
@@ -73,6 +79,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   };
   controller.createRecipe = function() {
     console.log('createRecipe()');
+    console.log(controller.recipeData);
     RecipeFactory.createRecipe(controller.recipeData).then(
         function success(response) {
        //redirects to another state
@@ -93,7 +100,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     var recipeId = $stateParams.recipeId;
     RecipeFactory.getOne(recipeId).then(
       function success(res) {
-        console.log('getPost:',res);
+        console.log('getRecipe:',res);
         controller.selectedRecipe = res.data;
       },
       function error(err){
@@ -107,8 +114,8 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
       function success(res) {
         console.log('deleted',res);
         controller.showMessage = true;
-        controller.showMessageUpdated = false;
         controller.showMessageDeleted = true;
+        controller.showMessageUpdated = false;
         $timeout(function() {
           controller.showMessage = false;
           controller.showMessageDeleted = false;

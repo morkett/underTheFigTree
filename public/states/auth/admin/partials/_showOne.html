@@ -1,14 +1,17 @@
 <div class="message" ng-if="recipe.showMessage">
   <p ng-if="recipe.showMessageUpdated">Recipe Updated</p>
-  <p ng-if="recipe.showMessageDelete">Recipe Deleted</p>
+  <p ng-if="recipe.showMessageDeleted">Recipe Deleted</p>
+</div>
+
+<div class="btn-save">
+  <input autocomplete="off" type="submit" value="Save changes" ng-click="recipe.updateRecipe(); recipe.notesActive = false">
 </div>
 
 <form class="admin-form"
       name="admin-form"
-      ng-submit="recipe.updateRecipe()"
       ng-init="recipe.getRecipe()"
-      ng-class="{'navActiveMain': recipe.navActive}"
-      ng-click="recipe.navActive = false">
+      ng-class="{'notesActiveMain': recipe.notesActive}"
+      ng-click="recipe.notesActive = false">
 
   <div class="info">
     <div class="info-inner info-inner-med">
@@ -100,14 +103,27 @@
     <div class="info-inner info-inner-sml">
       <h2>image</h2>
       <div class="ing-inner-container ing-inner-img"
-           ng-repeat="img in recipe.selectedRecipe.recipe.img | limitTo: 1 track by $index">
+           ng-repeat="img in recipe.selectedRecipe.recipe.img track by $index">
         <img ng-src="https://s3.amazonaws.com/under-the-fig-tree/{{img}}" alt="" ngclipboard data-clipboard-target="#img">
-        <input autocomplete="off"
-              type="text" id="img"
-              placeholder="img src"
-              ng-model="recipe.selectedRecipe.recipe.img[$index]"
-              class="info-img">
+
       </div>
+      <input autocomplete="off"
+            type="text" id="img"
+            placeholder="img src"
+            ng-model="recipe.selectedRecipe.recipe.img"
+            class="info-img">
+    </div>
+  </div>
+
+
+  <div class="info info-notes">
+    <div class="info-inner">
+      <div class="recipe-title">
+        <h1>Public Notes</h1>
+      </div>
+      <textarea type="text" id="new-recipe-instructions"
+                placeholder="- enter instruction -"
+                ng-model="recipe.selectedRecipe.recipe.notes"></textarea>
     </div>
   </div>
 
@@ -229,7 +245,7 @@
         <div class="ing-inner-container inst-inner-container"
              ng-repeat="instructions in recipe.selectedRecipe.recipe.instructions track by $index">
           <div class="numbers">
-            <p>{{$index+1}}</p>
+            <p>{{$index+1}}.</p>
             <textarea type="text" id="new-recipe-instructions"
                       placeholder="- enter instruction -"
                       ng-model="recipe.selectedRecipe.recipe.instructions[$index].instruction"></textarea>
@@ -248,9 +264,7 @@
 
 
 
-  <div class="btn-save">
-    <input autocomplete="off" type="submit" value="Save changes">
-  </div>
+
 
 </form>
 

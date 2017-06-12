@@ -63,8 +63,10 @@
       <li>{{ingredient.name}}</li>
     </ul>
 </div>
-<div class="sub-info">
+<div class="sub-info showAll-sub-info">
     <ul ng-repeat="instruction in r.instructions track by $index">
+
+        <p>{{$index+1}}.</p>
       <li >{{instruction.instruction}}</li>
     </ul>
 </div>

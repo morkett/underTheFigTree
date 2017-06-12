@@ -8,14 +8,21 @@ function getRecipes(req, res) {
       res.status(500).send('could not get Recipe');
       return;
     }
-    console.log(Recipe);
+    // for(var i = 0; i < Recipe.length; i++) {
+    //   res.json(Recipe[i].img);
+    // console.log(Recipe[i]);
+    //
+    // }
     res.json(Recipe);
+    // console.log(Recipe);
   });
 }
 
 function createRecipe(req, res) {
+  console.log(req.params);
+
   var recipe = new Recipe(req.body);
-  console.log(req.body);
+  recipe.img.push(req.file.key);
   recipe.save(function(err) {
     if(err) return res.json({message: 'Could not create recipe' + err});
     res.json({recipe: recipe});
@@ -55,6 +62,8 @@ function updateRecipe(req, res) {
     if(req.body.type) recipe.type = req.body.type;
     if(req.body.type2) recipe.type2 = req.body.type2;
     if(req.body.makes) recipe.makes = req.body.makes;
+    if(req.body.notes) recipe.notes = req.body.notes;
+    if(req.body.img) recipe.img = req.body.img;
     if(req.body.ingredients) recipe.ingredients = req.body.ingredients;
     if(req.body.ingredients_2_title) recipe.ingredients_2_title = req.body.ingredients_2_title;
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;

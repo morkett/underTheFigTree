@@ -120,10 +120,7 @@ function seed () {
               name: 'pepper'}
           ],
           isLive: 'no',
-          img: [
-            'food1.png',
-            'food2.png'
-          ]
+          img: []
         },
         {
           title: 'green beans with toasted mustard and garlic',

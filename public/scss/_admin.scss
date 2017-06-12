@@ -122,7 +122,7 @@
       width: 100%;
       text-align: center;
       text-align-last: center;
-      height: 40px;
+      height: 30px;
       background: transparent;
       border: none;
       border-radius: 0;
@@ -570,6 +570,7 @@
   right: 0;
   top: 0;
   transition: 0.4s;
+  box-shadow: $box-shadow;
 }
 
 .slider:before {
@@ -581,6 +582,8 @@
   position: absolute;
   transition: 0.4s;
   width: 16px;
+  box-shadow: $box-shadow;
+
 }
 
 .sliderClicked {
@@ -1044,4 +1047,53 @@ transform: translateY(-40px);
   transform: translateX(-100%) translateY(-50%)!important;
   transform: translateX(calc(-100% - 5px)) translateY(-50%)!important;
 
+}
+
+.notesActiveMain {
+  transform: translateX(40%);
+  transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.info-notes {
+  position: absolute;
+  transform: translateX(-100%);
+  top: 0;
+  margin-top: 10vh;
+  height: 80vh;
+
+  .info-inner {
+    height: 100%;
+  }
+
+  textarea {
+    font-size: 15px;
+    height: 100%;
+    width: 35vw;
+    background: transparent;
+    margin: 0;
+    padding: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+
+    &:focus {
+      font-style: normal;
+    }
+  }
+}
+
+.admin-form-create {
+  .info-inner select {
+    height: 49px;
+  }
+}
+
+.showAll-sub-info {
+  p {
+    margin-right: 15px;
+  }
+  li {
+    width: 95%;
+    // display: none;
+  }
 }

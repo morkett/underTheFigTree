@@ -407,7 +407,7 @@ body * {
       width: 100%;
       text-align: center;
       text-align-last: center;
-      height: 40px;
+      height: 30px;
       background: transparent;
       border: none;
       border-radius: 0;
@@ -856,7 +856,8 @@ body * {
   position: absolute;
   right: 0;
   top: 0;
-  transition: 0.4s; }
+  transition: 0.4s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .slider:before {
   background-color: #fff;
@@ -866,7 +867,8 @@ body * {
   left: 4px;
   position: absolute;
   transition: 0.4s;
-  width: 16px; }
+  width: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
 .sliderClicked {
   background-color: darkgray; }
@@ -1388,6 +1390,42 @@ strong {
       transform: translateX(-100%) translateY(-50%) !important;
   -ms-transform: translateX(calc(-100% - 5px)) translateY(-50%) !important;
       transform: translateX(calc(-100% - 5px)) translateY(-50%) !important; }
+
+.notesActiveMain {
+  -ms-transform: translateX(40%);
+      transform: translateX(40%);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.info-notes {
+  position: absolute;
+  -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+  top: 0;
+  margin-top: 10vh;
+  height: 80vh; }
+  .info-notes .info-inner {
+    height: 100%; }
+  .info-notes textarea {
+    font-size: 15px;
+    height: 100%;
+    width: 35vw;
+    background: transparent;
+    margin: 0;
+    padding: 10px;
+    outline: none;
+    border: none;
+    text-align: center; }
+    .info-notes textarea:focus {
+      font-style: normal; }
+
+.admin-form-create .info-inner select {
+  height: 49px; }
+
+.showAll-sub-info p {
+  margin-right: 15px; }
+
+.showAll-sub-info li {
+  width: 95%; }
 
 script#__bs_script__ {
   opacity: 0;

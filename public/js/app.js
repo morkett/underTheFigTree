@@ -74,7 +74,7 @@ function AuthCatcher($rootScope, $state) {
 
 
 angular
-  .module('myApp', ['ui.router','firebase','ngclipboard'])
+  .module('myApp', ['ui.router','firebase','ngclipboard', 'ngFileUpload'])
   .constant('API_URL', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher);

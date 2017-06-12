@@ -1,4 +1,4 @@
-function RecipeFactory($http) {
+function RecipeFactory($http, Upload) {
   return {
     getRecipes: function() {
       return $http({
@@ -7,7 +7,7 @@ function RecipeFactory($http) {
       });
     },
     createRecipe: function(newRecipe) {
-      return $http({
+      return Upload.upload({
         method: 'POST',
         url: '/api/recipes',
         data: newRecipe
@@ -45,11 +45,18 @@ function RecipeFactory($http) {
         url: `/api/type/${type}`,
         data: type
       });
+    },
+    imgUpload: function() {
+      return $http({
+        method: 'POST',
+        url: '/upload/single/'
+      });
     }
-  };
 
+
+  };
 }
-RecipeFactory.$inject = ['$http'];
+RecipeFactory.$inject = ['$http', 'Upload'];
 
 angular
   .module('myApp')

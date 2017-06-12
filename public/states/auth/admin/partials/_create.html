@@ -148,6 +148,7 @@
                   placeholder="-"></div>
 
         <div class="ing-inner-container">
+          <span class="drop-down"></span>
           <select id="new-recipe-units"
                   name="new-recipe-units"
                   ng-model="recipe.recipeData.ingredients[$index].unit"
@@ -207,6 +208,7 @@
                   placeholder="-"></div>
 
         <div class="ing-inner-container">
+          <span class="drop-down"></span>
           <select id="new-recipe-units_2"
                   name="new-recipe-units_2"
                   ng-model="recipe.recipeData.ingredients_2[$index].unit"
@@ -239,7 +241,7 @@
              ng-repeat="instructions in recipe.recipeData.instructions track by $index">
           <div class="numbers">
             <p>{{$index+1}}.</p>
-            <textarea type="text" id="new-recipe-instructions"
+            <textarea type="text" id="new-recipe-notes"
                       placeholder="- enter instruction -"
                       ng-model="recipe.recipeData.instructions[$index].instruction"
                       required>

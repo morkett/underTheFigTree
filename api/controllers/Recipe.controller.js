@@ -22,7 +22,9 @@ function createRecipe(req, res) {
   console.log(req.params);
 
   var recipe = new Recipe(req.body);
-  recipe.img.push(req.file.key);
+  if(req.file){
+    recipe.img.push(req.file.key);
+  }
   recipe.save(function(err) {
     if(err) return res.json({message: 'Could not create recipe' + err});
     res.json({recipe: recipe});

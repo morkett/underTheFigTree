@@ -604,7 +604,19 @@ body * {
     text-align: center;
     font-size: 15px; }
   .ing-inner-container select {
-    font-size: 15px; }
+    font-size: 15px;
+    position: relative; }
+  .ing-inner-container .drop-down:before {
+    content: "";
+    display: block;
+    position: absolute;
+    -ms-transform: translateX(15px);
+        transform: translateX(15px);
+    height: 20px;
+    width: 20px;
+    background: url("/images/arrow_drop.png");
+    background-size: contain;
+    z-index: 10; }
 
 .ing-name {
   -ms-flex: 0.7;
@@ -626,7 +638,11 @@ body * {
 .inst-inner-container {
   border-bottom: none; }
   .inst-inner-container textarea {
-    font-size: 15px; }
+    font-size: 15px;
+    background: transparent;
+    border: 0;
+    width: 90% !important;
+    text-align: center; }
 
 .ing_2-title {
   height: auto;

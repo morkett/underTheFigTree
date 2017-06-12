@@ -11,8 +11,8 @@ var AWS = require('aws-sdk');
 
 
 AWS.config.update({
-  accessKeyId: 'AKIAJWO72TFEUELFKUBA',
-  secretAccessKey: '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'
+  secretAccessKey: process.env.AWS_KEY,
+  accessKeyId: process.env.AWS_ID
 });
 
 var conf = new AWS.S3();

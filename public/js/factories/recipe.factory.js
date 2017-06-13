@@ -26,7 +26,7 @@ function RecipeFactory($http, Upload) {
       });
     },
     editOne: function(editedRecipe){
-      return $http({
+      return Upload.upload({
         method: 'PUT',
         url: `/api/recipes/${editedRecipe._id}`,
         data: editedRecipe

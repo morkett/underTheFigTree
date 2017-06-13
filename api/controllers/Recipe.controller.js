@@ -8,13 +8,7 @@ function getRecipes(req, res) {
       res.status(500).send('could not get Recipe');
       return;
     }
-    // for(var i = 0; i < Recipe.length; i++) {
-    //   res.json(Recipe[i].img);
-    // console.log(Recipe[i]);
-    //
-    // }
     res.json(Recipe);
-    // console.log(Recipe);
   });
 }
 
@@ -45,9 +39,9 @@ function deleteRecipe(req, res) {
 
   Recipe.remove({_id: recipeId}, function(err){
     if(err) {
-      res.json({message: 'could not delete duck b/c:' + err});
+      res.json({message: 'could not delete recipe b/c:' + err});
     }
-    res.json({message: 'duck successfully delete'});
+    res.json({message: 'recipe successfully delete'});
 
   });
 }
@@ -71,7 +65,7 @@ function updateRecipe(req, res) {
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;
     if(req.body.instructions) recipe.instructions = req.body.instructions;
     if(req.body.isLive) recipe.isLive = req.body.isLive;
-
+  
 
     recipe.save(function(err){
       if(err) return res.status(404).json({message: 'Could not update recipe b/c' + err});

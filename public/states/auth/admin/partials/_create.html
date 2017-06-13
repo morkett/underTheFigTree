@@ -2,16 +2,17 @@
   <p>Recipe Create</p>
 </div>
 
-<div class="btn-save">
-  <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid"
-  ng-click="recipe.createRecipe(); recipe.notesActive = false">
-</div>
+
 
 <form class="admin-form admin-form-create"
       name="admin-form"
       ng-init="recipe.createClear()"
       ng-class="{'notesActiveMain': recipe.notesActive}"
       ng-click="recipe.notesActive = false">
+  <div class="btn-save">
+    <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid"
+    ng-click="recipe.createRecipe(); recipe.notesActive = false">
+  </div>
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
@@ -95,18 +96,9 @@
 
     <div class="info-inner info-inner-sml">
       <h2>image</h2>
-    <!--
-      <input autocomplete="off"
-              type="text" id="img"
-              placeholder="img src"
-              ng-model="recipe.recipeData.img"
-              class="info-img"> -->
-              <!-- <form method="POST" action='/upload/single' enctype="multipart/form-data" > -->
-                <div>
-                  <input name="file" type="file" fileread="recipe.recipeData.img">
-                </div>
-                <!-- <input type="submit"/> -->
-              <!-- </form> -->
+        <div>
+          <input name="file" type="file" fileread="recipe.recipeData.img">
+        </div>
     </div>
   </div>
 

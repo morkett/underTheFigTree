@@ -65,7 +65,6 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
 
   controller.isLiveOptions = ['yes', 'no'];
 
-
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(
       function(success) {
@@ -78,11 +77,8 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     );
   };
   controller.createRecipe = function() {
-    console.log('createRecipe()');
-    console.log(controller.recipeData);
     RecipeFactory.createRecipe(controller.recipeData).then(
         function success(response) {
-       //redirects to another state
           console.log('Created new recipe: ', response);
           controller.showMessage = true;
           $timeout(function() {

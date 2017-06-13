@@ -148,12 +148,29 @@ input {
   font-family: 'Open Sans', sans-serif;
 }
 
+input::-webkit-input-placeholder {
+  border: none;
+  outline: none !important;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+  border: none;
+  outline: none !important;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
 input:-webkit-autofill {
   color: #fff !important;
 };
 
+
+
 textarea:focus::-webkit-input-placeholder {
   color: transparent;
+  border: none;
+  outline: none !important;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 

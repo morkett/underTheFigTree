@@ -176,10 +176,18 @@
 
     .info-img {
       vertical-align: top;
-      display: inline-block;
+      display: block;
       width: 90%;
       height: 40px;
-      transform: translateY(-20px);
+      // transform: translateY(-20px);
+    }
+
+    input {
+      margin-left: auto;
+      margin-right: auto;
+      border-top: $border-btm;
+      border-bottom: $border-btm;
+      text-align: center;
     }
   }
 }
@@ -353,6 +361,7 @@
     font-size: 15px;
     background: transparent;
     border: 0;
+    outline: none;
     width: 90% !important;
     text-align: center;
   }

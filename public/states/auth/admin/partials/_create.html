@@ -1,18 +1,17 @@
 <div class="message" ng-if="recipe.showMessage">
-  <p>Recipe Create</p>
+  <p>Recipe Created</p>
 </div>
 
-
+<div class="btn-save">
+  <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid"
+  ng-click="recipe.createRecipe(); recipe.notesActive = false">
+</div>
 
 <form class="admin-form admin-form-create"
       name="admin-form"
       ng-init="recipe.createClear()"
       ng-class="{'notesActiveMain': recipe.notesActive}"
       ng-click="recipe.notesActive = false">
-  <div class="btn-save">
-    <input autocomplete="off" type="submit" value="Save changes" ng-disabled="admin-form.$invalid"
-    ng-click="recipe.createRecipe(); recipe.notesActive = false">
-  </div>
   <div class="info">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">

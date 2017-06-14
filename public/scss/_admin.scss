@@ -136,7 +136,6 @@
       margin-bottom: 10px;
     }
 
-
     .info-makes {
       height: 10px;
     }
@@ -288,6 +287,7 @@
 .ing-container {
   @include flex($direction: row);
   border-bottom: $border-btm;
+
   select {
     width: 100%;
     text-align: center;
@@ -333,6 +333,7 @@
     font-size: 15px;
     position: relative;
   }
+
   .drop-down:before {
     @include pseudo;
     transform: translateX(15px);
@@ -365,7 +366,6 @@
     width: 90% !important;
     text-align: center;
   }
-
   // textarea::-webkit-scrollbar {
   //   display: none;
   // }
@@ -483,7 +483,7 @@
   transform: translateX(50%) translateY(-50%)!important;
   background: #e0e0e0;
   background: $headers;
-  background: transparent;
+  // background: transparent;
   border: 2px solid #fff;
   border-radius: 2px;
   cursor: pointer;
@@ -493,7 +493,7 @@
 
   input {
     cursor: pointer;
-    color: #fff;
+    color: $black;
 
     &:hover {
       // color: $black;
@@ -519,22 +519,22 @@
   transform: translateX(-50%) translateY(50%);
   background: #e0e0e0;
   background: $headers;
-  background: transparent;
+  // background: transparent;
   border: 1px solid #fff;
   border-radius: 2px;
   cursor: pointer;
   z-index: 5;
   box-shadow: $box-shadow;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-  height: 20px;
+  height: 25px;
   width: 160px;
-  color: #fff;
+  color: $black;
   font-size: 15px;
   font-weight: 400;
 
   input {
     cursor: pointer;
-    color: #fff;
+    color: $black;
   }
 
   &:hover {
@@ -545,7 +545,7 @@
 
 .btn-delete-cancel,
 .btn-delete-yes {
-  display: block;
+  display: flex;
   width: 100px;
   text-align: center;
   transform: translateX(-100%);
@@ -607,7 +607,6 @@
   transition: 0.4s;
   width: 16px;
   box-shadow: $box-shadow;
-
 }
 
 .sliderClicked {
@@ -702,7 +701,7 @@
   &::-webkit-input-placeholder {
     color: #fff;
     font-weight: bold;
-    letter-spacing: .03em;
+    letter-spacing: 0.03em;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   }
 
@@ -741,7 +740,6 @@
   width: 100vw;
   padding-top: 130px;
   @include flex($justify:flex-start);
-
 }
 
 .allRecipes-container {
@@ -757,7 +755,6 @@
 
   .title {
     position: relative;
-
     width: 100%;
     margin-bottom: 3px;
     text-align: center;
@@ -772,13 +769,23 @@
     @include flex;
     box-shadow: $box-shadow;
     border-radius: 2px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 
+    h2 {
+      width: 100%;
+      height: 100%;
+    }
 
     a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: $black;
       text-decoration: none;
+      width: 100%;
+      text-align: center;
+      height: 100%;
 
       &:hover,
       &:visited {
@@ -838,8 +845,8 @@ strong {
   flex: 1;
   box-shadow: $box-shadow;
   border-radius: 2px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 
   ul {
     padding: 10px;
@@ -889,7 +896,7 @@ strong {
   left: 1vw;
   z-index: 999;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
-  color: #fff;
+  color: $black;
   padding: 2px;
   width: 80px;
   text-align: center;
@@ -898,17 +905,15 @@ strong {
   transform: translateX(0) translateY(-50%);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
-  background: $white-trans;
+  background: $headers;
   font-family: 'Open Sans', sans-serif;
   font-size: 15px;
-  letter-spacing: .05em;
+  letter-spacing: 0.05em;
 
   a {
     display: block;
   }
 }
-
-
 
 .nav-reveal-filter {
   opacity: 0;
@@ -933,7 +938,8 @@ strong {
   height: 25px;
   width: 80px;
   border-radius: 2px;
-  color: #fff;
+  background: $headers;
+  color: $black;
   text-decoration: none;
   left: auto;
   top: 5%;
@@ -945,11 +951,9 @@ strong {
   &:active,
   &:hover,
   &:visited {
-    color: #fff;
+    color: $black;
     text-decoration: none;
   }
-
-
 }
 
 .close-nav {
@@ -1018,7 +1022,7 @@ strong {
   border-radius: 2px;
   background: $headers;
   position: absolute;
-transform: translateY(-40px);
+  transform: translateY(-40px);
 }
 
 .isLive {
@@ -1060,7 +1064,6 @@ transform: translateY(-40px);
   font-size: 60px;
   animation: msg-fade-in 0.3s cubic-bezier(.25,.8,.25,1) forwards;
 }
-
 @keyframes msg-fade-in {
   to {
     opacity: 1;
@@ -1070,7 +1073,6 @@ transform: translateY(-40px);
 .btn-showAll-edit {
   transform: translateX(-100%) translateY(-50%)!important;
   transform: translateX(calc(-100% - 5px)) translateY(-50%)!important;
-
 }
 
 .notesActiveMain {
@@ -1116,6 +1118,7 @@ transform: translateY(-40px);
   p {
     margin-right: 15px;
   }
+
   li {
     width: 95%;
     // display: none;

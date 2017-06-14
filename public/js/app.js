@@ -1,13 +1,14 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, AuthFactory) {
 
   $stateProvider
+  .state('home', {
+    url: '/',
+    templateUrl: '../states/public/partials/_home.html'
+  })
+  //ADMIN
     .state('login', {
       url: '/admin/login',
       templateUrl: '../states/auth/login.html'
-    })
-    .state('uploadTest', {
-      url: '/admin/upload',
-      templateUrl: '../states/auth/admin/uploadTest.html'
     })
     .state('create', {
       url: '/admin/create',
@@ -24,7 +25,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       }
     })
     .state('edit', {
-      url: '/',
+      url: '/admin/edit',
       views: {
         '': {templateUrl: '/states/auth/admin/admin.html'},
         'admin-main@edit': {templateUrl: '/states/auth/admin/partials/_edit.html'},

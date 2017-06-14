@@ -1618,14 +1618,14 @@ svg {
     left: 0;
     height: 100px;
     background: rgba(41, 41, 41, 0.82);
-    -ms-transform: translateY(-250px);
-        transform: translateY(-250px);
+    -ms-transform: translateY(-400px);
+        transform: translateY(-400px);
     padding: 5px;
     padding-top: 10px;
     position: relative; }
   .front-new h2, .front-new h3 {
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-transform: capitalize; }
   .front-new h3 {
     margin-top: 5px;
@@ -1645,6 +1645,7 @@ svg {
         transform: translateX(-25%);
     height: 400px; }
   .front-new p {
+    color: rgba(255, 255, 255, 0.8);
     padding: 10px;
     letter-spacing: .02em;
     line-height: 1.4;

@@ -66,8 +66,8 @@ function updateRecipe(req, res) {
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;
     if(req.body.instructions) recipe.instructions = req.body.instructions;
     if(req.body.isLive) recipe.isLive = req.body.isLive;
-    if(req.body.new) recipe.new = req.body.new;
-    if(req.body.featured) recipe.featured = req.body.featured;
+    recipe.new = req.body.new;
+    recipe.featured = req.body.featured;
 
 
     recipe.save(function(err){

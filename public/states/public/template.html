@@ -1,5 +1,8 @@
-<nav>
-  <ul>
+<nav ng-controller="NavController as nav" class="front-nav">
+  <div class="btn-nav-container" ng-click="nav.toggleFrontNav()">
+    <span ng-class="{'navAciveBtn': nav.frontNavActive}"></span>
+  </div>
+  <ul ng-if="nav.frontNavActive">
     <li><a ui-sref="home">home</a></li>
     <li><a ui-sref="recipes">recipes</a></li>
     <li><a ui-sref="about">about</a></li>

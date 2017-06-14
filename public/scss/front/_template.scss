@@ -1,3 +1,100 @@
 .front-template {
-  background: url('/images/bgInvert.png');
+  background: url('/images/bg.jpg');
+  position: relative;
+}
+
+.front-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 998;
+
+
+  ul {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background: url('/images/bg.jpg');
+    @include flex;
+  }
+
+  li {
+    font-family: $font-front-main;
+    height: 50px;
+    width: 100%;
+
+    a {
+      color: #fff;
+
+      text-decoration: none;
+      font-size: 2em;
+      letter-spacing: .1em;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      text-transform: capitalize;
+      // border: $border-dev-red;
+
+      &:active {
+        background: none;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.btn-nav-container {
+  position: fixed;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .1);
+  overflow: hidden;
+  @include flex;
+  left: auto;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+
+  span {
+    position: relative;
+    height: 2px;
+    width: 20px;
+    background: $front-nav-ham;
+    transition: transform .3s $transition;
+
+    &:before {
+      @include pseudo;
+      background: $front-nav-ham;
+      height: 2px;
+      width: 20px;
+      top: 0;
+      left: 0;
+      transform: translateY(-250%);
+    }
+    &:after {
+      @include pseudo;
+      background: $front-nav-ham;
+      height: 2px;
+      width: 20px;
+      top: 0;
+      left: 0;
+      transform: translateY(250%);
+    }
+  }
+
+  .navAciveBtn {
+    transform-origin: center;
+    transform: rotate(45deg);
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      transform: rotate(-90deg);
+    }
+  }
+
 }

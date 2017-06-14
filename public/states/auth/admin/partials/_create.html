@@ -91,6 +91,28 @@
         </select>
       </div>
 
+      <div class="ing-inner-container">
+        <span class="drop-down"></span>
+        <select id="new-recipe-new"
+                name="new-recipe-new"
+                ng-model="recipe.recipeData.new"
+                ng-options="r for r in recipe.newOptions"
+                required>
+          <option value="" disabled>- new -</option>
+        </select>
+      </div>
+
+      <div class="ing-inner-container">
+        <span class="drop-down"></span>
+        <select id="new-recipe-featured"
+                name="new-recipe-featured"
+                ng-model="recipe.recipeData.featured"
+                ng-options="r for r in recipe.newOptions"
+                required>
+          <option value="" disabled>- featured -</option>
+        </select>
+      </div>
+
     </div>
 
     <div class="info-inner info-inner-sml">
@@ -101,14 +123,25 @@
     </div>
   </div>
 
-  <div class="info info-notes">
-    <div class="info-inner">
+  <div class="info info-notes-blurb">
+    <div class="info-inner info-inner-med">
       <div class="recipe-title">
         <h1>Public Notes</h1>
       </div>
       <textarea type="text" id="new-recipe-instructions"
                 placeholder="- enter instruction -"
                 ng-model="recipe.recipeData.notes"></textarea>
+    </div>
+
+
+
+    <div class="info-inner info-inner-sml">
+      <div class="recipe-title">
+        <h1>Blurb</h1>
+      </div>
+      <textarea type="text" id="new-recipe-blurb"
+                placeholder="- enter blurb -"
+                ng-model="recipe.recipeData.blurb"></textarea>
     </div>
   </div>
 

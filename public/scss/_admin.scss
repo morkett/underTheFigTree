@@ -1038,17 +1038,32 @@ strong {
   box-shadow: rgba(0, 200, 83, 1) 0 0 5px;
 }
 
-.notLive {
-  background: lightgrey;
-  box-shadow: none;
-}
-
 .isLiveEdit {
   position: relative;
   display: block;
   transform: translateY(-100%) translateX(400%);
   right: 0;
 }
+
+.isLiveFeatured {
+  background: #304ffe;
+  box-shadow: rgba(48, 79, 254, 1) 0 0 5px;
+  transform: translateY(-100%) translateX(500%);
+}
+
+.isLiveNew {
+  background: #ffd600;
+  box-shadow: rgba(255, 214, 0, 1) 0 0 5px;
+}
+
+.notLive {
+  background: lightgrey;
+  box-shadow: none;
+}
+
+
+
+
 
 .message {
   position: absolute;
@@ -1080,15 +1095,19 @@ strong {
   transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-.info-notes {
+.info-notes-blurb {
   position: absolute;
   transform: translateX(-100%);
   top: 0;
   margin-top: 10vh;
   height: 80vh;
 
-  .info-inner {
-    height: 100%;
+  .info-inner-med {
+    height: 63.5%;
+  }
+
+  .info-inner-sml {
+    height: 35%;
   }
 
   textarea {
@@ -1108,11 +1127,24 @@ strong {
   }
 }
 
+
 .admin-form-create {
   .info-inner select {
     height: 49px;
   }
 }
+
+// .info-blurb {
+//   position: absolute;
+//   transform: translateX(-100%);
+//   top: 0;
+//   margin-top: 62vh;
+//   height: 28.5vh;
+//
+//   .info-inner {
+//     height: 100%;
+//   }
+// }
 
 .showAll-sub-info {
   p {

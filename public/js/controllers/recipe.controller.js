@@ -64,6 +64,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
+  controller.newOptions = [false, true];
 
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(

@@ -59,13 +59,16 @@ function updateRecipe(req, res) {
     if(req.body.type2) recipe.type2 = req.body.type2;
     if(req.body.makes) recipe.makes = req.body.makes;
     if(req.body.notes) recipe.notes = req.body.notes;
+    if(req.body.blurb) recipe.blurb = req.body.blurb;
     if(req.body.img) recipe.img = req.body.img;
     if(req.body.ingredients) recipe.ingredients = req.body.ingredients;
     if(req.body.ingredients_2_title) recipe.ingredients_2_title = req.body.ingredients_2_title;
     if(req.body.ingredients_2) recipe.ingredients_2 = req.body.ingredients_2;
     if(req.body.instructions) recipe.instructions = req.body.instructions;
     if(req.body.isLive) recipe.isLive = req.body.isLive;
-  
+    if(req.body.new) recipe.new = req.body.new;
+    if(req.body.featured) recipe.featured = req.body.featured;
+
 
     recipe.save(function(err){
       if(err) return res.status(404).json({message: 'Could not update recipe b/c' + err});

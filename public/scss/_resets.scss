@@ -208,3 +208,87 @@ textarea::-webkit-input-placeholder {
   display: none;
 
 }
+
+
+body {
+  @include flex;
+}
+
+// .home-wrap {
+//   // height: 100vh;
+//   width: 100vw;
+//   border: $border-dev-red;
+// }
+
+// .recipe {
+//   border-bottom: 2px solid black;
+//   margin-bottom: 20px;
+// }
+
+/* FIXME: REMOVE DISPLAY BLOCK */
+// body {
+//   padding-left: 50px;
+// }
+
+body * {
+  display: block;
+}
+//
+// .addfields {
+//   cursor: pointer;
+//   border: 1px solid green;
+//   background: green;
+// }
+
+// .createBtn {
+//   background: blue;
+//   height: 50px;
+//   cursor: pointer;
+//   margin-top: 20px;
+// }
+
+.ing-input {
+  display: inline-block;
+}
+
+.ing-all {
+  @include flex($direction: row, $justify:flex-start);
+  padding: 0;
+  margin: 0;
+
+  li {
+    margin: 0 1px;
+  }
+}
+
+.info .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-ing .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-inst .ng-dirty {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.admin-form-create {
+  .info .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .admin-ing .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  .admin-inst .ng-dirty {
+    font-weight: bold;
+    font-style: normal;
+  }
+}

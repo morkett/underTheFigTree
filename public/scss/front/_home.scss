@@ -1,0 +1,54 @@
+.home-section {
+}
+
+
+header {
+  background: url('/images/bg.jpg');
+  height: 100vh;
+  width: 100vw;
+  @include flex;
+
+  h1 {
+    color: #fff;
+    font-size: 40px;
+    line-height: 120px;
+    letter-spacing: 0px;
+    font-family: $font-front-main;
+    opacity: 0;
+    transform: translateY(-60px);
+    animation: fade-in-title 3s $transition 3s forwards;
+  }
+}
+
+@keyframes fade-in-title {
+  to{
+    opacity: 1;
+  }
+}
+
+.svg-container {
+  height: 50%;
+  width: 50%;
+  // border: $border-dev-red;
+  overflow: hidden;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translateX(-50%) translateY(-50%);
+
+
+  svg {
+    margin: auto;
+    width: 50%;
+    stroke: #fff;
+    stroke-dasharray: 790;
+    stroke-dashoffset: 800;
+    animation: svg-dash-offset 7s $transition 1s forwards;
+  }
+}
+
+@keyframes svg-dash-offset {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

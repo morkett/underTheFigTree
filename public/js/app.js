@@ -3,7 +3,10 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
   $stateProvider
   .state('home', {
     url: '/',
-    templateUrl: '../states/public/partials/_home.html'
+    views: {
+      '': {templateUrl: '/states/public/template.html'},
+      'front-template@home': {templateUrl: '/states/public/partials/_home.html'}
+    }
   })
   //ADMIN
     .state('login', {

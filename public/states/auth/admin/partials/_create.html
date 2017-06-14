@@ -10,9 +10,8 @@
 <form class="admin-form admin-form-create"
       name="admin-form"
       ng-init="recipe.createClear()"
-      ng-class="{'notesActiveMain': recipe.notesActive}"
-      ng-click="recipe.notesActive = false">
-  <div class="info">
+      ng-class="{'notesActiveMain': recipe.notesActive}">
+  <div class="info" ng-click="recipe.notesActive = false">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
         <input autocomplete="off"
@@ -146,7 +145,8 @@
   </div>
 
   <div class="admin-ing"
-        ng-class="{'visible': recipe.showIng1}">
+        ng-class="{'visible': recipe.showIng1}"
+        ng-click="recipe.notesActive = false">
     <div class="switch-container">
       <div class="switch"
            ng-click="recipe.toggleIng()">

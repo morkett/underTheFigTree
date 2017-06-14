@@ -11,9 +11,9 @@
       name="admin-form"
       ng-init="recipe.getRecipe()"
       ng-class="{'notesActiveMain': recipe.notesActive}"
-      ng-click="recipe.notesActive = false">
+      >
 
-  <div class="info">
+  <div class="info" ng-click="recipe.notesActive = false">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
         <input autocomplete="off"
@@ -124,7 +124,7 @@
       </div>
     </div>
 
-    <div class="info-inner info-inner-sml">
+    <div class="info-inner info-inner-sml" ng-click="recipe.notesActive = false">
       <h2>image</h2>
       <div class="ing-inner-container ing-inner-img"
            ng-repeat="img in recipe.selectedRecipe.recipe.img track by $index">
@@ -149,7 +149,7 @@
   </div>
 
 
-  <div class="info info-notes-blurb">
+  <div class="info info-notes-blurb" ng-click="recipe.notesActive = true">
     <div class="info-inner info-inner-med">
       <div class="recipe-title">
         <h1>Public Notes</h1>
@@ -169,7 +169,7 @@
     </div>
   </div>
 
-  <div class="admin-ing" ng-class="{'visible': recipe.showIng1}">
+  <div class="admin-ing" ng-class="{'visible': recipe.showIng1}" ng-click="recipe.notesActive = false">
     <div class="switch-container">
       <div class="switch" ng-click="recipe.toggleIng()">
         <div class="slider round" ng-class="{'sliderClicked': !recipe.showIng1}"></div>
@@ -224,7 +224,7 @@
 
 
   <div class="admin-ing"
-       ng-class="{'visible': !recipe.showIng1}">
+       ng-class="{'visible': !recipe.showIng1}" ng-click="recipe.notesActive = false">
     <div class="ing_2-title">
       <input autocomplete="off"
              type="text" id="new-recipe-ingredients_2.title"

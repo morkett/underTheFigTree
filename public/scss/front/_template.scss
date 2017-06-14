@@ -16,6 +16,9 @@
     width: 100vw;
     background: url('/images/bg.jpg');
     @include flex;
+    opacity: 0;
+    animation: fade-in-title .3s $transition 0s forwards;
+
   }
 
   li {

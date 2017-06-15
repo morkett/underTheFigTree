@@ -138,6 +138,18 @@
             ng-model="recipe.selectedRecipe.recipe.img"
             class="info-img">
 
+            <div class="ing-inner-container ing-inner-img"
+                 ng-repeat="img in recipe.selectedRecipe.recipe.blurImg track by $index">
+              <img ng-src="https://s3.amazonaws.com/under-the-fig-tree/{{img}}" alt="" ngclipboard data-clipboard-target="#imgBlur"
+              ng-if="img">
+
+            </div>
+            <input autocomplete="off"
+                  type="text" id="imgBlur"
+                  placeholder="blur img src"
+                  ng-model="recipe.selectedRecipe.recipe.blurImg"
+                  class="info-img">
+
     </div>
 
     <!-- <div class="info-inner info-inner-sml">

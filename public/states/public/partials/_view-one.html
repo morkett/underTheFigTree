@@ -1,9 +1,4 @@
 
-<div class="cooking-mode" ng-click="recipe.toggleCookingBtn()" ng-class="{'expand': recipe.cookingActive}">
-  <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span>
-  <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
-</div>
-
 <section class="home-section" ng-init="recipe.getRecipe()" >
   <div class="front-temp" ng-repeat="r in recipe.selectedRecipe track by $index">
     <div class="head-container" ng-class="{'cookingMode': recipe.cookingModeActive}">

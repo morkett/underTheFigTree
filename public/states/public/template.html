@@ -1,11 +1,31 @@
-<nav ng-controller="NavController as nav" class="front-nav">
-  <div class="btn-nav-container" ng-click="nav.toggleFrontNav()">
-    <span ng-class="{'navAciveBtn': nav.frontNavActive}"></span>
+<nav class="front-nav">
+  <div class="btn-nav-container" ng-click="recipe.toggleFrontNav(); recipe.frontNavMenuActive = false">
+    <span ng-class="{'navAciveBtn': recipe.frontNavActive}"></span>
   </div>
-  <ul ng-if="nav.frontNavActive">
-    <li><a ui-sref="home">home</a></li>
+  <ul ng-if="recipe.frontNavActive">
+    <li><a ui-sref="home" ng-click="recipe.frontNavMenuActive = false; recipe.frontNavActive = false">home</a></li>
     <li><a ui-sref="recipes">recipes</a></li>
     <li><a ui-sref="about">about</a></li>
   </ul>
 </nav>
-<div class="front-template" ui-view="front-template"></div>
+
+
+<!-- <div class="front-nav-btn" ng-click="recipe.toggleSiteBtn(); recipe.recipeNavActive = false; recipe.cookingActive = false " ng-class="{'expand': recipe.siteNavActive}" ng-if="recipe.frontNavActive">
+  <span ng-if="recipe.siteNavActive" ng-click="recipe.toggleNavMode()">Navigation</span>
+  <i ng-class="{'expand-icon': recipe.siteNavActive}"></i>
+</div> -->
+<!-- <div class="front-nav-btn recipeBtn" ng-click="recipe.toggleRecipeBtn(); recipe.siteNavActive = false; recipe.cookingActive = false " ng-class="{'expand': recipe.recipeNavActive}" ng-if="recipe.frontNavActive">
+  <span ng-if="recipe.recipeNavActive" ng-click="recipe.toggleRecipeMode()">recipes</span>
+  <i ng-class="{'expand-icon': recipe.recipeNavActive}"></i>
+</div> -->
+
+<div class="front-nav-btn cooking-mode" ng-click="recipe.toggleCookingBtn(); recipe.siteNavActive = false; recipe.recipeNavActive = false " ng-class="{'expand': recipe.cookingActive}" ng-if="'view-one'| isState">
+  <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span>
+  <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
+</div>
+
+<div class="front-template" ui-view="front-template" autoscroll="true"></div>
+
+
+
+<!-- frontNavActive -->

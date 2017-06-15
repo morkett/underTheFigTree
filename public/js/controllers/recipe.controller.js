@@ -1,6 +1,28 @@
 function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout){
   var controller = this;
 
+//front
+
+  controller.frontNavActive = false;
+  controller.toggleFrontNav = function() {
+    controller.frontNavActive = !controller.frontNavActive;
+  };
+  controller.recipeNavActive = false;
+  controller.toggleRecipeBtn = function() {
+    controller.recipeNavActive = !controller.recipeNavActive;
+  };
+  controller.siteNavActive = false;
+  controller.toggleSiteBtn = function() {
+    controller.siteNavActive = !controller.siteNavActive;
+  };
+
+  controller.frontNavMenuActive = false;
+  controller.toggleNavMode = function() {
+    controller.frontNavMenuActive = !controller.frontNavMenuActive;
+  };
+
+
+
   controller.showMessage = false;
   controller.showMessageUpdated = false;
   controller.showMessageDeleted = false;

@@ -1651,6 +1651,70 @@ ol {
 .cookingMode {
   display: none !important; }
 
+.view-recipe {
+  border: 1px solid #fff;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-decoration: none; }
+
+.front-nav-btn {
+  position: fixed;
+  width: 54px;
+  height: 54px;
+  border-radius: 40px 40px 40px 40px;
+  background: rgba(255, 255, 255, 0.9);
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  top: 0;
+  left: 0;
+  left: auto;
+  top: 25px;
+  right: 20px;
+  -ms-transform: translateY(100%);
+      transform: translateY(100%);
+  z-index: 800;
+  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer; }
+  .front-nav-btn i {
+    background-size: contain;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 17px; }
+  .front-nav-btn span {
+    color: #fff;
+    font-size: 1em;
+    opacity: 0;
+    text-transform: capitalize;
+    font-family: "Nixie One", cursive;
+    -ms-transform: translateX(-20px);
+        transform: translateX(-20px);
+    animation: visible 0.3s linear .2s forwards; }
+
+.recipeBtn {
+  -ms-transform: translateY(200%);
+      transform: translateY(200%);
+  top: 30px; }
+
+.expand {
+  border-radius: 40px 40px 40px 40px;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.8); }
+
+.expand-icon {
+  position: absolute;
+  right: 17px; }
+
 .home-section {
   font-family: "Nixie One", cursive;
   color: #fff; }
@@ -1700,55 +1764,11 @@ svg {
   display: none; }
 
 .cooking-mode {
-  position: fixed;
-  width: 54px;
-  height: 54px;
-  border-radius: 40px 40px 40px 40px;
-  background: rgba(255, 255, 255, 0.1);
-  overflow: hidden;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  top: 0;
-  left: 0;
-  left: auto;
-  top: 25px;
-  right: 20px;
   -ms-transform: translateY(100%);
       transform: translateY(100%);
-  z-index: 800;
-  transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer; }
+  top: 25px; }
   .cooking-mode i {
-    background: url("/images/cook-icon.svg") center no-repeat;
-    background-size: contain;
-    height: 20px;
-    width: 20px;
-    position: absolute;
-    right: 17px; }
-  .cooking-mode span {
-    color: #fff;
-    font-size: 1em;
-    opacity: 0;
-    text-transform: capitalize;
-    font-family: "Nixie One", cursive;
-    -ms-transform: translateX(-20px);
-        transform: translateX(-20px);
-    animation: visible 0.3s linear .2s forwards; }
-
-.expand {
-  border-radius: 40px 40px 40px 40px;
-  width: 200px;
-  background: rgba(0, 0, 0, 0.8); }
-
-.expand-icon {
-  position: absolute;
-  right: 17px; }
+    background: url("/images/cook-icon.svg") center no-repeat; }
 
 script#__bs_script__ {
   opacity: 0;

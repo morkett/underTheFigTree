@@ -13,7 +13,6 @@
     </div>
     <img src="https://s3.amazonaws.com/under-the-fig-tree/{{new.blurImg[$index]}}"  lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{new.img[$index]}}" alt="">
     <p> {{new.blurb}}</p>
-    {{new._id}}
-    <a ui-sref="view-one({recipeId : new._id})">view recipe</a>
+    <a ui-sref="view-one({recipeId : new._id})" class="view-recipe" ng-click="recipe.cookingModeActive = false">view recipe</a>
   </div>
 </section>

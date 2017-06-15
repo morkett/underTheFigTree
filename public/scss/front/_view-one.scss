@@ -1,50 +1,11 @@
-.cooking-mode {
-  position: fixed;
-  width: 54px;
-  height: 54px;
-  border-radius: 40px 40px 40px 40px;
-  background: rgba(255, 255, 255, .1);
-  overflow: hidden;
-  @include flex($direction: row);
-  left: auto;
-  top: 25px;
-  right: 20px;
+.cooking-mode{
+  // transform: translateY(300%);
+  // top: 35px;
   transform: translateY(100%);
-  z-index: 800;
-  transition: width .3s $transition, background .3s $transition;
-  cursor: pointer;
+  top: 25px;
+
 
   i {
     background: url('/images/cook-icon.svg') center no-repeat;
-    background-size: contain;
-    // position: absolute;
-    height: 20px;
-    width: 20px;
-    // right: 0;
-    position: absolute;
-    right: 17px;
   }
-
-  span {
-    color: #fff;
-    font-size: 1em;
-    opacity: 0;
-    text-transform: capitalize;
-    font-family: $font-front-main;
-    transform: translateX(-20px);
-    animation: visible 0.3s linear .2s forwards;
-  }
-}
-
-.expand {
-   border-radius: 40px 40px 40px 40px;
-   width: 200px;
-   background: rgba(0, 0, 0, .8);
-
-
-}
-
-.expand-icon {
-  position: absolute;
-  right: 17px;
 }

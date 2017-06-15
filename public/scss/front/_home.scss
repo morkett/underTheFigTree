@@ -48,60 +48,6 @@ svg {
   }
 }
 
-.front-new {
-  // position: relative;
-  overflow-x: hidden;
-  width: 100vw;
-
-  .head-container {
-    @include flex($align:flex-start);
-    height: 100px;
-    background: transparent;
-    // background: url('/images/bg.jpg');
-    // transform: translateY(-400px);
-    padding: 5px;
-    padding-top: 10px;
-    position: relative;
-  }
-  h2,h3 {
-    color: #fff;
-    font-size: 1.3em;
-    line-height: 1.3;
-    text-transform: capitalize;
-  }
-  h3 {
-    margin-top: 5px;
-    font-size: .9em;
-    font-style: italic;
-    // border: $border-dev-red;
-  }
-  h4 {
-      font-size: .7em;
-      font-style: normal;
-      font-weight: bold;
-      position: absolute;
-      letter-spacing: .05em;
-      top: 5px;
-      right: 10px;
-      font-family: Helvetica;
-  }
-  img {
-    // transform: translateX(-25%);
-    // height: 400px;
-    // background: url('/images/food/food2-blur.png') center center no-repeat;
-    // background-size: cover;
-    width: 100%;
-    animation: fade-in-title 3s $transition 3s forwards;
-  }
-
-  p {
-    color: rgba(255,255,255,.8);
-    padding: 10px;
-    letter-spacing: .02em;
-    line-height: 1.4;
-    // transform: translateY(-100px);
-  }
-}
 
 .none {
   display: none;

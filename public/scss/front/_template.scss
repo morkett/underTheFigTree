@@ -1,5 +1,7 @@
 .front-template {
   background: url('/images/bg.jpg');
+  width: 100vw;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -65,11 +67,13 @@
     height: 2px;
     width: 20px;
     background: $front-nav-ham;
+    // background: url('/images/bg.jpg');
     transition: transform .3s $transition;
 
     &:before {
       @include pseudo;
       background: $front-nav-ham;
+// background: url('/images/bg.jpg');
       height: 2px;
       width: 20px;
       top: 0;
@@ -79,6 +83,7 @@
     &:after {
       @include pseudo;
       background: $front-nav-ham;
+// background: url('/images/bg.jpg');
       height: 2px;
       width: 20px;
       top: 0;
@@ -100,4 +105,109 @@
     }
   }
 
+}
+
+.front-temp {
+  // position: relative;
+  overflow-x: hidden;
+  width: 100vw;
+  padding:0 15px;
+
+
+  .head-container {
+    @include flex($align:flex-start);
+    // height: 100px;
+    background: transparent;
+    // background: url('/images/bg.jpg');
+    // transform: translateY(-400px);
+    padding: 5px;
+    padding-top: 10px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  h2,h3 {
+    color: #fff;
+    font-size: 1.3em;
+    line-height: 1.3;
+    text-transform: capitalize;
+    margin-top: 0;
+  }
+  h3 {
+    margin-top: 5px;
+    font-size: .9em;
+    font-style: italic;
+    // border: $border-dev-red;
+  }
+  h4 {
+      font-size: .7em;
+      font-style: normal;
+      font-weight: bold;
+      position: absolute;
+      letter-spacing: .05em;
+      top: 5px;
+      right: 10px;
+      font-family: Helvetica;
+  }
+  img {
+    width: 100%;
+  }
+
+  p {
+    color: rgba(255,255,255,.8);
+    padding: 10px;
+    letter-spacing: .02em;
+    line-height: 1.4;
+    // transform: translateY(-100px);
+  }
+}
+h2 {
+  // text-decoration: underline;
+}
+.front-ing-list {
+  @include flex($direction: row);
+
+  ul {
+    padding: 15px;
+  }
+  li {
+    // border: $border-dev-blue;
+    flex: .2;
+    margin: 5px 0;
+    text-transform: capitalize;
+    font-weight: bold;
+    text-align: center;
+  }
+  li:nth-child(2){
+    flex: .3;
+    text-align: left;
+    text-transform: none;
+    // margin:0 10px 0 0;
+  }
+  li:last-of-type {
+    flex: 1;
+    text-align: left;
+  }
+
+
+}
+ol {
+display: list-item;
+list-style-type: decimal;
+list-style-position:inside;
+margin: 20px 0;
+margin-right: 15px;
+
+
+li {
+  display: inline;
+
+}
+}
+
+.list-containers {
+  margin: 20px 0;
+}
+
+.cookingMode {
+  display: none !important;
 }

@@ -1,0 +1,44 @@
+
+<div class="cooking-mode" ng-click="recipe.toggleCookingBtn()" ng-class="{'expand': recipe.cookingActive}">
+  <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span>
+  <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
+</div>
+
+<section class="home-section" ng-init="recipe.getRecipe()" >
+  <div class="front-temp" ng-repeat="r in recipe.selectedRecipe track by $index">
+    <div class="head-container" ng-class="{'cookingMode': recipe.cookingModeActive}">
+      <h2>{{r.title}}</h2>
+      <h3>{{r.cuisine}}</h3>
+      <h3>Serves: {{r.serves}}</h3>
+      <h3>{{r.type}}</h3>
+      <h3>{{r.type2}}</h3>
+      <!-- <h4>recipe</h4> -->
+    </div>
+    <img src="https://s3.amazonaws.com/under-the-fig-tree/{{r.blurImg[$index]}}"  lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{r.img[$index]}}" alt=""
+    ng-class="{'cookingMode': recipe.cookingModeActive}">
+    <p ng-class="{'cookingMode': recipe.cookingModeActive}"> {{r.notes}}</p>
+    <h2>Ingredients</h2>
+    <div class="list-containers">
+      <ul class="front-ing-list" ng-repeat="i in r.ingredients | orderBy:'unit' track by $index">
+        <li>{{i.qty}}</li>
+        <li>{{i.unit}}</li>
+        <li>{{i.name}}</li>
+      </ul>
+    </div>
+    <h2>{{recipe.ingredients_2_title}}</h2>
+    <div class="list-containers">
+      <ul class="front-ing-list" ng-repeat="i in r.ingredients_2 | orderBy:'unit' track by $index">
+        <li>{{i.qty}}</li>
+        <li>{{i.unit}}</li>
+        <li>{{i.name}}</li>
+      </ul>
+    </div>
+
+    <h2>Instructions</h2>
+    <div class="list-containers">
+      <ol ng-repeat="ins in r.instructions track by $index">
+        <li>{{ins.instruction}}</li>
+      </ol>
+    </div>
+  </div>
+</section>

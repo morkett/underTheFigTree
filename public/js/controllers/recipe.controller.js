@@ -23,8 +23,16 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
 
   controller.notesActive = false;
   controller.toggleNotes = function() {
-    console.log('hit');
     controller.notesActive = !controller.notesActive;
+  };
+  controller.cookingActive = false;
+  controller.toggleCookingBtn = function() {
+    controller.cookingActive = !controller.cookingActive;
+  };
+  controller.cookingModeActive = false;
+  controller.toggleCookingMode = function() {
+    console.log('cookingMode',controller.cookingModeActive);
+    controller.cookingModeActive = !controller.cookingModeActive;
   };
 
   controller.checkboxIsLive = 'all';

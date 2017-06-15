@@ -8,6 +8,15 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       'front-template@home': {templateUrl: '/states/public/partials/_home.html'}
     }
   })
+  .state('view-one', {
+    url: '/recipe/:recipeId',
+    views: {
+      '': {templateUrl: '/states/public/template.html'},
+      'front-template@view-one': {templateUrl: '/states/public/partials/_view-one.html'}
+    }
+  })
+
+
   //ADMIN
     .state('login', {
       url: '/admin/login',

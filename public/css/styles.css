@@ -1460,7 +1460,8 @@ strong {
   background: url("/images/bg.jpg");
   width: 100vw;
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  padding-top: 80px; }
   .front-template h1 {
     font-size: 1.5em;
     text-align: center;
@@ -1473,7 +1474,7 @@ strong {
   left: 0;
   z-index: 998; }
   .front-nav ul {
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     background: url("/images/bg.jpg");
@@ -1663,7 +1664,7 @@ ol {
   border: 1px solid #fff;
   color: #fff;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   padding: 10px;
   text-decoration: none; }
 
@@ -1686,10 +1687,8 @@ ol {
   top: 0;
   left: 0;
   left: auto;
-  top: 25px;
+  top: 20px;
   right: 20px;
-  -ms-transform: translateY(100%);
-      transform: translateY(100%);
   z-index: 800;
   transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer; }
@@ -1705,8 +1704,8 @@ ol {
     opacity: 0;
     text-transform: capitalize;
     font-family: "Nixie One", cursive;
-    -ms-transform: translateX(-20px);
-        transform: translateX(-20px);
+    -ms-transform: translateX(0px);
+        transform: translateX(0px);
     animation: visible 0.3s linear .2s forwards; }
 
 .recipeBtn {
@@ -1716,12 +1715,11 @@ ol {
 
 .expand {
   border-radius: 40px 40px 40px 40px;
-  width: 200px;
-  background: rgba(0, 0, 0, 0.8); }
+  width: 220px; }
 
 .expand-icon {
   position: absolute;
-  right: 17px; }
+  left: 17px; }
 
 .home-section {
   font-family: "Nixie One", cursive;
@@ -1772,24 +1770,25 @@ svg {
   display: none; }
 
 .cooking-mode {
-  -ms-transform: translateY(100%);
-      transform: translateY(100%);
-  top: 25px; }
+  left: 20px; }
   .cooking-mode i {
     background: url("/images/cook-icon.svg") center no-repeat; }
 
 .search-mode {
-  -ms-transform: translateY(100%);
-      transform: translateY(100%);
-  top: 25px; }
+  top: 20px;
+  left: 20px; }
   .search-mode .icon {
-    background: url("/images/magnifier.svg") center no-repeat; }
+    background: url("/images/magnifier.svg") center no-repeat;
+    left: 17px; }
 
 .front-search {
   color: #fff;
+  margin-left: 10%;
+  width: 70%;
   height: 100%; }
   .front-search::-webkit-input-placeholder {
     color: #fff;
+    text-align: center;
     transition: color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) 0s; }
   .front-search:focus::-webkit-input-placeholder {
     color: transparent;

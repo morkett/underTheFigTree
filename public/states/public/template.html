@@ -2,7 +2,7 @@
   <div class="btn-nav-container" ng-click="recipe.toggleFrontNav(); recipe.frontNavMenuActive = false">
     <span ng-class="{'navAciveBtn': recipe.frontNavActive}"></span>
   </div>
-  <ul ng-if="recipe.frontNavActive">
+  <ul ng-if="recipe.frontNavActive" class="nav-links">
     <li><a ui-sref="home" ng-click="recipe.frontNavActive = false">home</a></li>
     <li><a ui-sref="view-all" ng-click="recipe.frontNavActive = false">recipes</a></li>
     <li><a ui-sref="about">about</a></li>
@@ -34,7 +34,7 @@
            class="front-search"
            id="front-search"
            ng-if="recipe.searchActive"
-           ng-focus="{{recipe.searchActive}}">
+           ng-focus="recipe.searchActive">
   <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
 </div>
 

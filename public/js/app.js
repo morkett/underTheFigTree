@@ -1,13 +1,26 @@
 function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, AuthFactory) {
 
   $stateProvider
+  .state('home', {
+    url: '/',
+    views: {
+      '': {templateUrl: '/states/public/template.html'},
+      'front-template@home': {templateUrl: '/states/public/partials/_home.html'}
+    }
+  })
+  .state('view-one', {
+    url: '/recipe/:recipeId',
+    views: {
+      '': {templateUrl: '/states/public/template.html'},
+      'front-template@view-one': {templateUrl: '/states/public/partials/_view-one.html'}
+    }
+  })
+
+
+  //ADMIN
     .state('login', {
       url: '/admin/login',
       templateUrl: '../states/auth/login.html'
-    })
-    .state('uploadTest', {
-      url: '/admin/upload',
-      templateUrl: '../states/auth/admin/uploadTest.html'
     })
     .state('create', {
       url: '/admin/create',
@@ -24,7 +37,7 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       }
     })
     .state('edit', {
-      url: '/',
+      url: '/admin/edit',
       views: {
         '': {templateUrl: '/states/auth/admin/admin.html'},
         'admin-main@edit': {templateUrl: '/states/auth/admin/partials/_edit.html'},
@@ -74,7 +87,7 @@ function AuthCatcher($rootScope, $state) {
 
 
 angular
-  .module('myApp', ['ui.router','firebase','ngclipboard', 'ngFileUpload'])
+  .module('myApp', ['ui.router','firebase','ngclipboard', 'ngFileUpload','angularLazyImg'])
   .constant('API_URL', 'http://localhost:3000')
   .config(MainRouter)
   .run(AuthCatcher);

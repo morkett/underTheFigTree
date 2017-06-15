@@ -1,6 +1,28 @@
 function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout){
   var controller = this;
 
+//front
+
+  controller.frontNavActive = false;
+  controller.toggleFrontNav = function() {
+    controller.frontNavActive = !controller.frontNavActive;
+  };
+  controller.recipeNavActive = false;
+  controller.toggleRecipeBtn = function() {
+    controller.recipeNavActive = !controller.recipeNavActive;
+  };
+  controller.siteNavActive = false;
+  controller.toggleSiteBtn = function() {
+    controller.siteNavActive = !controller.siteNavActive;
+  };
+
+  controller.frontNavMenuActive = false;
+  controller.toggleNavMode = function() {
+    controller.frontNavMenuActive = !controller.frontNavMenuActive;
+  };
+
+
+
   controller.showMessage = false;
   controller.showMessageUpdated = false;
   controller.showMessageDeleted = false;
@@ -23,8 +45,16 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
 
   controller.notesActive = false;
   controller.toggleNotes = function() {
-    console.log('hit');
     controller.notesActive = !controller.notesActive;
+  };
+  controller.cookingActive = false;
+  controller.toggleCookingBtn = function() {
+    controller.cookingActive = !controller.cookingActive;
+  };
+  controller.cookingModeActive = false;
+  controller.toggleCookingMode = function() {
+    console.log('cookingMode',controller.cookingModeActive);
+    controller.cookingModeActive = !controller.cookingModeActive;
   };
 
   controller.checkboxIsLive = 'all';
@@ -64,6 +94,7 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
+  controller.newOptions = [true, false];
 
   controller.getRecipes = function() {
     RecipeFactory.getRecipes().then(

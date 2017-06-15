@@ -15,6 +15,13 @@ function MainRouter ($stateProvider, $urlRouterProvider, $locationProvider, Auth
       'front-template@view-one': {templateUrl: '/states/public/partials/_view-one.html'}
     }
   })
+  .state('view-all', {
+    url: '/recipes/',
+    views: {
+      '': {templateUrl: '/states/public/template.html'},
+      'front-template@view-all': {templateUrl: '/states/public/partials/_view-all.html'}
+    }
+  })
 
 
   //ADMIN

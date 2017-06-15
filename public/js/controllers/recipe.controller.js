@@ -15,6 +15,10 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.toggleSiteBtn = function() {
     controller.siteNavActive = !controller.siteNavActive;
   };
+  controller.searchActive = false;
+  controller.toggleSearchBtn = function() {
+    controller.searchActive = !controller.searchActive;
+  };
 
   controller.frontNavMenuActive = false;
   controller.toggleNavMode = function() {

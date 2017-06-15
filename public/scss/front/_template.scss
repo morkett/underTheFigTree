@@ -7,6 +7,14 @@
   width: 100vw;
   min-height: 100vh;
   position: relative;
+
+
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: underline;
+    padding: 10px;
+  }
 }
 
 .front-nav {
@@ -244,7 +252,7 @@ li {
     transition: width .3s $transition, background .3s $transition;
     cursor: pointer;
 
-    i {
+    i, .icon {
       // background: url('/images/cook-icon.svg') center no-repeat;
       background-size: contain;
       // position: absolute;

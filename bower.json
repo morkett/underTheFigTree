@@ -1,0 +1,20 @@
+{
+  "name": "social-network",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "David Corkett <dcorkett@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/morkett/underTheFigTree",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-lazy-img": "^1.2.2"
+  }
+}

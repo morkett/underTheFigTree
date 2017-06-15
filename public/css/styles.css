@@ -1453,6 +1453,9 @@ strong {
   bottom: 0;
   left: 0; }
 
+::-webkit-scrollbar {
+  display: none; }
+
 .front-template {
   background: url("/images/bg.jpg");
   width: 100vw;

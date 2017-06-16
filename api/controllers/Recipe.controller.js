@@ -36,7 +36,7 @@ function getRecipe(req, res) {
 
 function getRecipeByType(req, res) {
   var type = req.params.type;
-  Recipe.find({type2: type}, function(err, recipe){
+  Recipe.find({$or: [{type: type}, {type2: type}]}, function(err, recipe){
     if(err) return res.json({message: 'could not find recipe by type b/c', err});
     res.json({type: recipe});
   }).select('-__v');
@@ -64,7 +64,9 @@ function updateRecipe(req, res) {
     if(req.body.cuisine) recipe.cuisine = req.body.cuisine;
     if(req.body.serves) recipe.serves = req.body.serves;
     if(req.body.type) recipe.type = req.body.type;
+    if(req.body.typeB) recipe.typeB = req.body.typeB;
     if(req.body.type2) recipe.type2 = req.body.type2;
+    if(req.body.type2B) recipe.type2B = req.body.type2B;
     if(req.body.makes) recipe.makes = req.body.makes;
     if(req.body.notes) recipe.notes = req.body.notes;
     if(req.body.blurb) recipe.blurb = req.body.blurb;

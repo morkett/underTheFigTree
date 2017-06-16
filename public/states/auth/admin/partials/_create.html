@@ -70,12 +70,34 @@
 
       <div class="ing-inner-container">
         <span class="drop-down"></span>
+        <select id="new-recipe-typeB"
+                name="new-recipe-typeB"
+                ng-model="recipe.recipeData.typeB"
+                ng-options="r for r in recipe.typeOptions1"
+                required>
+          <option value="" disabled>- type ii -</option>
+        </select>
+      </div>
+
+      <div class="ing-inner-container">
+        <span class="drop-down"></span>
         <select id="new-recipe-type2"
                 name="new-recipe-type2"
                 ng-model="recipe.recipeData.type2"
                 ng-options="r for r in recipe.typeOptions2"
                 required>
           <option value="" disabled>- secondary type -</option>
+        </select>
+      </div>
+
+      <div class="ing-inner-container">
+        <span class="drop-down"></span>
+        <select id="new-recipe-type2B"
+                name="new-recipe-type2B"
+                ng-model="recipe.recipeData.type2B"
+                ng-options="r for r in recipe.typeOptions2"
+                required>
+          <option value="" disabled>- secondary type ii -</option>
         </select>
       </div>
 

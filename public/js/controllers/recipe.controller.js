@@ -93,9 +93,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
 
   controller.cuisineOptions = ['-','cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
-  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
+  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'pork', 'prawns', 'seafood', 'veg'];
 
-  controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
+  controller.typeOptions1 = ['-', 'starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
   controller.newOptions = [true, false];
@@ -144,11 +144,11 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     var type = $stateParams.type;
     RecipeFactory.getType(type).then(
       function success(res) {
-        console.log('getRecipe:',res);
+        console.log('getRecipeByType:',type,res);
         controller.selectedRecipe = res.data;
       },
       function error(err){
-        console.log('Error getting recipe, front', err);
+        console.log('Error getting recipe type, front', err);
       }
     );
   };

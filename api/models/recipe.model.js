@@ -33,7 +33,9 @@ var RecipeSchema = mongoose.Schema({
   new: {type: Boolean, default: false},
   isLive: {type: String, default: 'no', required: true},
   img: { type: Array },
-  blurImg: { type: Array }
+  blurImg: { type: Array },
+  cookTime: {type: Number},
+  prepTime: {type: Number}
 },
   {
     timestamps: true,

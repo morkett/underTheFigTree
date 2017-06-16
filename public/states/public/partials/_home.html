@@ -11,7 +11,7 @@
       <h3>{{new.cuisine}}</h3>
       <!-- <h4>new</h4> -->
     </div>
-    <img src="https://s3.amazonaws.com/under-the-fig-tree/{{new.blurImg[$index]}}"  lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{new.img[$index]}}" alt="">
+    <img src="https://s3.amazonaws.com/under-the-fig-tree/{{new.blurImg[0]}}"  lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{new.img[0]}}" alt="">
     <p> {{new.blurb}}</p>
     <a ui-sref="view-one({recipeId : new._id})" class="view-recipe" ng-click="recipe.cookingModeActive = false">view recipe</a>
   </div>

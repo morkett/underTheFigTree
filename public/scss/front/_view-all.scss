@@ -28,3 +28,13 @@
     transition: color 0.3s $transition 1s;
   }
 }
+
+.type-container {
+  @include flex($direction: row, $justify:space-around);
+}
+.type {
+  width:45%;
+  height: 180px;
+  background: url('/images/food/food1.png') center no-repeat;
+  border: 1px solid black;
+}

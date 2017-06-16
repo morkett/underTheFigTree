@@ -34,6 +34,14 @@ function getRecipe(req, res) {
   }).select('-__v');
 }
 
+function getRecipeByType(req, res) {
+  var type = req.params.type;
+  Recipe.find({type2: type}, function(err, recipe){
+    if(err) return res.json({message: 'could not find recipe by type b/c', err});
+    res.json({type: recipe});
+  }).select('-__v');
+}
+
 function deleteRecipe(req, res) {
   var recipeId = req.params.id;
 
@@ -88,15 +96,15 @@ function getRecipeByCuisine (req, res) {
     res.json(products);
   });
 }
-function getRecipeByType (req, res) {
-  var type = req && req.params && req.params.type;
-  if (!type) return err.missingParams(res, ['type']);
-
-  Recipe.find({ type: type }, function (err, products) {
-    if (err) return err.recordNotFound(res, err.message);
-    res.json(products);
-  });
-}
+// function getRecipeByType (req, res) {
+//   var type = req && req.params && req.params.type;
+//   if (!type) return err.missingParams(res, ['type']);
+//
+//   Recipe.find({ type: type }, function (err, products) {
+//     if (err) return err.recordNotFound(res, err.message);
+//     res.json(products);
+//   });
+// }
 
 // function addIngredient (req, res) {
 //   Recipe.findById(req.params.id, function (err, doc) {

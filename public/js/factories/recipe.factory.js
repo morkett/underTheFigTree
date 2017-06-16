@@ -19,6 +19,12 @@ function RecipeFactory($http, Upload) {
         url: `/api/recipes/${recipeId}`
       });
     },
+    getType: function(type) {
+      return $http({
+        method: 'GET',
+        url: `/api/type/${type}`
+      });
+    },
     deleteRecipe: function(recipeId) {
       return $http({
         method: 'DELETE',

@@ -140,6 +140,19 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
     );
   };
 
+  controller.getRecipeByType = function(){
+    var type = $stateParams.type;
+    RecipeFactory.getType(type).then(
+      function success(res) {
+        console.log('getRecipe:',res);
+        controller.selectedRecipe = res.data;
+      },
+      function error(err){
+        console.log('Error getting recipe, front', err);
+      }
+    );
+  };
+
   controller.deleteRecipe = function(recipeId){
     RecipeFactory.deleteRecipe(recipeId).then(
       function success(res) {

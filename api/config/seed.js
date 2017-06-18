@@ -44,7 +44,7 @@ function seed () {
           title: 'cambodian marinated beef (beef lok lak)',
           cuisine: 'cambodian',
           serves: '2',
-          type: 'starter',
+          type: 'starters',
           type2: 'beef',
           makes: '-',
           ingredients: [
@@ -119,13 +119,19 @@ function seed () {
               unit: 'tsp',
               name: 'pepper'}
           ],
-          isLive: 'no'
+          isLive: 'yes',
+          new: true,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'green beans with toasted mustard and garlic',
           cuisine: 'indian',
           serves: '4',
-          type: 'sides',
+          type: 'side',
           type2: '-',
           makes: '-',
           ingredients: [
@@ -165,7 +171,13 @@ function seed () {
             }
           ],
           ingredients_2: [],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'grilled lamb kebabs (mutton tikka)',
@@ -226,7 +238,13 @@ function seed () {
             }
           ],
 
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'onion bhajiyas',
@@ -297,7 +315,13 @@ function seed () {
           ],
           ingredients_2: [{}],
 
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'mums chana masala',
@@ -394,7 +418,13 @@ function seed () {
           ],
           ingredients_2: [],
 
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'chicken florentine puffs',
@@ -479,7 +509,13 @@ function seed () {
               instruction: 'Puff pastry + filling + (1 egg + 1 tbsp water → beat) + oven → 15-18 min'
             }
           ],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'mum\'s spring rolls',
@@ -556,7 +592,13 @@ function seed () {
               instruction: '+ spring roll pastry + (flour + water) as glue → make spring rolls'
             }
           ],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
 
         {
@@ -628,7 +670,13 @@ function seed () {
               instruction: '+ skewers + grill → cooked'
             }
           ],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'sticky sticks',
@@ -706,7 +754,13 @@ function seed () {
               instruction: '+ dip chicken → serve'
             }
           ],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
 
 
@@ -770,7 +824,13 @@ function seed () {
               instruction: '+ remove heat + 1/2 green chili + 1 spring onion + adjust seasoning → serve'
             }
           ],
-          isLive: 'no'
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'
         },
         {
           title: 'garlic bread',
@@ -824,7 +884,13 @@ function seed () {
               instruction: '+ baguette + cut so bread stays whole + Mixture + foil + oven → 10-15 min, 15-20min from frozen'
             }
           ],
-          isLive: 'no'}
+          isLive: 'no',
+          new: false,
+          featured: false,
+          img: ['25599442f5ab2e496d2021bd21984b01'],
+          blurImg: ['de143d185a37e798390a7a202bd0c693'],
+          notes: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged',
+          blurb: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s.'}
       ]
     }
   ];

@@ -24,7 +24,11 @@
 <div class="allRecipes-container">
   <div
        class="title">
-  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a><span class="isLive" ng-class="{'notLive': r.isLive === 'no' }"></span></h2>
+  <h2><a ui-sref="admin-showOne({recipeId : r._id})">{{r.title}}</a><span class="isLive" ng-class="{'notLive': r.isLive === 'no' }"></span>
+  <span class="isLive isLiveEdit isLiveFeatured" ng-class="{'notLive': r.featured === false }"></span>
+
+  <span class="isLive isLiveEdit isLiveNew" ng-class="{'notLive': r.new === false }"></span>
+</h2>
 
   </div>
   <div class="recipe-details-container">
@@ -34,7 +38,9 @@
   <p><strong>serves</strong> {{r.serves}}</p>
   <p ng-if="r.makes"><strong>makes</strong> {{r.makes}}</p>
   <p><strong>type</strong> {{r.type}}</p>
+  <p ng-if="r.typeB"><strong>type b</strong> {{r.typeB}}</p>
   <p ng-if="r.type2"><strong>type2</strong> {{r.type2}}</p>
+  <p ng-if="r.type2B"><strong>type2 b</strong> {{r.type2B}}</p>
   </div>
 
 </div>

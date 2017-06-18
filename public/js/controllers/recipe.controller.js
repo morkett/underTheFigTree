@@ -15,6 +15,10 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
   controller.toggleSiteBtn = function() {
     controller.siteNavActive = !controller.siteNavActive;
   };
+  controller.searchActive = false;
+  controller.toggleSearchBtn = function() {
+    controller.searchActive = !controller.searchActive;
+  };
 
   controller.frontNavMenuActive = false;
   controller.toggleNavMode = function() {
@@ -89,9 +93,9 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
 
   controller.cuisineOptions = ['-','cambodian', 'chinese', 'english', 'indian', 'italian', 'pakistani', 'thai'];
 
-  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'mince', 'pork', 'prawns', 'seafood', 'veg'];
+  controller.typeOptions2 = ['-','baking', 'beef', 'chicken', 'fish', 'lamb', 'pork', 'prawns', 'seafood', 'vegetarian'];
 
-  controller.typeOptions1 = ['-','starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
+  controller.typeOptions1 = ['-', 'starters', 'main', 'side', 'breakfast', 'lunch', 'dinner'];
 
   controller.isLiveOptions = ['yes', 'no'];
   controller.newOptions = [true, false];
@@ -132,6 +136,19 @@ function RecipeController(RecipeFactory, $state, $stateParams, $window, $timeout
       },
       function error(err){
         console.log('Error getting recipe, front', err);
+      }
+    );
+  };
+
+  controller.getRecipeByType = function(){
+    var type = $stateParams.type;
+    RecipeFactory.getType(type).then(
+      function success(res) {
+        console.log('getRecipeByType:',type,res);
+        controller.typeResult = res.data;
+      },
+      function error(err){
+        console.log('Error getting recipe type, front', err);
       }
     );
   };

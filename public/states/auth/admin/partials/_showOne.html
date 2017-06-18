@@ -76,6 +76,18 @@
       </div>
 
       <div class="ing-inner-container">
+        <label for="new-recipe-typeB">Type i</label>
+        <span class="drop-down"></span>
+        <select id="new-recipe-typeB"
+                name="new-recipe-typeB"
+                ng-model="recipe.selectedRecipe.recipe.typeB"
+                ng-options="r for r in recipe.typeOptions1"
+                required>
+                <option value="" disabled>-  type ii -</option>
+        </select>
+      </div>
+
+      <div class="ing-inner-container">
         <label for="new-recipe-type2">Secondary Type</label>
         <span class="drop-down"></span>
         <select id="new-recipe-type2"
@@ -84,6 +96,18 @@
                 ng-options="r for r in recipe.typeOptions2"
                 required>
                   <option value="" disabled>- secondary type -</option>
+        </select>
+      </div>
+
+      <div class="ing-inner-container">
+        <label for="new-recipe-type2B">Secondary Type ii</label>
+        <span class="drop-down"></span>
+        <select id="new-recipe-type2B"
+                name="new-recipe-type2B"
+                ng-model="recipe.selectedRecipe.recipe.type2B"
+                ng-options="r for r in recipe.typeOptions2"
+                required>
+                  <option value="" disabled>- secondary type ii -</option>
         </select>
       </div>
 

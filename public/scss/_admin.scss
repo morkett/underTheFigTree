@@ -14,6 +14,7 @@
 
   h2 {
     color: #fff;
+    text-decoration: underline;
     margin: 25px 0 10px;
     text-transform: capitalize;
   }
@@ -23,6 +24,8 @@
   }
 
   h3 {
+    color: #fff;
+
     margin-left: 25px;
   }
 
@@ -48,14 +51,16 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background: #159957;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #155799, #159957);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, rgba(21, 87, 153, .7), rgba(21, 153, 87, .7)), url('../images/food/bg3.png');
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background: #159957;
+    // /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to top, #155799, #159957);
+    // /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to top, rgba(21, 87, 153, .7), rgba(21, 153, 87, .7)), url('../images/food/bg3.png');
+    // /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    background: url('/images/bg.jpg');
+
     z-index: -1;
     opacity: 1;
   }
@@ -1161,4 +1166,18 @@ strong {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+
+.allRecipes-container {
+  .isLiveFeatured, .isLiveNew {
+    display: inline-block;
+    position: absolute;
+      left: auto;
+      right: 30px;
+    transform: translateY(-50%);
+  }
+
+  .isLiveNew {
+    right: 50px;
+  }
 }

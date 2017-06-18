@@ -7,7 +7,9 @@ var RecipeSchema = mongoose.Schema({
   serves: {type: String, required: true},
   makes: {type: String},
   type: {type: String},
+  typeB: {type: String},
   type2: {type: String},
+  type2B: {type: String},
   ingredients: [{
     _id: false,
     qty: {type: String},
@@ -31,7 +33,9 @@ var RecipeSchema = mongoose.Schema({
   new: {type: Boolean, default: false},
   isLive: {type: String, default: 'no', required: true},
   img: { type: Array },
-  blurImg: { type: Array }
+  blurImg: { type: Array },
+  cookTime: {type: Number},
+  prepTime: {type: Number}
 },
   {
     timestamps: true,

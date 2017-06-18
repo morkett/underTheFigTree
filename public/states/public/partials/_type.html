@@ -1,0 +1,20 @@
+
+<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}">
+
+    <input autocomplete="off"
+           type="search"
+           ng-model="recipe.searchRecipe"
+           placeholder="search this list"
+           class="front-search"
+           id="front-search"
+           ng-if="recipe.searchActive"
+           ng-focus="recipe.searchActive">
+  <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
+</div>
+
+<section class="home-section" ng-init="recipe.getRecipeByType()">
+    <div class="type" ui-sref="view-one({recipeId : recipe._id})" ng-repeat="recipe in recipe.typeResult.type | filter: recipe.searchRecipe | orderBy:'title'  track by $index"
+    ng-if="recipe.isLive === 'yes'">
+      <p>{{recipe.title}}</p>
+    </div>
+</section>

@@ -34,6 +34,14 @@ function getRecipe(req, res) {
   }).select('-__v');
 }
 
+function getRecipeByType(req, res) {
+  var type = req.params.type;
+  Recipe.find({$or: [{type: type}, {type2: type}]}, function(err, recipe){
+    if(err) return res.json({message: 'could not find recipe by type b/c', err});
+    res.json({type: recipe});
+  }).select('-__v');
+}
+
 function deleteRecipe(req, res) {
   var recipeId = req.params.id;
 
@@ -56,7 +64,9 @@ function updateRecipe(req, res) {
     if(req.body.cuisine) recipe.cuisine = req.body.cuisine;
     if(req.body.serves) recipe.serves = req.body.serves;
     if(req.body.type) recipe.type = req.body.type;
+    if(req.body.typeB) recipe.typeB = req.body.typeB;
     if(req.body.type2) recipe.type2 = req.body.type2;
+    if(req.body.type2B) recipe.type2B = req.body.type2B;
     if(req.body.makes) recipe.makes = req.body.makes;
     if(req.body.notes) recipe.notes = req.body.notes;
     if(req.body.blurb) recipe.blurb = req.body.blurb;
@@ -88,15 +98,15 @@ function getRecipeByCuisine (req, res) {
     res.json(products);
   });
 }
-function getRecipeByType (req, res) {
-  var type = req && req.params && req.params.type;
-  if (!type) return err.missingParams(res, ['type']);
-
-  Recipe.find({ type: type }, function (err, products) {
-    if (err) return err.recordNotFound(res, err.message);
-    res.json(products);
-  });
-}
+// function getRecipeByType (req, res) {
+//   var type = req && req.params && req.params.type;
+//   if (!type) return err.missingParams(res, ['type']);
+//
+//   Recipe.find({ type: type }, function (err, products) {
+//     if (err) return err.recordNotFound(res, err.message);
+//     res.json(products);
+//   });
+// }
 
 // function addIngredient (req, res) {
 //   Recipe.findById(req.params.id, function (err, doc) {

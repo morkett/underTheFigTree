@@ -2,9 +2,9 @@
   <div class="btn-nav-container" ng-click="recipe.toggleFrontNav(); recipe.frontNavMenuActive = false">
     <span ng-class="{'navAciveBtn': recipe.frontNavActive}"></span>
   </div>
-  <ul ng-if="recipe.frontNavActive">
-    <li><a ui-sref="home" ng-click="recipe.frontNavMenuActive = false; recipe.frontNavActive = false">home</a></li>
-    <li><a ui-sref="recipes">recipes</a></li>
+  <ul ng-if="recipe.frontNavActive" class="nav-links">
+    <li><a ui-sref="home" ng-click="recipe.frontNavActive = false">home</a></li>
+    <li><a ui-sref="view-all" ng-click="recipe.frontNavActive = false">recipes</a></li>
     <li><a ui-sref="about">about</a></li>
   </ul>
 </nav>
@@ -23,6 +23,19 @@
   <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span>
   <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
 </div>
+
+<!-- <div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">
+
+    <input autocomplete="off"
+           type="search"
+           ng-model="recipe.searchRecipe"
+           placeholder="search featured"
+           class="front-search"
+           id="front-search"
+           ng-if="recipe.searchActive"
+           ng-focus="recipe.searchActive">
+  <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
+</div> -->
 
 <div class="front-template" ui-view="front-template" autoscroll="true"></div>
 

@@ -24,8 +24,7 @@
   <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
 </div>
 
-<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">
-  <!-- <span ng-if="recipe.searchActive">search</span> -->
+<!-- <div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">
 
     <input autocomplete="off"
            type="search"
@@ -36,7 +35,7 @@
            ng-if="recipe.searchActive"
            ng-focus="recipe.searchActive">
   <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
-</div>
+</div> -->
 
 <div class="front-template" ui-view="front-template" autoscroll="true"></div>
 

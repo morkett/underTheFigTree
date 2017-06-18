@@ -1,10 +1,26 @@
+<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">
+
+    <input autocomplete="off"
+           type="search"
+           ng-model="recipe.searchRecipe"
+           placeholder="search type"
+           class="front-search"
+           id="front-search"
+           ng-if="recipe.searchActive"
+           ng-focus="recipe.searchActive">
+  <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
+</div>
+
 <section class="home-section" ng-init="recipe.getRecipes()">
   <div class="type-container">
-    <div class="type" ui-sref="type({type : 'beef'})">
-
-    </div>
-    <div class="type" ui-sref="type({type : 'chicken'})">
-
+    <div class="type {{type}}" ui-sref="type({type : '{{type}}'})" ng-repeat="type in recipe.typeOptions1 | filter: recipe.searchRecipe" ng-if="type !== '-'">
+      <p>{{type}}</p>
     </div>
   </div>
+  <div class="type-container">
+    <div class="type {{type}}" ui-sref="type({type : '{{type}}'})" ng-repeat="type in recipe.typeOptions2 | filter: recipe.searchRecipe" ng-if="type !== '-'">
+      <p>{{type}}</p>
+    </div>
+  </div>
+
 </section>

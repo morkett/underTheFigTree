@@ -31,10 +31,15 @@
 
 .type-container {
   @include flex($direction: row, $justify:space-around);
+  flex-wrap: wrap;
 }
 .type {
-  width:45%;
+  width:100%;
   height: 180px;
   background: url('/images/food/food1.png') center no-repeat;
-  border: 1px solid black;
+  background-size: cover;
+  // border: 1px solid black;
+  @include flex;
+  margin: 10px 0;
+  cursor: pointer;
 }

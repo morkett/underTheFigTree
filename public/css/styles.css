@@ -1804,13 +1804,27 @@ svg {
   -ms-flex-direction: row;
       flex-direction: row;
   top: 0;
-  left: 0; }
+  left: 0;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .type {
-  width: 45%;
+  width: 100%;
   height: 180px;
   background: url("/images/food/food1.png") center no-repeat;
-  border: 1px solid black; }
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  top: 0;
+  left: 0;
+  margin: 10px 0;
+  cursor: pointer; }
 
 script#__bs_script__ {
   opacity: 0;

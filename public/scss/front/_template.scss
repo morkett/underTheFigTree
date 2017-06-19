@@ -9,7 +9,6 @@
   position: relative;
   padding-top: 80px;
 
-
   h1 {
     font-size: 1.5em;
     text-align: center;
@@ -19,11 +18,24 @@
 }
 
 .front-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 998;
+  z-index: 400;
+  height: 80px;
+  width: 100%;
 
+  &:after{
+    @include pseudo;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    border: 1px solid red;
+    background: url('/images/bg.jpg');
+    mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
+
+  }
 
   ul {
     position: fixed;

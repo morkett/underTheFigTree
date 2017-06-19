@@ -44,8 +44,12 @@
   margin: 10px 0;
   cursor: pointer;
 
-  p {
+  h1 {
     z-index: 50;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 2em;
+    letter-spacing: .1em;
   }
 
   &:after {

@@ -1,5 +1,5 @@
 
-<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}">
+<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-init="recipe.searchType=''" ng-if="!recipe.frontNavActive">
 
     <input autocomplete="off"
            type="search"
@@ -12,31 +12,14 @@
   <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
 </div>
 
-<!-- <section class="home-section" ng-init="recipe.getRecipeByType()">
-    <div ui-sref="view-one({recipeId : recipe._id})" ng-repeat="recipe in recipe.typeResult.type | filter: recipe.searchRecipe | orderBy:'title'  track by $index"
-    ng-if="recipe.isLive === 'yes'">
-
-    <div class="head-container">
-      <h2>{{recipe.title}}</h2>
-      <h3>{{recipe.cuisine}}</h3>
-    </div>
-
-    <img src="https://s3.amazonaws.com/under-the-fig-tree/{{recipe.blurImg[0]}}" lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{recipe.img[0]}}" alt="">
-
-    <a ui-sref="view-one({recipeId : featured._id})" class="view-recipe" ng-click="recipe.cookingModeActive = false">view recipe</a>
-
-    </div>
-</section> -->
-
 <section class="home-section" ng-init="recipe.getRecipeByType()">
   <div class="front-temp" ng-repeat="featured in recipe.typeResult.type | filter: recipe.searchType | orderBy:'title' track by $index" ng-if="featured.isLive === 'yes'">
     <div class="head-container">
-      <h2>{{featured.title}}</h2>
+      <h2 ui-sref="view-one({recipeId : featured._id})">{{featured.title}}</h2>
       <h3>{{featured.cuisine}}</h3>
       <!-- <h4>new</h4> -->
     </div>
-
-    <img src="https://s3.amazonaws.com/under-the-fig-tree/{{featured.blurImg[0]}}" lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{featured.img[0]}}" alt="">
+    <img ui-sref="view-one({recipeId : featured._id})" src="https://s3.amazonaws.com/under-the-fig-tree/{{featured.blurImg[0]}}" lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{featured.img[0]}}" alt="">
 
     <p> {{featured.blurb}}</p>
     <a ui-sref="view-one({recipeId : featured._id})" class="view-recipe" ng-click="recipe.cookingModeActive = false">view recipe</a>

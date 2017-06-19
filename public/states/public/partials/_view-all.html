@@ -1,4 +1,4 @@
-<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">
+<div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="!recipe.frontNavActive" ng-init="recipe.searchRecipe=''">
 
     <input autocomplete="off"
            type="search"
@@ -11,15 +11,15 @@
   <label class="icon" for="front-search" ng-class="{'expand-icon': recipe.searchActive}" ng-click="recipe.toggleSearchBtn(); recipe.cookingActive = false; recipe.recipeNavActive = false "></label>
 </div>
 
-<section class="home-section" ng-init="recipe.getRecipes()">
+<section class="home-section" >
   <div class="type-container">
     <div class="type {{type}}" ui-sref="type({type : '{{type}}'})" ng-repeat="type in recipe.typeOptions1 | filter: recipe.searchRecipe" ng-if="type !== '-'">
-      <p>{{type}}</p>
+      <h1>{{type}}</h1>
     </div>
   </div>
   <div class="type-container">
     <div class="type {{type}}" ui-sref="type({type : '{{type}}'})" ng-repeat="type in recipe.typeOptions2 | filter: recipe.searchRecipe" ng-if="type !== '-'">
-      <p>{{type}}</p>
+      <h1>{{type}}</h1>
     </div>
   </div>
 

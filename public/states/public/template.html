@@ -3,9 +3,9 @@
     <span ng-class="{'navAciveBtn': recipe.frontNavActive}"></span>
   </div>
   <ul ng-if="recipe.frontNavActive" class="nav-links">
-    <li><a ui-sref="home" ng-click="recipe.frontNavActive = false">home</a></li>
-    <li><a ui-sref="view-all" ng-click="recipe.frontNavActive = false">recipes</a></li>
-    <li><a ui-sref="about">about</a></li>
+    <li><a ui-sref="home" ng-click="recipe.frontNavActive = false; recipe.cookingModeActive = false">home</a></li>
+    <li><a ui-sref="view-all" ng-click="recipe.frontNavActive = false; recipe.cookingModeActive = false">recipes</a></li>
+    <li><a ui-sref="about" ng-click="recipe.frontNavActive = false; recipe.cookingModeActive = false">about</a></li>
   </ul>
 </nav>
 
@@ -19,9 +19,9 @@
   <i ng-class="{'expand-icon': recipe.recipeNavActive}"></i>
 </div> -->
 
-<div class="front-nav-btn cooking-mode" ng-click="recipe.toggleCookingBtn(); recipe.siteNavActive = false; recipe.recipeNavActive = false " ng-class="{'expand': recipe.cookingActive}" ng-if="'view-one'| isState">
-  <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span>
-  <i ng-class="{'expand-icon': recipe.cookingActive}"></i>
+<div class="front-nav-btn cooking-mode" ng-click="recipe.toggleCookingMode(); recipe.siteNavActive = false; recipe.recipeNavActive = false " ng-class="{'': recipe.cookingActive}" ng-if="'view-one'| isState">
+  <!-- <span ng-if="recipe.cookingActive" ng-click="recipe.toggleCookingMode()">cooking mode</span> -->
+  <i ng-class="{'': recipe.cookingActive}"></i>
 </div>
 
 <!-- <div class="front-nav-btn search-mode"  ng-class="{'expand': recipe.searchActive}" ng-if="'view-all'| isState">

@@ -29,9 +29,9 @@
     @include pseudo;
     top: 0;
     left: 0;
-    height: 100px;
+    height: 120px;
     width: 100%;
-    border: 1px solid red;
+    // border: 1px solid red;
     background: url('/images/bg.jpg');
     mask-image:-webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
 
@@ -178,7 +178,7 @@
   }
 
   p {
-    color: rgba(255,255,255,.8);
+    color: #848383;;
     padding: 10px;
     letter-spacing: .02em;
     line-height: 1.4;

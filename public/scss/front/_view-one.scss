@@ -9,3 +9,11 @@
     background: url('/images/cook-icon.svg') center no-repeat;
   }
 }
+
+.type1Container {
+  @include flex($direction:row);
+
+  h3 {
+    margin-right: 5px;
+  }
+}

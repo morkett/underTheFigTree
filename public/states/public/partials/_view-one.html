@@ -5,8 +5,14 @@
       <h2>{{r.title}}</h2>
       <h3>{{r.cuisine}}</h3>
       <h3>Serves: {{r.serves}}</h3>
-      <h3>{{r.type}}</h3>
-      <h3>{{r.type2}}</h3>
+      <div class="type1Container">
+        <h3 ng-if="r.type !== '-'">{{r.type}},</h3>
+        <h3 ng-if="r.typeB !== '-'">{{r.typeB}}</h3>
+      </div>
+      <div class="type1Container">
+        <h3 ng-if="r.type2 !== '-'">{{r.type2}},</h3>
+        <h3 ng-if="r.type2B !== '-'">{{r.type2B}}</h3>
+    </div>
       <!-- <h4>recipe</h4> -->
     </div>
     <img src="https://s3.amazonaws.com/under-the-fig-tree/{{r.blurImg[$index]}}"  lazy-img="https://s3.amazonaws.com/under-the-fig-tree/{{r.img[$index]}}" alt=""
